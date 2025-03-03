@@ -18,6 +18,7 @@ namespace PersonnelInfo.Razor.Pages.Employee
         public List<EmployeeDto> Employees { get; set; }
         public List<string> Headers { get; set; }
         public List<PropertyInfo> DtoProperties { get; set; }
+
         public async Task OnGet()
         {
             DtoProperties = typeof(EmployeeDto).GetProperties().ToList();

@@ -44,11 +44,11 @@ public class EmployeeController : ControllerBase
     }
 
 
-
     [HttpPost]
     [Route("Add")]
     public async Task<IActionResult> Add(AddEmployeeDto addDto, CancellationToken cancellationToken = default)
     {
+        
         var isAdded = await _services.AddAsync(addDto, cancellationToken);
         if (isAdded) return CreatedAtAction(nameof(GetById), new { id = _services.GetByNationalId(addDto.NationalId).Id }, new { message = $"Employee with name: {addDto.FirstName} {addDto.LastName} is added successfully." });
         return BadRequest(new { message = "Failed to add the employee. Please check the provided data." });
