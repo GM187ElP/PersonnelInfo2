@@ -1,0 +1,138 @@
+[
+  {
+    "Title": "فروش",
+    "DepartmentId": null
+  },
+  {
+    "Title": "توزیع",
+    "DepartmentId": null
+  },
+  {
+    "Title": "انبار",
+    "DepartmentId": null
+  },
+  {
+    "Title": "مالی و اداری",
+    "DepartmentId": null
+  },
+  {
+    "Title": "فروشنده",
+    "DepartmentId": "فروش"
+  },
+  {
+    "Title": "راننده",
+    "DepartmentId": "توزیع"
+  },
+  {
+    "Title": "موزع",
+    "DepartmentId": "توزیع"
+  },
+  {
+    "Title": "راننده_موزع",
+    "DepartmentId": "توزیع"
+  },
+  {
+    "Title": "کارگر انبار",
+    "DepartmentId": "انبار"
+  },
+  {
+    "Title": "سرپرست فروش",
+    "DepartmentId": "فروش"
+  },
+  {
+    "Title": "چیدمان",
+    "DepartmentId": "فروش"
+  },
+  {
+    "Title": "پروموتر",
+    "DepartmentId": "فروش"
+  },
+  {
+    "Title": "اپراتور سیستم",
+    "DepartmentId": "فروش"
+  },
+  {
+    "Title": "وصول مطالبات ",
+    "DepartmentId": "فروش"
+  },
+  {
+    "Title": "انباردار ",
+    "DepartmentId": "انبار"
+  },
+  {
+    "Title": "کمک انباردار",
+    "DepartmentId": "انبار"
+  },
+  {
+    "Title": "خدمات ",
+    "DepartmentId": "مالی و اداری"
+  },
+  {
+    "Title": "نگهبان ",
+    "DepartmentId": "انبار"
+  },
+  {
+    "Title": "سرپرست توزیع",
+    "DepartmentId": "انبار"
+  },
+  {
+    "Title": "مدیر لجستیک",
+    "DepartmentId": "انبار"
+  },
+  {
+    "Title": "سرپرست چیدمان",
+    "DepartmentId": "فروش"
+  },
+  {
+    "Title": "مهندس کامپیوتر(نرم افزار)",
+    "DepartmentId": "مالی و اداری"
+  },
+  {
+    "Title": "راننده لیفتراک",
+    "DepartmentId": "انبار"
+  },
+  {
+    "Title": "حسابدار فروش ",
+    "DepartmentId": "مالی و اداری"
+  },
+  {
+    "Title": "کارشناس حسابداری",
+    "DepartmentId": "مالی و اداری"
+  },
+  {
+    "Title": "رئیس حسابداری",
+    "DepartmentId": "مالی و اداری"
+  },
+  {
+    "Title": "مدیر بازاریابی و فروش ",
+    "DepartmentId": "فروش"
+  },
+  {
+    "Title": "مسئول امور اداری ",
+    "DepartmentId": "مالی و اداری"
+  },
+  {
+    "Title": "مدیر فروش",
+    "DepartmentId": "فروش"
+  },
+  {
+    "Title": "مدیر مالی ",
+    "DepartmentId": "مالی و اداری"
+  },
+  {
+    "Title": "مدیر IT",
+    "DepartmentId": "مالی و اداری"
+  },
+  {
+    "Title": "کار پرداز ",
+    "DepartmentId": "مالی و اداری"
+  },
+  {
+    "Title": "سرپرست وصول",
+    "DepartmentId": "فروش"
+  },
+  {
+    "Title": "مدیر عامل",
+    "DepartmentId": "مالی و اداری"
+  }
+]

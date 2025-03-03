@@ -1,0 +1,58 @@
+﻿@page
+@model PersonnelInfo.Razor.Pages.Employee.IndexModel
+@{
+}
+
+
+<div class="container">
+    <table class="table text-center">
+        <thead>
+            <tr>
+                @foreach (var item in Model.Headers)
+                {
+                    <th>@item</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model.Employees)
+            {
+                <tr>
+                    <th><input disabled asp-for="@employee.Id" class="form-control" /></th>
+                    <th><input disabled asp-for="@employee.PersonnelCode" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.FirstName" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.LastName" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.NationalId" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.ContactNumber" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.GenderDisplay" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.WorkingStatusDisplay" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.FatherName" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.MaritalStatus" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.ChildrenCount" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.ShenasnameNumber" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.ShenasnameSerialLetter" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.ShenasnameSerie" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.ShenasnameSerial" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.BirthDate" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.BirthPlaceId" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.ShenasnameIssuedPlaceId" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.InsurranceCode" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.InsurranceStatus" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.HasInsurance" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.ExtraInsurranceCount" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.DepartmentId" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.EmploymentTypeDisplay" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.StartingDate" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.LeavingDate" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.SupervisorId" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.InternalContactNumber" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.LandPhoneNumber" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.Address" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.PostalCode" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.MostRecentDegree" class="form-control"/></th>
+                    <th><input disabled asp-for="@employee.Major" class="form-control"/></th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

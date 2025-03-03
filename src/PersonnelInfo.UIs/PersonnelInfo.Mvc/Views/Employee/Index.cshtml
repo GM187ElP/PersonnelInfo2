@@ -1,0 +1,222 @@
+﻿@using PersonnelInfo.Core.DTOs.Entities.Employees
+@model IEnumerable<EmployeeDto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonnelCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NationalId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GenderDisplay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkingStatusDisplay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FatherName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaritalStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChildrenCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShenasnameNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShenasnameSerialLetter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShenasnameSerie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShenasnameSerial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BirthDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BirthPlaceId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShenasnameIssuedPlaceId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsurranceCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsurranceStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HasInsurance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExtraInsurranceCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartmentId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmploymentTypeDisplay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LeavingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupervisorId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InternalContactNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LandPhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostalCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MostRecentDegree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Major)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonnelCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NationalId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GenderDisplay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkingStatusDisplay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FatherName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaritalStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChildrenCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShenasnameNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShenasnameSerialLetter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShenasnameSerie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShenasnameSerial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthPlaceId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShenasnameIssuedPlaceId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsurranceCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsurranceStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasInsurance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExtraInsurranceCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmploymentTypeDisplay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeavingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupervisorId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InternalContactNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LandPhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostalCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MostRecentDegree)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Major)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.Id  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.Id  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

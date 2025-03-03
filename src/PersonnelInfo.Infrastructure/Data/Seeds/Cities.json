@@ -1,0 +1,5797 @@
+[
+  {
+    "Name": "فارس",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "تهران",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "خراسان رضوی",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "اصفهان",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "خوزستان",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "آذربایجان شرقی",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "مازندران",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "آذربایجان غربی",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "کرمان",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "سیستان و بلوچستان",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "البرز",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "گیلان",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "کرمانشاه",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "گلستان",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "هرمزگان",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "لرستان",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "همدان",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "کردستان",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "مرکزی",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "قم",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "اردبیل",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "قزوين",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "بوشهر",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "یزد",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "زنجان",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "چهارمحال و بختیاری",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "خراسان شمالی",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "خراسان جنوبی",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "کهگیلویه و بویر احمد",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "سمنان",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "ایلام",
+    "ProvinceId": null,
+    "IsCapital": false
+  },
+  {
+    "Name": "شیراز",
+    "ProvinceId": 1,
+    "IsCapital": true
+  },
+  {
+    "Name": "اردکان",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "ارسنجان",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "استهبان",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "اسیر",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "اشکنان",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "افزر",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "اقلید",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "امام شهر",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "اوز",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "اهل",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "ایج",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "ایزدخواست",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "آباده",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "آباده طشک",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "باب انار",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "بالاده",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "بنارویه",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "بوانات",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "بهمن",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "بیرم",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "بیضا",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "جنت شهر",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "جویم",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "جهرم",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "حاجی آباد ",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "حسامی",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "حسن آباد ",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "خانه زنیان",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "خاوران",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "خرامه",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "خشت",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "خنج",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "خور ",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "خومه زار",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "داراب",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "داریان",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "دبیران",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "دژکرد",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "دوبرجی",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "دوزه",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "دهرم",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "رامجرد",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "رونیز",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "زاهدشهر",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "زرقان",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "سده",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "سروستان",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "سعادت شهر",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "سورمق",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "سیدان",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "ششده",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "شهر جدید صدرا",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "شهرپیر",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "صغاد",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "صفاشهر",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "علامرودشت",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "عمادده",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "فدامی",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "فراشبند",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "فسا",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "فیروزآباد",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "قادرآباد",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "قائمیه",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "قطب آباد",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "قطرویه",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "قیر",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "کارزین",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "کازرون",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "کامفیروز",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "کره ای",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "کنارتخته",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "کوار",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "کوهنجان",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "گراش",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "گله دار",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "لار",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "لامرد",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "لپوئی",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "لطیفی",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "مبارک آباد",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "مرودشت",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "مشکان",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "مصیری",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "مهر",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "میمند",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "نوبندگان",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "نوجین",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "نودان",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "نورآباد",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "نی ریز",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "وراوی",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "هماشهر",
+    "ProvinceId": 1,
+    "IsCapital": false
+  },
+  {
+    "Name": "تهران",
+    "ProvinceId": 2,
+    "IsCapital": true
+  },
+  {
+    "Name": "ارجمند",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "اسلامشهر",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "اندیشه",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "آبسرد",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "آبعلی",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "باغستان",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "باقرشهر",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "بومهن",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "پاکدشت",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "پردیس",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "پیشوا",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "تجریش",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "جوادآباد",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "چهاردانگه",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "حسن آباد ",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "دماوند",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "رباط کریم",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "رودهن",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "ری",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "شاهدشهر",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "شریف آباد",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "شهریار",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "صالح آباد ",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "صباشهر",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "صفادشت",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "فردوسیه",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "فرون آباد",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "فشم",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "فیروزکوه",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "قدس",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "قرچک",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "کهریزک",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "کیلان",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "گلستان",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "لواسان",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "ملارد",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "نسیم شهر",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "نصیرآباد",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "وحیدیه",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "ورامین",
+    "ProvinceId": 2,
+    "IsCapital": false
+  },
+  {
+    "Name": "مشهد",
+    "ProvinceId": 3,
+    "IsCapital": true
+  },
+  {
+    "Name": "احمدآبادصولت",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "انابد",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "باجگیران",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "باخرز",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "بار",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "بایگ",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "بجستان",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "بردسکن",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "بیدخت",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "تایباد",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "تربت جام",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "تربت حیدریه",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "جغتای",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "جنگل",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "چاپشلو",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "چکنه",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "چناران",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "خرو",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "خلیل آباد",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "خواف",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "داورزن",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "درگز",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "درود",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "دولت آباد ",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "رباط سنگ",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "رشتخوار",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "رضویه",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "روداب",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "ریوش",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "سبزوار",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "سرخس",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "سفیدسنگ",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "سلامی",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "سلطان آباد",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "سنگان",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "شادمهر",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "شاندیز",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "ششتمد",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "شهرآباد",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "شهرزو",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "صالح آباد ",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "طرقبه",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "عشق آباد",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "فرهادگرد",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "فریمان",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "فیروزه",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "فیض آباد",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "قاسم آباد",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "قدمگاه",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "قلندرآباد",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "قوچان",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "کاخک",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "کاریز",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "کاشمر",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "کدکن",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "کلات",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "کندر",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "گلمکان",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "گناباد",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "لطف آباد",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "مزدآوند",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "مشهدریزه",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "ملک آباد",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "نشتیفان",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "نصر آباد",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "نقاب",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "نوخندان",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "نیشابور",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "نیل شهر",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "همت آباد",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "یونسی",
+    "ProvinceId": 3,
+    "IsCapital": false
+  },
+  {
+    "Name": "اصفهان",
+    "ProvinceId": 4,
+    "IsCapital": true
+  },
+  {
+    "Name": "ابریشم",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "ابوزیدآباد",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "اردستان",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "اژیه",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "افوس",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "انارک",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "ایمانشهر",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "آران وبیدگل",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "بادرود",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "باغ بهادران",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "بافران",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "برزک",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "برف انبار",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "بوئین ومیاندشت",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "بهاران شهر",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "بهارستان",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "پیربکران",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "تودشک",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "تیران",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "جندق",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "جوزدان",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "جوشقان وکامو",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "چادگان",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "چرمهین",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "چمگردان",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "حبیب آباد",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "حسن آباد",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "حنا",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "خالدآباد",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "خمینی شهر",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "خوانسار",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "خور",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "خوراسگان",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "خورزوق",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "داران",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "دامنه",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "درچه پیاز",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "دستگرد",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "دولت آباد",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "دهاقان",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "دهق",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "دیزیچه",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "رزوه",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "رضوانشهر",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "زاینده رود",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "زرین شهر",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "زواره",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "زیباشهر",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "سده لنجان",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "سفیدشهر",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "سگزی",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "سمیرم",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "شاپورآباد",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "شاهین شهر",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "شهرضا",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "طالخونچه",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "عسگران",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "علویچه",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "فرخی",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "فریدونشهر",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "فلاورجان",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "فولادشهر",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "قمصر",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "قهجاورستان",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "قهدریجان",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "کاشان",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "کرکوند",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "کلیشادوسودرجان",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "کمشچه",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "کمه",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "کوشک",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "کوهپایه",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "کهریزسنگ",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "گرگاب",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "گزبرخوار",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "گلپایگان",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "گلدشت",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "گلشن",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "گلشهر",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "گوگد",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "لای بید",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "مبارکه",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "محمدآباد",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "مشکات",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "منظریه",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "مهاباد",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "میمه",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "نائین",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "نجف آباد",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "نصرآباد",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "نطنز",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "نوش آباد",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "نیاسر",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "نیک آباد",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "ورزنه",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "ورنامخواست",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "وزوان",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "ونک",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "هرند",
+    "ProvinceId": 4,
+    "IsCapital": false
+  },
+  {
+    "Name": "اهواز",
+    "ProvinceId": 5,
+    "IsCapital": true
+  },
+  {
+    "Name": "اروندکنار",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "الوان",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "امیدیه",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "اندیمشک",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "ایذه",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "آبادان",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "آغاجاری",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "باغ ملک",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "بستان",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "بندرامام خمینی",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "بندرماهشهر",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "بهبهان",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "ترکالکی",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "جایزان",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "جنت مکان",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "چغامیش",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "چمران",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "چوئبده",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "حر",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "حسینیه",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "حمزه",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "حمیدیه",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "خرمشهر",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "دارخوین",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "دزآب",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "دزفول",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "دهدز",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "رامشیر",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "رامهرمز",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "رفیع",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "زهره",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "سالند",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "سردشت ",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "سماله",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "سوسنگرد",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "شادگان",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "شاوور",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "شرافت",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "شوش",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "شوشتر",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "شیبان",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "صالح شهر",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "صالح مشطط",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "صفی آباد ",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "صیدون",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "قلعه تل",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "قلعه خواجه",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "گتوند",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "گوریه",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "لالی",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "مسجدسلیمان",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "مشراگه",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "مقاومت",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "ملاثانی",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "میانرود",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "میداود",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "مینوشهر",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "ویس",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "هفتگل",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "هندیجان",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "هویزه",
+    "ProvinceId": 5,
+    "IsCapital": false
+  },
+  {
+    "Name": "تبریز",
+    "ProvinceId": 6,
+    "IsCapital": true
+  },
+  {
+    "Name": "اسکو",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "اهر",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "ایلخچی",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "آبش احمد",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "آذرشهر",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "آقکند",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "باسمنج",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "بخشایش",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "بستان آباد",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "بناب",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "بناب جدید",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "ترک",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "ترکمانچای",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "تسوج",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "تیکمه داش",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "جلفا",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "خاروانا",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "خامنه",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "خراجو",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "خسروشهر",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "خمارلو",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "خواجه",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "دوزدوزان",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "زرنق",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "زنوز",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "سراب",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "سردرود",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "سیس",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "سیه رود",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "شبستر",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "شربیان",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "شرفخانه",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "شندآباد",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "شهرجدیدسهند",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "صوفیان",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "عجب شیر",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "قره آغاج",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "کشکسرای",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "کلوانق",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "کلیبر",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "کوزه کنان",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "گوگان",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "لیلان",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "مراغه",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "مرند",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "ملکان",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "ممقان",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "مهربان",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "میانه",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "نظرکهریزی",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "وایقان",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "ورزقان",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "هادیشهر",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "هریس",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "هشترود",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "هوراند",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "یامچی",
+    "ProvinceId": 6,
+    "IsCapital": false
+  },
+  {
+    "Name": "ساری",
+    "ProvinceId": 7,
+    "IsCapital": true
+  },
+  {
+    "Name": "امیرکلا",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "ایزدشهر",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "آلاشت",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "آمل",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "بابل",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "بابلسر",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "بلده",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "بهشهر",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "بهنمیر",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "پل سفید",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "پول",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "تنکابن",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "جویبار",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "چالوس",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "چمستان",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "خلیل شهر",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "خوش رودپی",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "دابودشت",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "رامسر",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "رستمکلا",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "رویان",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "رینه",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "زرگر محله",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "زیرآب",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "سرخرود",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "سلمان شهر",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "سورک",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "شیرگاه",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "شیرود",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "عباس آباد",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "فریدونکنار",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "فریم",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "قائم شهر",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "کتالم وسادات شهر",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "کلارآباد",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "کلاردشت",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "کله بست",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "کوهی خیل",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "کیاسر",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "کیاکلا",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "گتاب",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "گزنک",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "گلوگاه",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "محمود آباد",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "مرزن آباد",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "مرزیکلا",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "نشتارود",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "نکا",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "نور",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "نوشهر",
+    "ProvinceId": 7,
+    "IsCapital": false
+  },
+  {
+    "Name": "ارومیه",
+    "ProvinceId": 8,
+    "IsCapital": true
+  },
+  {
+    "Name": "اشنویه",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "ایواوغلی",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "آواجیق",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "باروق",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "بازرگان",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "بوکان",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "پلدشت",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "پیرانشهر",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "تازه شهر",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "تکاب",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "چهاربرج",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "خلیفان",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "خوی",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "دیزج دیز",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "ربط",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "سردشت",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "سرو",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "سلماس",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "سیلوانه",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "سیمینه",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "سیه چشمه",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "شاهین دژ",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "شوط",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "فیرورق",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "قره ضیاءالدین",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "قطور",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "قوشچی",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "کشاورز",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "گردکشانه",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "ماکو",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "محمدیار",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "محمودآباد",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "مهاباد ",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "میاندوآب",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "میرآباد",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "نالوس",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "نقده",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "نوشین",
+    "ProvinceId": 8,
+    "IsCapital": false
+  },
+  {
+    "Name": "کرمان",
+    "ProvinceId": 9,
+    "IsCapital": true
+  },
+  {
+    "Name": "اختیارآباد",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "ارزوئیه",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "امین شهر",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "انار",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "اندوهجرد",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "باغین",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "بافت",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "بردسیر",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "بروات",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "بزنجان",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "بم",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "بهرمان",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "پاریز",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "جبالبارز",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "جوپار",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "جوزم",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "جیرفت",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "چترود",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "خاتون آباد",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "خانوک",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "خورسند",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "درب بهشت",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "دوساری",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "دهج",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "رابر",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "راور",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "راین",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "رفسنجان",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "رودبار",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "ریحان شهر",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "زرند",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "زنگی آباد",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "زیدآباد",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "سرچشمه",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "سیرجان",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "شهداد",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "شهربابک",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "صفائیه",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "عنبرآباد",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "فاریاب",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "فهرج",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "قلعه گنج",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "کاظم آباد",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "کشکوئیه",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "کوهبنان",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "کهنوج",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "کیانشهر",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "گلباف",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "گلزار",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "لاله زار",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "ماهان",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "محمد آباد ",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "محی آباد",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "مردهک",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "منوجان",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "نجف شهر",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "نرماشیر",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "نظام شهر",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "نگار",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "نودژ",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "هجدک",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "هماشهر ",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "یزدان شهر",
+    "ProvinceId": 9,
+    "IsCapital": false
+  },
+  {
+    "Name": "زاهدان",
+    "ProvinceId": 10,
+    "IsCapital": true
+  },
+  {
+    "Name": "ادیمی",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "اسپکه",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "ایرانشهر",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "بزمان",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "بمپور",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "بنت",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "بنجار",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "پیشین",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "جالق",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "چاه بهار",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "خاش",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "دوست محمد",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "راسک",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "زابل",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "زابلی",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "زرآباد",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "زهک",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "سراوان",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "سرباز",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "سوران",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "سیرکان",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "علی اکبر",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "فنوج",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "قصرقند",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "کنارک",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "گشت",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "گلمورتی",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "محمدان",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "محمد آباد",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "محمدی",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "میرجاوه",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "نصرت آباد",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "نگور",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "نوک آباد",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "نیک شهر",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "هیدوج",
+    "ProvinceId": 10,
+    "IsCapital": false
+  },
+  {
+    "Name": "کرج",
+    "ProvinceId": 11,
+    "IsCapital": true
+  },
+  {
+    "Name": "اشتهارد",
+    "ProvinceId": 11,
+    "IsCapital": false
+  },
+  {
+    "Name": "آسارا",
+    "ProvinceId": 11,
+    "IsCapital": false
+  },
+  {
+    "Name": "تنکمان",
+    "ProvinceId": 11,
+    "IsCapital": false
+  },
+  {
+    "Name": "چهارباغ",
+    "ProvinceId": 11,
+    "IsCapital": false
+  },
+  {
+    "Name": "سیف آباد",
+    "ProvinceId": 11,
+    "IsCapital": false
+  },
+  {
+    "Name": "شهرجدیدهشتگرد",
+    "ProvinceId": 11,
+    "IsCapital": false
+  },
+  {
+    "Name": "طالقان",
+    "ProvinceId": 11,
+    "IsCapital": false
+  },
+  {
+    "Name": "کمال شهر",
+    "ProvinceId": 11,
+    "IsCapital": false
+  },
+  {
+    "Name": "کوهسار",
+    "ProvinceId": 11,
+    "IsCapital": false
+  },
+  {
+    "Name": "گرمدره",
+    "ProvinceId": 11,
+    "IsCapital": false
+  },
+  {
+    "Name": "ماهدشت",
+    "ProvinceId": 11,
+    "IsCapital": false
+  },
+  {
+    "Name": "محمدشهر",
+    "ProvinceId": 11,
+    "IsCapital": false
+  },
+  {
+    "Name": "مشکین دشت",
+    "ProvinceId": 11,
+    "IsCapital": false
+  },
+  {
+    "Name": "نظرآباد",
+    "ProvinceId": 11,
+    "IsCapital": false
+  },
+  {
+    "Name": "هشتگرد",
+    "ProvinceId": 11,
+    "IsCapital": false
+  },
+  {
+    "Name": "رشت",
+    "ProvinceId": 12,
+    "IsCapital": true
+  },
+  {
+    "Name": "احمدسرگوراب",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "اسالم",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "اطاقور",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "املش",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "آستارا",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "آستانه اشرفیه",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "بازارجمعه",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "بره سر",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "بندرانزلی",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "پره سر",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "توتکابن",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "جیرنده",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "چابکسر",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "چاف وچمخاله",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "چوبر",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "حویق",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "خشکبیجار",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "خمام",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "دیلمان",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "رانکوه",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "رحیم آباد",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "رستم آباد",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "رضوانشهر ",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "رودبار ",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "رودبنه",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "رودسر",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "سنگر",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "سیاهکل",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "شفت",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "شلمان",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "صومعه سرا",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "فومن",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "کلاچای",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "کوچصفهان",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "کومله",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "کیاشهر",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "گوراب زرمیخ",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "لاهیجان",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "لشت نشاء",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "لنگرود",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "لوشان",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "لولمان",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "لوندویل",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "لیسار",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "ماسال",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "ماسوله",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "مرجقل",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "منجیل",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "واجارگاه",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "هشتپر",
+    "ProvinceId": 12,
+    "IsCapital": false
+  },
+  {
+    "Name": "کرمانشاه",
+    "ProvinceId": 13,
+    "IsCapital": true
+  },
+  {
+    "Name": "ازگله",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "اسلام آبادغرب",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "باینگان",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "بیستون",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "پاوه",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "تازه آباد",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "جوانرود",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "حمیل",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "رباط",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "روانسر",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "سرپل ذهاب",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "سرمست",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "سطر",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "سنقر",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "سومار",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "شاهو",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "صحنه",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "قصرشیرین",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "کرندغرب",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "کنگاور",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "کوزران",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "گهواره",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "گیلانغرب",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "میان راهان",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "نودشه",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "نوسود",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "هرسین",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "هلشی",
+    "ProvinceId": 13,
+    "IsCapital": false
+  },
+  {
+    "Name": "گرگان",
+    "ProvinceId": 14,
+    "IsCapital": true
+  },
+  {
+    "Name": "انبارآلوم",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "اینچه برون",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "آزادشهر",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "آق قلا",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "بندرگز",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "ترکمن",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "جلین",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "خان ببین",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "دلند",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "رامیان",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "سرخنکلاته",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "سیمین شهر",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "علی آباد",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "فاضل آباد",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "کردکوی",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "کلاله",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "گالیکش",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "گمیش تپه",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "گنبد کاووس",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "مراوه تپه",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "مینودشت",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "نگین شهر",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "نوده خاندوز",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "نوکنده",
+    "ProvinceId": 14,
+    "IsCapital": false
+  },
+  {
+    "Name": "بندرعباس",
+    "ProvinceId": 15,
+    "IsCapital": true
+  },
+  {
+    "Name": "ابوموسی",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "بستک",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "بندرجاسک",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "بندرچارک",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "بندرلنگه",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "بیکاه",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "پارسیان",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "تخت",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "جناح",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "حاجی آباد ",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "خمیر",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "درگهان",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "دهبارز",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "رویدر",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "زیارتعلی",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "سردشت بشاگرد",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "سرگز",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "سندرک",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "سوزا",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "سیریک",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "فارغان",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "فین",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "قشم",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "قلعه قاضی",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "کنگ",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "کوشکنار",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "کیش",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "گوهران",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "میناب",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "هرمز",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "هشتبندی",
+    "ProvinceId": 15,
+    "IsCapital": false
+  },
+  {
+    "Name": "خرم آباد",
+    "ProvinceId": 16,
+    "IsCapital": true
+  },
+  {
+    "Name": "ازنا",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "اشترینان",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "الشتر",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "الیگودرز",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "بروجرد",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "پلدختر",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "چالانچولان",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "چغلوندی",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "چقابل",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "درب گنبد",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "دورود",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "زاغه",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "سپیددشت",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "سراب دوره",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "شول آباد",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "فیروز آباد",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "کونانی",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "کوهدشت",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "گراب",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "معمولان",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "مؤمن آباد",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "نور آباد",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "ویسیان",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "هفت چشمه",
+    "ProvinceId": 16,
+    "IsCapital": false
+  },
+  {
+    "Name": "همدان",
+    "ProvinceId": 17,
+    "IsCapital": true
+  },
+  {
+    "Name": "ازندریان",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "اسدآباد",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "برزول",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "بهار",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "تویسرکان",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "جورقان",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "جوکار",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "دمق",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "رزن",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "زنگنه",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "سامن",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "سرکان",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "شیرین سو",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "صالح آباد ",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "فامنین",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "فرسفج",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "فیروزان",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "قروه در جزین",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "قهاوند",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "کبودرآهنگ",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "گل تپه",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "گیان",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "لالجین",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "مریانج",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "ملایر",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "نهاوند",
+    "ProvinceId": 17,
+    "IsCapital": false
+  },
+  {
+    "Name": "سنندج",
+    "ProvinceId": 18,
+    "IsCapital": true
+  },
+  {
+    "Name": "آرمرده",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "بابارشانی",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "بانه",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "بلبان آباد",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "بوئین سفلی",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "بیجار",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "چناره",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "دزج",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "دلبران",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "دهگلان",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "دیواندره",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "زرینه",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "سروآباد",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "سریش آباد",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "سقز",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "شویشه",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "صاحب",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "قروه",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "کامیاران",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "کانی دینار",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "کانی سور",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "مریوان",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "موچش",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "یاسوکند",
+    "ProvinceId": 18,
+    "IsCapital": false
+  },
+  {
+    "Name": "اراک",
+    "ProvinceId": 19,
+    "IsCapital": true
+  },
+  {
+    "Name": "آستانه",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "آشتیان",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "پرندک",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "تفرش",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "توره",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "جاورسیان",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "خشکرود",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "خمین",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "خنداب",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "داودآباد",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "دلیجان",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "رازقان",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "زاویه",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "ساروق",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "ساوه",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "سنجان",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "شازند",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "شهرجدیدمهاجران",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "غرق آباد",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "فرمهین",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "قورچی باشی",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "کرهرود",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "کمیجان",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "مأمونیه",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "محلات",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "میلاجرد",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "نراق",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "نوبران",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "نیمور",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "هندودر",
+    "ProvinceId": 19,
+    "IsCapital": false
+  },
+  {
+    "Name": "قم",
+    "ProvinceId": 20,
+    "IsCapital": true
+  },
+  {
+    "Name": "جعفریه",
+    "ProvinceId": 20,
+    "IsCapital": false
+  },
+  {
+    "Name": "دستجرد",
+    "ProvinceId": 20,
+    "IsCapital": false
+  },
+  {
+    "Name": "سلفچگان",
+    "ProvinceId": 20,
+    "IsCapital": false
+  },
+  {
+    "Name": "قنوات",
+    "ProvinceId": 20,
+    "IsCapital": false
+  },
+  {
+    "Name": "کهک",
+    "ProvinceId": 20,
+    "IsCapital": false
+  },
+  {
+    "Name": "اردبیل",
+    "ProvinceId": 21,
+    "IsCapital": true
+  },
+  {
+    "Name": "اصلاندوز",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "آبی بیگلو",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "بیله سوار",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "پارس آباد",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "تازه کند",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "تازه کندانگوت",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "جعفرآباد",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "خلخال",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "رضی",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "سرعین",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "عنبران",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "فخرآباد",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "کلور",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "کوراییم",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "گرمی",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "گیوی",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "لاهرود",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "مرادلو",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "مشگین شهر",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "نمین",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "نیر",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "هشتجین",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "هیر",
+    "ProvinceId": 21,
+    "IsCapital": false
+  },
+  {
+    "Name": "قزوین",
+    "ProvinceId": 22,
+    "IsCapital": true
+  },
+  {
+    "Name": "ارداق",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "اسفرورین",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "اقبالیه",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "الوند",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "آبگرم",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "آبیک",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "آوج",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "بوئین زهرا",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "بیدستان",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "تاکستان",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "خاکعلی",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "خرمدشت",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "دانسفهان",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "رازمیان",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "سگزآباد",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "سیردان",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "شال",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "شریفیه",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "ضیاءآباد",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "کوهین",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "محمدیه",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "محمودآبادنمونه",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "معلم کلایه",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "نرجه",
+    "ProvinceId": 22,
+    "IsCapital": false
+  },
+  {
+    "Name": "بوشهر",
+    "ProvinceId": 23,
+    "IsCapital": true
+  },
+  {
+    "Name": "امام حسن",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "انارستان",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "اهرم",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "آبپخش",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "آبدان",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "برازجان",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "بردخون",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "بردستان",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "بندردیر",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "بندردیلم",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "بندرریگ",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "بندرکنگان",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "بندرگناوه",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "بنک",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "تنگ ارم",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "جم",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "چغادک",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "خارک",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "خورموج",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "دالکی",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "دلوار",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "ریز",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "سعدآباد",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "سیراف",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "شبانکاره",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "شنبه",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "عسلویه",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "کاکی",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "کلمه",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "نخل تقی",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "وحدتیه",
+    "ProvinceId": 23,
+    "IsCapital": false
+  },
+  {
+    "Name": "یزد",
+    "ProvinceId": 24,
+    "IsCapital": true
+  },
+  {
+    "Name": "ابرکوه",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "احمدآباد",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "اردکان ",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "اشکذر",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "بافق",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "بفروئیه",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "بهاباد",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "تفت",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "حمیدیا",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "خضرآباد",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "دیهوک",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "زارچ",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "شاهدیه",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "طبس",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "عشق آباد ",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "عقدا",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "مروست",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "مهردشت",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "مهریز",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "میبد",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "ندوشن",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "نیر ",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "هرات",
+    "ProvinceId": 24,
+    "IsCapital": false
+  },
+  {
+    "Name": "زنجان",
+    "ProvinceId": 25,
+    "IsCapital": true
+  },
+  {
+    "Name": "ابهر",
+    "ProvinceId": 25,
+    "IsCapital": false
+  },
+  {
+    "Name": "ارمغانخانه",
+    "ProvinceId": 25,
+    "IsCapital": false
+  },
+  {
+    "Name": "آب بر",
+    "ProvinceId": 25,
+    "IsCapital": false
+  },
+  {
+    "Name": "چورزق",
+    "ProvinceId": 25,
+    "IsCapital": false
+  },
+  {
+    "Name": "حلب",
+    "ProvinceId": 25,
+    "IsCapital": false
+  },
+  {
+    "Name": "خرمدره",
+    "ProvinceId": 25,
+    "IsCapital": false
+  },
+  {
+    "Name": "دندی",
+    "ProvinceId": 25,
+    "IsCapital": false
+  },
+  {
+    "Name": "زرین آباد",
+    "ProvinceId": 25,
+    "IsCapital": false
+  },
+  {
+    "Name": "زرین رود",
+    "ProvinceId": 25,
+    "IsCapital": false
+  },
+  {
+    "Name": "سجاس",
+    "ProvinceId": 25,
+    "IsCapital": false
+  },
+  {
+    "Name": "سلطانیه",
+    "ProvinceId": 25,
+    "IsCapital": false
+  },
+  {
+    "Name": "سهرورد",
+    "ProvinceId": 25,
+    "IsCapital": false
+  },
+  {
+    "Name": "صائین قلعه",
+    "ProvinceId": 25,
+    "IsCapital": false
+  },
+  {
+    "Name": "قیدار",
+    "ProvinceId": 25,
+    "IsCapital": false
+  },
+  {
+    "Name": "گرماب",
+    "ProvinceId": 25,
+    "IsCapital": false
+  },
+  {
+    "Name": "ماه نشان",
+    "ProvinceId": 25,
+    "IsCapital": false
+  },
+  {
+    "Name": "هیدج",
+    "ProvinceId": 25,
+    "IsCapital": false
+  },
+  {
+    "Name": "شهرکرد",
+    "ProvinceId": 26,
+    "IsCapital": true
+  },
+  {
+    "Name": "آلونی",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "باباحیدر",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "بلداجی",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "جونقان",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "سفیددشت",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "سودجان",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "سورشجان",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "شلمزار",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "اردل",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "بروجن",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "بن",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "سامان",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "طاقانک",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "فارسان",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "فرادنبه",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "فرخ شهر",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "گندمان",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "لردگان",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "مال خلیفه",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "ناغان",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "نافچ",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "نقنه",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "هفشجان",
+    "ProvinceId": 26,
+    "IsCapital": false
+  },
+  {
+    "Name": "بجنورد",
+    "ProvinceId": 27,
+    "IsCapital": true
+  },
+  {
+    "Name": "اسفراین",
+    "ProvinceId": 27,
+    "IsCapital": false
+  },
+  {
+    "Name": "ایور",
+    "ProvinceId": 27,
+    "IsCapital": false
+  },
+  {
+    "Name": "آشخانه",
+    "ProvinceId": 27,
+    "IsCapital": false
+  },
+  {
+    "Name": "پیش قلعه",
+    "ProvinceId": 27,
+    "IsCapital": false
+  },
+  {
+    "Name": "تیتکانلو",
+    "ProvinceId": 27,
+    "IsCapital": false
+  },
+  {
+    "Name": "جاجرم",
+    "ProvinceId": 27,
+    "IsCapital": false
+  },
+  {
+    "Name": "حصارگرمخان",
+    "ProvinceId": 27,
+    "IsCapital": false
+  },
+  {
+    "Name": "درق",
+    "ProvinceId": 27,
+    "IsCapital": false
+  },
+  {
+    "Name": "راز",
+    "ProvinceId": 27,
+    "IsCapital": false
+  },
+  {
+    "Name": "سنخواست",
+    "ProvinceId": 27,
+    "IsCapital": false
+  },
+  {
+    "Name": "شوقان",
+    "ProvinceId": 27,
+    "IsCapital": false
+  },
+  {
+    "Name": "شیروان",
+    "ProvinceId": 27,
+    "IsCapital": false
+  },
+  {
+    "Name": "صفی آباد",
+    "ProvinceId": 27,
+    "IsCapital": false
+  },
+  {
+    "Name": "فاروج",
+    "ProvinceId": 27,
+    "IsCapital": false
+  },
+  {
+    "Name": "قاضی",
+    "ProvinceId": 27,
+    "IsCapital": false
+  },
+  {
+    "Name": "گرمه",
+    "ProvinceId": 27,
+    "IsCapital": false
+  },
+  {
+    "Name": "لوجلی",
+    "ProvinceId": 27,
+    "IsCapital": false
+  },
+  {
+    "Name": "بیرجند",
+    "ProvinceId": 28,
+    "IsCapital": true
+  },
+  {
+    "Name": "ارسک",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "اسدیه",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "اسفدن",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "اسلامیه",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "آرین شهر",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "آیسک",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "بشرویه",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "حاجی آباد",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "خضری دشت بیاض",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "خوسف",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "زهان",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "سرایان",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "سربیشه",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "سه قلعه",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "شوسف",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "طبس مسینا",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "فردوس",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "قائن",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "قهستان",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "گزیک",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "محمد شهر",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "مود",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "نهبندان",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "نیمبلوک",
+    "ProvinceId": 28,
+    "IsCapital": false
+  },
+  {
+    "Name": "یاسوج",
+    "ProvinceId": 29,
+    "IsCapital": true
+  },
+  {
+    "Name": "باشت",
+    "ProvinceId": 29,
+    "IsCapital": false
+  },
+  {
+    "Name": "پاتاوه",
+    "ProvinceId": 29,
+    "IsCapital": false
+  },
+  {
+    "Name": "چرام",
+    "ProvinceId": 29,
+    "IsCapital": false
+  },
+  {
+    "Name": "چیتاب",
+    "ProvinceId": 29,
+    "IsCapital": false
+  },
+  {
+    "Name": "دوگنبدان",
+    "ProvinceId": 29,
+    "IsCapital": false
+  },
+  {
+    "Name": "دهدشت",
+    "ProvinceId": 29,
+    "IsCapital": false
+  },
+  {
+    "Name": "دیشموک",
+    "ProvinceId": 29,
+    "IsCapital": false
+  },
+  {
+    "Name": "سوق",
+    "ProvinceId": 29,
+    "IsCapital": false
+  },
+  {
+    "Name": "سی سخت",
+    "ProvinceId": 29,
+    "IsCapital": false
+  },
+  {
+    "Name": "قلعه رئیسی",
+    "ProvinceId": 29,
+    "IsCapital": false
+  },
+  {
+    "Name": "گراب سفلی",
+    "ProvinceId": 29,
+    "IsCapital": false
+  },
+  {
+    "Name": "لنده",
+    "ProvinceId": 29,
+    "IsCapital": false
+  },
+  {
+    "Name": "لیکک",
+    "ProvinceId": 29,
+    "IsCapital": false
+  },
+  {
+    "Name": "مادوان",
+    "ProvinceId": 29,
+    "IsCapital": false
+  },
+  {
+    "Name": "مارگون",
+    "ProvinceId": 29,
+    "IsCapital": false
+  },
+  {
+    "Name": "سمنان",
+    "ProvinceId": 30,
+    "IsCapital": true
+  },
+  {
+    "Name": "امیریه",
+    "ProvinceId": 30,
+    "IsCapital": false
+  },
+  {
+    "Name": "ایوانکی",
+    "ProvinceId": 30,
+    "IsCapital": false
+  },
+  {
+    "Name": "آرادان",
+    "ProvinceId": 30,
+    "IsCapital": false
+  },
+  {
+    "Name": "بسطام",
+    "ProvinceId": 30,
+    "IsCapital": false
+  },
+  {
+    "Name": "بیارجمند",
+    "ProvinceId": 30,
+    "IsCapital": false
+  },
+  {
+    "Name": "دامغان",
+    "ProvinceId": 30,
+    "IsCapital": false
+  },
+  {
+    "Name": "درجزین",
+    "ProvinceId": 30,
+    "IsCapital": false
+  },
+  {
+    "Name": "دیباج",
+    "ProvinceId": 30,
+    "IsCapital": false
+  },
+  {
+    "Name": "سرخه",
+    "ProvinceId": 30,
+    "IsCapital": false
+  },
+  {
+    "Name": "شاهرود",
+    "ProvinceId": 30,
+    "IsCapital": false
+  },
+  {
+    "Name": "شهمیرزاد",
+    "ProvinceId": 30,
+    "IsCapital": false
+  },
+  {
+    "Name": "کلاته خیج",
+    "ProvinceId": 30,
+    "IsCapital": false
+  },
+  {
+    "Name": "گرمسار",
+    "ProvinceId": 30,
+    "IsCapital": false
+  },
+  {
+    "Name": "مجن",
+    "ProvinceId": 30,
+    "IsCapital": false
+  },
+  {
+    "Name": "مهدی شهر",
+    "ProvinceId": 30,
+    "IsCapital": false
+  },
+  {
+    "Name": "میامی",
+    "ProvinceId": 30,
+    "IsCapital": false
+  },
+  {
+    "Name": "ایلام",
+    "ProvinceId": 31,
+    "IsCapital": true
+  },
+  {
+    "Name": "ارکواز",
+    "ProvinceId": 31,
+    "IsCapital": false
+  },
+  {
+    "Name": "ایوان",
+    "ProvinceId": 31,
+    "IsCapital": false
+  },
+  {
+    "Name": "آبدانان",
+    "ProvinceId": 31,
+    "IsCapital": false
+  },
+  {
+    "Name": "آسمان آباد",
+    "ProvinceId": 31,
+    "IsCapital": false
+  },
+  {
+    "Name": "بدره",
+    "ProvinceId": 31,
+    "IsCapital": false
+  },
+  {
+    "Name": "پهله",
+    "ProvinceId": 31,
+    "IsCapital": false
+  },
+  {
+    "Name": "توحید",
+    "ProvinceId": 31,
+    "IsCapital": false
+  },
+  {
+    "Name": "چوار",
+    "ProvinceId": 31,
+    "IsCapital": false
+  },
+  {
+    "Name": "دره شهر",
+    "ProvinceId": 31,
+    "IsCapital": false
+  },
+  {
+    "Name": "دلگشا",
+    "ProvinceId": 31,
+    "IsCapital": false
+  },
+  {
+    "Name": "دهلران",
+    "ProvinceId": 31,
+    "IsCapital": false
+  },
+  {
+    "Name": "زرنه",
+    "ProvinceId": 31,
+    "IsCapital": false
+  },
+  {
+    "Name": "سراب باغ",
+    "ProvinceId": 31,
+    "IsCapital": false
+  },
+  {
+    "Name": "سرابله",
+    "ProvinceId": 31,
+    "IsCapital": false
+  },
+  {
+    "Name": "صالح آباد",
+    "ProvinceId": 31,
+    "IsCapital": false
+  },
+  {
+    "Name": "لومار",
+    "ProvinceId": 31,
+    "IsCapital": false
+  },
+  {
+    "Name": "مورموری",
+    "ProvinceId": 31,
+    "IsCapital": false
+  },
+  {
+    "Name": "موسیان",
+    "ProvinceId": 31,
+    "IsCapital": false
+  },
+  {
+    "Name": "مهران",
+    "ProvinceId": 31,
+    "IsCapital": false
+  },
+  {
+    "Name": "میمه ",
+    "ProvinceId": 31,
+    "IsCapital": false
+  }
+]
