@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace QueryTest;
 
@@ -74,7 +75,8 @@ public partial class ValidationMessageGenerator
             var messageDictionary = new Dictionary<string, Dictionary<string, Dictionary<string, string>>>();
 
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            var filePath = @"C:\Users\arsalan\Desktop\Errors.xlsx";
+            var filePath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\", "Errors.xlsx"));
+
             using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
             {
                 using (var reader = ExcelReaderFactory.CreateReader(stream))
