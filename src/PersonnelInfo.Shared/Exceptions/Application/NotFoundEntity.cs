@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PersonnelInfo.Shared.Exceptions.Infrastructure;
+namespace PersonnelInfo.Shared.Exceptions.Application;
 
 [Serializable]
 public class NotFoundEntity : Exception

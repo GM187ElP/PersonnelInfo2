@@ -10,13 +10,21 @@ using System.Threading.Tasks;
 namespace PersonnelInfo.Infrastructure.Configuration.EntitiesConfiguration;
 public class JobTitleConfig : IEntityTypeConfiguration<JobTitle>
 {
-    void IEntityTypeConfiguration<JobTitle>.Configure(EntityTypeBuilder<JobTitle> builder)
+    public void Configure(EntityTypeBuilder<JobTitle> builder)
     {
         RelationalEntityTypeBuilderExtensions.ToTable(builder, "JobTitles");
-        builder.HasKey(e => e.Title);
-        builder.Property(e => e.Title).HasMaxLength(35);
-        builder.HasOne(e => e.Department).WithMany(e => e.JobTitles).HasForeignKey(e => e.DepartmentId);
-        builder.HasMany(e => e.PersonList).WithOne(e => e.JobTitle).HasForeignKey(e => e.DepartmentId);
+        builder.HasIndex(j => j.Title).IsUnique();
+        builder.Property(j => j.Title).HasMaxLength(35);
+
+        builder.HasOne(j => j.Department)
+               .WithMany(d => d.JobTitles)
+               .HasPrincipalKey(j => j.Title)
+               .HasForeignKey(j => j.DepartmentId).OnDelete(DeleteBehavior.Restrict);
+
+        builder.HasMany(j => j.Employees)
+               .WithOne(emp => emp.JobTitle)
+               .HasPrincipalKey(j => j.Title)
+               .HasForeignKey(emp => emp.DepartmentId);
     }
 }
 

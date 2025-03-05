@@ -7,6 +7,6 @@ namespace PersonnelInfo.Application.Interfaces.Entities;
 
 public interface ICityRepository
 {
-    Task<List<City>> GetAllAsync(CancellationToken cancellationToken = default);
-    Task<City> GetByIdAsync(long id, CancellationToken cancellationToken = default);
+    Task<Dictionary<string, IEnumerable<string>>> GetAllAsync(CancellationToken cancellationToken = default);
+    Task<City?> GetByIdAsync(long id, CancellationToken cancellationToken = default);
 }

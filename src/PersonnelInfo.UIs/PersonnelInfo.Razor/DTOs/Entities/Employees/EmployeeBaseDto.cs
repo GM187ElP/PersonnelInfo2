@@ -1,16 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PersonnelInfo.Core.DTOs.Entities.Employees;
+namespace PersonnelInfo.Razor.DTOs.Entities.Employees;
 public class EmployeeBaseDto
 {
-    public List<SelectListItem> ShenasnameSerialLetterList { get; set; } = new();
-
     public static List<SelectListItem> SeedShenasnameSerialLetter()
     {
         return

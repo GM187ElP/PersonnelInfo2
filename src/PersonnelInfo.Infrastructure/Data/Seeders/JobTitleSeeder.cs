@@ -15,7 +15,7 @@ public class JobTitleSeeder
 
     public async Task SeedJobTitlesFromJson()
     {
-        var filePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "src", "PersonnelInfo.Infrastructure", "Data", "Seeds", "JobTitles.json");
+        var filePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "src", "PersonnelInfo.Infrastructure", "Data", "SeedData", "JobTitles.json");
         var jsonData = await File.ReadAllTextAsync(filePath);
         var jobTitles = JsonSerializer.Deserialize<List<JobTitle>>(jsonData);
         foreach (var jobTitle in jobTitles)

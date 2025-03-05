@@ -1,4 +1,4 @@
-﻿namespace PersonnelInfo.Application.Services;
+﻿namespace PersonnelInfo.Shared.Exceptions.Application;
 
 [Serializable]
 public class DuplicateEntityException : Exception

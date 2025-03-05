@@ -1,7 +1,7 @@
 ﻿namespace PersonnelInfo.Application;
 public static class Mapper
 {
-    public static TDto MapToDto<T, TDto>(T entity, TDto dto)
+    public static TDto MapToDto<T, TDto>(T? entity, TDto dto)
     where T : class
     where TDto : class
     {
@@ -20,13 +20,6 @@ public static class Mapper
         return dto;
     }
 
-    //public static TDto MapToDto<T,TDto>(T entity) where TDto : class,new()
-    //{
-    //    var dto = new TDto();
-    //    MapToDto(entity, dto);
-    //    return dto;
-    //}
-
     public static T MapToEntity<TDto, T>(TDto dto, T entity) where T : class
     {
         var dtoProperties = typeof(TDto).GetProperties();
@@ -44,7 +37,6 @@ public static class Mapper
 
         return entity;
     }
-
     public static T MapToEntity<TDto,T>(TDto dto) where T : class,new()
     {
         var entity = new T();

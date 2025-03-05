@@ -5,8 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersonnelInfo.Core.Enums;
+namespace PersonnelInfo.Razor.DTOs.Enums;
 public enum MaritalStatusType
 {
-    NotSelected, Single, Married
+    [Display(Name = "انتخاب نشده")] NotSelected, [Display(Name = "مجرد")] Single, [Display(Name = "متاهل")] Married
 }

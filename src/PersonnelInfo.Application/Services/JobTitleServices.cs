@@ -2,6 +2,7 @@
 using PersonnelInfo.Application.Interfaces.Entities;
 using PersonnelInfo.Core.DTOs.Entities.JobTitles;
 using PersonnelInfo.Core.Entities;
+using PersonnelInfo.Core.Interfaces;
 
 namespace PersonnelInfo.Application.Services;
 

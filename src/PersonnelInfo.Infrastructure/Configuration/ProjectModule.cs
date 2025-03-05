@@ -1,11 +1,8 @@
 ﻿using Autofac;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using PersonnelInfo.Application;
 using PersonnelInfo.Application.Interfaces;
 using PersonnelInfo.Application.Interfaces.Entities;
 using PersonnelInfo.Application.Services;
-using PersonnelInfo.Core.Entities;
 using PersonnelInfo.Core.Interfaces;
 using PersonnelInfo.Infrastructure.Data.Repositories;
 using PersonnelInfo.Infrastructure.Services;
@@ -22,10 +19,11 @@ public class ProjectModule : Module
         builder.RegisterType<EmployeeRepository>().As<IEmployeeRepository>().InstancePerLifetimeScope();
         builder.RegisterType<StartLeaveHistoryRepository>().As<IStartLeaveHistoryRepository>().InstancePerLifetimeScope();
         builder.RegisterType<BankNameRepository>().As<IBankNameRepository>().InstancePerLifetimeScope();
-        //builder.RegisterType<CityRepository>().As<ICityRepository>().InstancePerLifetimeScope();
+        builder.RegisterType<CityRepository>().As<ICityRepository>().InstancePerLifetimeScope();
         builder.RegisterType<JobTitleRepository>().As<IJobTitleRepository>().InstancePerLifetimeScope();
 
         builder.RegisterType<EmployeeServices>().As<IEmployeeServices>().InstancePerLifetimeScope();
+        builder.RegisterType<CityServices>().As<ICityServices>().InstancePerLifetimeScope();
         builder.RegisterType<GlobalExceptionMiddleware>().AsSelf().InstancePerLifetimeScope();
     }
 }

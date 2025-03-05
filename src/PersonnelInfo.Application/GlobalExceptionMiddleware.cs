@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
-using PersonnelInfo.Shared.Exceptions.Infrastructure;
+using PersonnelInfo.Shared.Exceptions.Application;
 using System.Data;
 using System.Net;
 using System.Runtime.CompilerServices;

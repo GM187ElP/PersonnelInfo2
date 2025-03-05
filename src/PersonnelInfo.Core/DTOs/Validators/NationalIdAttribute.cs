@@ -4,6 +4,7 @@ namespace PersonnelInfo.Core.DTOs.Validators;
 
 public class NationalIdAttribute : ValidationAttribute
 {
+    public NationalIdAttribute() { }
     private static bool IsValidnationalId(string nationalId)
     {
         var sum = 0;
@@ -27,19 +28,24 @@ public class NationalIdAttribute : ValidationAttribute
     }
     protected override ValidationResult IsValid(object value, ValidationContext validationContext)
     {
-        if (value is not string nationalId)
-            return new ValidationResult("National Id must be a string.");
+        //if (value is not string nationalId)
+        //    return new ValidationResult("National Id must be a string.");
 
-        if (string.IsNullOrWhiteSpace(nationalId))
-            return new ValidationResult("National Id cannot be empty or contain only whitespace.");
+        //if (nationalId.Length != 10)
+        //    return new ValidationResult(errorMessage);
 
-        if (nationalId.Length != 10)
-            return new ValidationResult("National Id must be exactly 10 digits long.");
+        if (value is string nationalId)
+        {
+            if (string.IsNullOrWhiteSpace(nationalId))
+                return new ValidationResult(base.ErrorMessage);
 
-        if (!IsValidnationalId(nationalId))
-            return new ValidationResult("Invalid National Id.");
+            if (!IsValidnationalId(nationalId))
+                return new ValidationResult(base.ErrorMessage);
 
-        return ValidationResult.Success;
+            return ValidationResult.Success;
+        }
+        else
+            return new ValidationResult(base.ErrorMessage);
     }
 }
 

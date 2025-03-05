@@ -29,7 +29,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonnelInfo.Razor", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonnelInfo.Mvc", "src\PersonnelInfo.UIs\PersonnelInfo.Mvc\PersonnelInfo.Mvc.csproj", "{573C38FB-FA35-4EAA-8D5A-5A1456C83534}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryTest", "src\QueryTest\QueryTest.csproj", "{BD216CB8-0610-433D-8AFF-C3F36151FB04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "src\QueryTest\Test.csproj", "{BD216CB8-0610-433D-8AFF-C3F36151FB04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,5 +97,8 @@ Global
 		{C9B15E01-328C-410C-87B7-B889E04125C2} = {6BC99D44-70F5-4277-9DB7-D3503A532AEE}
 		{61FAC4B9-2799-4BBE-A1A6-1FD41CCA6534} = {6077531A-09C8-4E03-A356-964F799B13A7}
 		{573C38FB-FA35-4EAA-8D5A-5A1456C83534} = {6077531A-09C8-4E03-A356-964F799B13A7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B01FDC92-F900-4546-927C-4E5E03928C36}
 	EndGlobalSection
 EndGlobal

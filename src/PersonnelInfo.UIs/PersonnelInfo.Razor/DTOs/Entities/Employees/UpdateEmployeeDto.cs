@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PersonnelInfo.Razor.DTOs.Entities.Employees;
 
-public class EmployeeDto : EmployeeBaseDto
+public class UpdateEmployeeDto : EmployeeBaseDto
 {
     [BindNever]
     public long Id { get; set; }
@@ -31,7 +31,7 @@ public class EmployeeDto : EmployeeBaseDto
     public GenderType GenderDisplay { get; set; } = GenderType.NotSelected;
 
     [Display(Name = "وضعیت اشتغال")]
-    public WorkingStatusType WorkingStatusDisplay { get; set; } = WorkingStatusType.Working;
+    public WorkingStatusType WorkingStatusDisplay { get; set; } = WorkingStatusType.NotSelected;
     #endregion
 
     #region Family Information
@@ -61,14 +61,14 @@ public class EmployeeDto : EmployeeBaseDto
 
     #region Birth and Place Information
     [Display(Name = "تاریخ تولد")]
-    public DateTime BirthDate { get; set; } = DateTime.UtcNow;
+    public DateTime BirthDate { get; set; } = DateTime.Now;
 
     [Display(Name = "محل تولد")]
-    public long BirthPlaceId { get; set; }
+    public long BirthPlaceId { get; set; } // should get from database in razor class file
     #endregion
 
     #region Shenasname Issuance Information
-    [Display(Name = "محل صدور شناسنامه")]
+    [Display(Name = "محل صدور شناسنامه")]  // should get from database in razor class file
     public long ShenasnameIssuedPlaceId { get; set; }
     #endregion
 
@@ -82,7 +82,7 @@ public class EmployeeDto : EmployeeBaseDto
     [Display(Name = "بیمه دارد؟")]
     public bool HasInsurance { get; set; }
 
-    [Display(Name = "تعداد بیمه‌تکمیلی")]
+    [Display(Name = "تعداد بیمه ‌تکمیلی")]
     public int ExtraInsurranceCount { get; set; } = 0;
     #endregion
 
@@ -94,10 +94,10 @@ public class EmployeeDto : EmployeeBaseDto
     public EmploymentType EmploymentTypeDisplay { get; set; } = EmploymentType.Official;
 
     [Display(Name = "تاریخ شروع به کار")]
-    public DateTime StartingDate { get; set; } = DateTime.UtcNow;
+    public DateTime StartingDate { get; set; } = DateTime.Now;
 
     [Display(Name = "تاریخ پایان کار")]
-    public DateTime LeavingDate { get; set; }
+    public DateTime? LeavingDate { get; set; } // nullable
 
     [Display(Name = "کد سرپرست")]
     public long SupervisorId { get; set; }
@@ -105,7 +105,7 @@ public class EmployeeDto : EmployeeBaseDto
 
     #region Contact Information
     [Display(Name = "شماره تماس داخلی")]
-    public string InternalContactNumber { get; set; } = "0000";
+    public string InternalContactNumber { get; set; } = string.Empty;
 
     [Display(Name = "شماره تلفن ثابت")]
     public string LandPhoneNumber { get; set; } = string.Empty;

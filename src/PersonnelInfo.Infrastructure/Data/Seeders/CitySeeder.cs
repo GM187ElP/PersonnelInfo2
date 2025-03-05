@@ -16,7 +16,7 @@ public class CitySeeder
 
     public async Task SeedCitiesFromJson()
     {
-        var filePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "src", "PersonnelInfo.Infrastructure", "Data", "Seeds", "Cities.json");
+        var filePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "src", "PersonnelInfo.Infrastructure", "Data", "SeedData", "Cities.json");
         var jsonData = await File.ReadAllTextAsync(filePath);
         var cities = JsonSerializer.Deserialize<List<City>>(jsonData);
         foreach (var city in cities)

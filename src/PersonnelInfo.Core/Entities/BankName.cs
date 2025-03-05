@@ -7,5 +7,6 @@ using System.Threading.Tasks;
 namespace PersonnelInfo.Core.Entities;
 public class BankName
 {
-    public string Name { get; set; }
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
 }

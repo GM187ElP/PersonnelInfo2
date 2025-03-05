@@ -1,12 +1,16 @@
-﻿using PersonnelInfo.Core.Entities;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 
-namespace PersonnelInfo.Core.DTOs.Entities.JobTitles;
+namespace PersonnelInfo.Razor.DTOs.Entities.JobTitles;
 
 public class JobTitleDto
 {
-    public string Title { get; set; }
-    public string? DepartmentId { get; set; }
-    public JobTitle Department { get; set; }
-    public ICollection<JobTitle> JobTitles { get; set; }
-    public ICollection<Employee> PersonList { get; set; }
+    public int Id { get; set; }
+
+    [Display(Name = "عنوان شغلی")]
+    public string Title { get; set; } = string.Empty;
+
+    [Display(Name = "واحد")]
+    public string Department { get; set; } = string.Empty;
+    public List<SelectListItem> Departments { get; set; } = new();
 }

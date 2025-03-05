@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace QueryTest;
+namespace Test;
 
 
 public partial class ValidationMessageGenerator
@@ -49,6 +49,7 @@ public partial class ValidationMessageGenerator
         }
 
         json = JsonConvert.SerializeObject(result, Formatting.Indented);
+        
 
         var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         var filePath = Path.Combine(desktopPath, $"{dtoName}ValidationMessages.json");

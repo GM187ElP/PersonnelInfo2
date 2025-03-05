@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PersonnelInfo.API.Controllers;
 using PersonnelInfo.Core.DTOs.Entities.Employees;
+using PersonnelInfo.Mvc.DTOs.Entities.Employees;
 
 namespace PersonnelInfo.Mvc.Controllers;
 public class EmployeeController : Controller

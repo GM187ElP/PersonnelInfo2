@@ -1,6 +1,6 @@
 ﻿using PersonnelInfo.Core.DTOs.Entities.JobTitles;
 
-namespace PersonnelInfo.Application.Services;
+namespace PersonnelInfo.Core.Interfaces;
 
 public interface IJobTitleServices
 {

@@ -1,5 +1,5 @@
-﻿
-using QueryTest;
+﻿using PersonnelInfo.Razor.DTOs.Entities.Employees;
+using Test;
 
 
 //
@@ -22,7 +22,7 @@ using QueryTest;
 
 
 
-var value=ValidationMessageGenerator.DtoGenerateValidationMessages(typeof(AddEmployeeDto));
+var value=ValidationMessageGenerator.DtoGenerateValidationMessages(typeof(UpdateEmployeeDto));
 Console.WriteLine(value);
 Console.ReadKey();
 
