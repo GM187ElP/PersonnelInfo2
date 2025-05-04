@@ -1,4 +1,5 @@
-﻿using PersonnelInfo.Razor.DTOs.Entities.Employees;
+﻿using Newtonsoft.Json;
+using PersonnelInfo.Razor.DTOs.Entities.Employees;
 using Test;
 
 
@@ -22,7 +23,27 @@ using Test;
 
 
 
-var value=ValidationMessageGenerator.DtoGenerateValidationMessages(typeof(UpdateEmployeeDto));
-Console.WriteLine(value);
-Console.ReadKey();
+//var value=ValidationMessageGenerator.DtoGenerateValidationMessages(typeof(UpdateEmployeeDto));
+//Console.WriteLine(value);
+//Console.ReadKey();
 
+using Newtonsoft.Json;
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        string json = "{ 'Errors': { 'AddEmployeeDto': { 'FirstName': { 'StringLength': { 'En': 'First name must be between 3 and 50 characters long.', 'Fa': 'نام باید بین 3 و 50 کاراکتر باشد.' } } } } } }";
+
+        try
+        {
+            //var validationErrors = JsonConvert.DeserializeObject<ValidationErrors>(json);
+            Console.WriteLine("Deserialization successful");
+        }
+        catch (JsonReaderException ex)
+        {
+            Console.WriteLine($"JSON Error: {ex.Message}");
+        }
+    }
+}

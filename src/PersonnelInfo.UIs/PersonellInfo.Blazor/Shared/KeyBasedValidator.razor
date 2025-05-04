@@ -1,0 +1,66 @@
+﻿@using System.Reflection;
+@using System.ComponentModel.DataAnnotations;
+@using System.ComponentModel.DataAnnotations
+@using Microsoft.AspNetCore.Components.Forms
+@using PersonellInfo.Blazor.Services
+@inject ValidationServices ValidationService
+
+@code {
+    [CascadingParameter] private EditContext CurrentEditContext { get; set; }
+    [Parameter] public object Model { get; set; }
+
+    private ValidationMessageStore _messageStore;
+
+    protected override void OnInitialized()
+    {
+        if (CurrentEditContext is null)
+            throw new InvalidOperationException("KeyBasedValidator must be inside an EditForm.");
+
+        _messageStore = new ValidationMessageStore(CurrentEditContext);
+
+        CurrentEditContext.OnValidationRequested += (s, e) => ValidateModel();
+    }
+
+    private void ValidateModel()
+    {
+        _messageStore.Clear();
+
+        var context = new ValidationContext(Model);
+        var results = new List<ValidationResult>();
+        Validator.TryValidateObject(Model, context, results, true);
+
+        foreach (var result in results)
+        {
+            foreach (var field in result.MemberNames)
+            {
+                var property = Model.GetType().GetProperty(field);
+                if (property == null) continue;
+
+                var value = property.GetValue(Model);
+                string errorKey = null;
+
+                // Use reflection to get all validation attributes
+                var validationAttributes = property
+                    .GetCustomAttributes(typeof(ValidationAttribute), true)
+                    .Cast<ValidationAttribute>();
+
+                foreach (var attr in validationAttributes)
+                {
+                    if (!attr.IsValid(value))
+                    {
+                        errorKey = attr.GetType().Name.Replace("Attribute", "");
+                        break;
+                    }
+                }
+
+                string msg = ValidationService.GetError(
+                    Model.GetType().Name, field, errorKey ?? "Unknown", "Fa"
+                );
+
+                _messageStore.Add(CurrentEditContext.Field(field), msg);
+            }
+        }
+
+        CurrentEditContext.NotifyValidationStateChanged();
+    }
+}

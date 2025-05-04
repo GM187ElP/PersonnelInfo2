@@ -1,0 +1,53 @@
+﻿@page "/add-employee"
+@using PersonellInfo.Blazor.Services
+@using PersonellInfo.Blazor.Shared
+@using PersonnelInfo.Core.DTOs
+@using System.ComponentModel.DataAnnotations
+@inject NavigationManager Navigation
+
+<EditForm Model="@employee" OnValidSubmit="HandleValidSubmit" FormName="add-employee">
+    <KeyBasedValidator Model="@employee" />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label>@validationService.GetDisplayName(() => employee.PersonnelCode)</label>
+        <InputNumber @bind-Value="employee.PersonnelCode" class="form-control" disabled />
+    </div>
+
+    <div class="mb-3">
+        <label>@validationService.GetDisplayName(() => employee.FirstName)</label>
+        <InputText @bind-Value="employee.FirstName" class="form-control" />
+        <ValidationMessage For="@(() => employee.FirstName)" />
+    </div>
+
+    <div class="mb-3">
+        <label>@validationService.GetDisplayName(() => employee.LastName)</label>
+        <InputText @bind-Value="employee.LastName" class="form-control" />
+        <ValidationMessage For="@(() => employee.LastName)" />
+    </div>
+
+    <div class="mb-3">
+        <label>@validationService.GetDisplayName(() => employee.NationalId)</label>
+        <InputText @bind-Value="employee.NationalId" class="form-control" />
+        <ValidationMessage For="@(() => employee.NationalId)" />
+    </div>
+
+    <div class="mb-3">
+        <label>@validationService.GetDisplayName(() => employee.ContactNumber)</label>
+        <InputText @bind-Value="employee.ContactNumber" class="form-control" />
+        <ValidationMessage For="@(() => employee.ContactNumber)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">ثبت</button>
+</EditForm>
+
+
+@code {
+    private AddEmployeeDto employee = new();
+    [Inject] private ValidationServices validationService { get; set; }
+
+    private void HandleValidSubmit()
+    {
+        Console.WriteLine("Form valid. Submitting...");
+    }
+}
