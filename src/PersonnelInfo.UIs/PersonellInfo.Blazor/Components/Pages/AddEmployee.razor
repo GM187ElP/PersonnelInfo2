@@ -7,7 +7,7 @@
 
 <EditForm Model="@employee" OnValidSubmit="HandleValidSubmit" FormName="add-employee">
     <KeyBasedValidator Model="@employee" />
-    <ValidationSummary />
+    @*<ValidationSummary />*@
 
     <div class="mb-3">
         <label>@validationService.GetDisplayName(() => employee.PersonnelCode)</label>
@@ -20,7 +20,7 @@
         <ValidationMessage For="@(() => employee.FirstName)" />
     </div>
 
-    <div class="mb-3">
+    @* <div class="mb-3">
         <label>@validationService.GetDisplayName(() => employee.LastName)</label>
         <InputText @bind-Value="employee.LastName" class="form-control" />
         <ValidationMessage For="@(() => employee.LastName)" />
@@ -36,7 +36,7 @@
         <label>@validationService.GetDisplayName(() => employee.ContactNumber)</label>
         <InputText @bind-Value="employee.ContactNumber" class="form-control" />
         <ValidationMessage For="@(() => employee.ContactNumber)" />
-    </div>
+    </div> *@
 
     <button type="submit" class="btn btn-primary">ثبت</button>
 </EditForm>

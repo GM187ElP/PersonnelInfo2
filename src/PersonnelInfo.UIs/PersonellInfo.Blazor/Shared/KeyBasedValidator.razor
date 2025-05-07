@@ -11,15 +11,25 @@
 
     private ValidationMessageStore _messageStore;
 
-    protected override void OnInitialized()
-    {
-        if (CurrentEditContext is null)
-            throw new InvalidOperationException("KeyBasedValidator must be inside an EditForm.");
+    private bool _eventsAttached = false;
 
+protected override void OnParametersSet()
+{
+    if (!_eventsAttached && CurrentEditContext != null)
+    {
         _messageStore = new ValidationMessageStore(CurrentEditContext);
 
-        CurrentEditContext.OnValidationRequested += (s, e) => ValidateModel();
+        CurrentEditContext.OnValidationRequested += async (s, e) =>
+        {
+            await Task.Yield(); // allow binding to complete
+            ValidateModel();
+        };
+
+        _eventsAttached = true;
     }
+}
+
+    private record FieldError(string MemberName, string ErrorKey, string ErrorMessage);
 
     private void ValidateModel()
     {
@@ -27,40 +37,37 @@
 
         var context = new ValidationContext(Model);
         var results = new List<ValidationResult>();
-        Validator.TryValidateObject(Model, context, results, true);
+        Validator.TryValidateObject(Model, context, results, validateAllProperties: true);
 
         foreach (var result in results)
         {
             foreach (var field in result.MemberNames)
             {
-                var property = Model.GetType().GetProperty(field);
-                if (property == null) continue;
+                var prop = Model.GetType().GetProperty(field);
+                if (prop == null) continue;
 
-                var value = property.GetValue(Model);
+                // Infer which attribute failed (same logic as before)
                 string errorKey = null;
+                var value = prop.GetValue(Model);
 
-                // Use reflection to get all validation attributes
-                var validationAttributes = property
-                    .GetCustomAttributes(typeof(ValidationAttribute), true)
-                    .Cast<ValidationAttribute>();
-
-                foreach (var attr in validationAttributes)
+                var attrs = prop.GetCustomAttributes<ValidationAttribute>(true).Cast<ValidationAttribute>();
+                foreach (var attr in attrs)
                 {
-                    if (!attr.IsValid(value))
+                    var attrContext = new ValidationContext(Model) { MemberName = prop.Name };
+                    if (attr.GetValidationResult(value, attrContext)?.ErrorMessage == result.ErrorMessage)
                     {
                         errorKey = attr.GetType().Name.Replace("Attribute", "");
                         break;
                     }
                 }
 
-                string msg = ValidationService.GetError(
-                    Model.GetType().Name, field, errorKey ?? "Unknown", "Fa"
-                );
-
+                var msg = ValidationService.GetError(Model.GetType().Name, field, errorKey ?? "Unknown", "Fa");
                 _messageStore.Add(CurrentEditContext.Field(field), msg);
             }
         }
 
         CurrentEditContext.NotifyValidationStateChanged();
     }
+
+
 }
