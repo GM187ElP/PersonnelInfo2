@@ -5,8 +5,13 @@ namespace PersonnelInfo.Core.DTOs.Validators;
 public class NationalIdAttribute : ValidationAttribute
 {
     public NationalIdAttribute() { }
+
     private static bool IsValidnationalId(string nationalId)
     {
+        // Check if the length of the nationalId is exactly 10 characters
+        if (nationalId.Length != 10)
+            return false;
+
         var sum = 0;
         var lastDigit = 0;
 
@@ -20,32 +25,33 @@ public class NationalIdAttribute : ValidationAttribute
                     lastDigit = digit;
             }
             else
+            {
+                // If any character cannot be parsed as a digit, return false
                 return false;
+            }
         }
 
+        // Calculate and compare the last digit using the checksum algorithm
         var calc = sum % 11 < 2 ? sum % 11 : 11 - sum % 11;
         return calc == lastDigit;
     }
+
     protected override ValidationResult IsValid(object value, ValidationContext validationContext)
     {
-        //if (value is not string nationalId)
-        //    return new ValidationResult("National Id must be a string.");
-
-        //if (nationalId.Length != 10)
-        //    return new ValidationResult(errorMessage);
-
         if (value is string nationalId)
         {
-            if (string.IsNullOrWhiteSpace(nationalId))
-                return new ValidationResult(base.ErrorMessage);
-
-            if (!IsValidnationalId(nationalId))
-                return new ValidationResult(base.ErrorMessage);
+            if (string.IsNullOrWhiteSpace(nationalId) || !IsValidnationalId(nationalId))
+            {
+                // Return without a custom message if invalid
+                return new ValidationResult(string.Empty); // or return null to suppress error message
+            }
 
             return ValidationResult.Success;
         }
         else
-            return new ValidationResult(base.ErrorMessage);
+        {
+            // If the value is not a string, return an invalid result
+            return new ValidationResult(string.Empty); // or return null to suppress error message
+        }
     }
 }
-

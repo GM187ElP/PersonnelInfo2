@@ -1,26 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace PersonnelInfo.Razor.Pages.Employee
+public class BaseEmployeePageModel : PageModel
 {
-    public class BaseEmployeePageModel : PageModel
+    private readonly IHttpClientFactory _httpClientFactory;
+    private readonly HttpClient client;
+
+    public BaseEmployeePageModel(IHttpClientFactory httpClientFactory)
     {
-        private readonly IHttpClientFactory _httpClientFactory;
-        private readonly HttpClient client;
-        public BaseEmployeePageModel(IHttpClientFactory httpClientFactory)
+        _httpClientFactory = httpClientFactory;
+        client = _httpClientFactory.CreateClient("API");
+        Cities = new List<SelectListItem>(); // avoid null ref
+    }
+
+    public List<SelectListItem> Cities { get; set; }
+
+    public async Task LoadCitiesAsync()
+    {
+        var response = await client.GetAsync("api/Employee/GetAll");
+        if (response.IsSuccessStatusCode)
         {
-            _httpClientFactory = httpClientFactory;
-            client = _httpClientFactory.CreateClient("API");
-            Cities = GetCities() ?? [];
+            var cityList = await response.Content.ReadFromJsonAsync<List<string>>();
+            Cities = cityList.Select(c => new SelectListItem { Text = c, Value = c }).ToList();
         }
-
-        public List<SelectListItem> Cities { get; set; }
-
-        private static List<SelectListItem> GetCities()
-        {
-            var response = client.GetAsync("api/Employee/GetAll");
-            return null;
-        }
-
     }
 }
