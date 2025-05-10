@@ -1,14 +1,9 @@
 ﻿@page "/add-employee"
 @rendermode InteractiveServer
 
-@using System.ComponentModel.DataAnnotations
-@using System.Reflection
-@using PersonellInfo.Blazor.Services
-@inject ValidationServices validationServices
 
 <EditForm Model="@employee" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
+    <CustomValidator />
 
     <div class="mb-3">
         <label>First Name</label>
@@ -19,107 +14,19 @@
     <button class="btn btn-primary" type="submit">Submit</button>
 </EditForm>
 
+
 @code {
     private AddEmployeeDto employee = new();
-    private List<string> errorKeys = new(); // List to store the error keys
+    private List<string> errorKeys = new(); 
 
     private void HandleValidSubmit()
     {
-        // Code for handling valid form submission
         Console.WriteLine("Form submitted with FirstName: " + employee.FirstName);
     }
 
     private void HandleInvalidSubmit()
     {
         // On invalid submission, extract validation error keys
-        ExtractValidationErrorKeys();
-    }
-
-    private Dictionary<string, Dictionary<string, Dictionary<string, LocalizedMessage>>> validationErrors = new();
-
-    private void ExtractValidationErrorKeys()
-    {
-        errorKeys.Clear();
-        validationErrors.Clear();
-
-        var dtoType = employee.GetType().Name;
-        var validationContext = new ValidationContext(employee, null, null);
-        var validationResults = new List<ValidationResult>();
-
-        Validator.TryValidateObject(employee, validationContext, validationResults, true);
-
-        foreach (var validationResult in validationResults)
-        {
-            foreach (var memberName in validationResult.MemberNames)
-            {
-                var propertyInfo = employee.GetType().GetProperty(memberName);
-                if (propertyInfo != null)
-                {
-                    var attributes = propertyInfo.GetCustomAttributes<ValidationAttribute>(true);
-
-                    foreach (var attribute in attributes)
-                    {
-                        // Match the actual error message to the one generated
-                        if (attribute.FormatErrorMessage(propertyInfo.Name) == validationResult.ErrorMessage)
-                        {
-                            var errorKey = attribute.GetType().Name.Replace("Attribute", "");
-                            errorKeys.Add(errorKey);
-
-                            if (!validationErrors.ContainsKey(dtoType))
-                                validationErrors[dtoType] = new Dictionary<string, Dictionary<string, LocalizedMessage>>();
-
-                            if (!validationErrors[dtoType].ContainsKey(memberName))
-                                validationErrors[dtoType][memberName] = new Dictionary<string, LocalizedMessage>();
-
-                            if (!validationErrors[dtoType][memberName].ContainsKey(errorKey))
-                            {
-                                validationErrors[dtoType][memberName][errorKey] = new LocalizedMessage
-                                {
-                                    Fa = "پیام خطا به فارسی" // Placeholder Farsi error message
-                                };
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        //     foreach (var dtoEntry in validationErrors)
-        //     {
-        //         var dtoType1 = dtoEntry.Key;
-        //         var properties = dtoEntry.Value;
-
-        //         Console.WriteLine($"DTO Type: {dtoType1}");
-
-        //         foreach (var propertyEntry in properties)
-        //         {
-        //             var propertyName = propertyEntry.Key;
-        //             var validations = propertyEntry.Value;
-
-        //             Console.WriteLine($"\tProperty: {propertyName}");
-
-        //             foreach (var validationEntry in validations)
-        //             {
-        //                 var errorKey = validationEntry.Key;
-        //                 var localized = validationEntry.Value;
-
-        //                 Console.WriteLine($"\t\tError Key: {errorKey}, Fa: {localized.Fa}");
-        //             }
-        //         }
-        //     }
-    }
-
-    // Custom ValidationMessage component to display localized messages
-    private string GetLocalizedErrorMessage(string propertyName, string errorKey)
-    {
-        if (validationErrors.ContainsKey(employee.GetType().Name) &&
-            validationErrors[employee.GetType().Name].ContainsKey(propertyName) &&
-            validationErrors[employee.GetType().Name][propertyName].ContainsKey(errorKey))
-        {
-            var localizedMessage = validationErrors[employee.GetType().Name][propertyName][errorKey];
-            return localizedMessage.Fa;  // Returning the Farsi error message
-        }
-        return string.Empty; // Return empty if no message found
     }
 }
 

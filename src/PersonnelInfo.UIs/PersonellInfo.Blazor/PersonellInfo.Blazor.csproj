@@ -10,4 +10,8 @@
     <ProjectReference Include="..\..\PersonnelInfo.Infrastructure\PersonnelInfo.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Shared\" />
+  </ItemGroup>
+
 </Project>

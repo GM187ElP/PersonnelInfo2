@@ -6,7 +6,7 @@ public class NationalIdAttribute : ValidationAttribute
 {
     public NationalIdAttribute() { }
 
-    private static bool IsValidnationalId(string nationalId)
+    private static bool IsValidNationalId(string nationalId)
     {
         // Check if the length of the nationalId is exactly 10 characters
         if (nationalId.Length != 10)
@@ -40,7 +40,7 @@ public class NationalIdAttribute : ValidationAttribute
     {
         if (value is string nationalId)
         {
-            if (string.IsNullOrWhiteSpace(nationalId) || !IsValidnationalId(nationalId))
+            if (string.IsNullOrWhiteSpace(nationalId) || !IsValidNationalId(nationalId))
             {
                 // Return without a custom message if invalid
                 return new ValidationResult(string.Empty); // or return null to suppress error message
