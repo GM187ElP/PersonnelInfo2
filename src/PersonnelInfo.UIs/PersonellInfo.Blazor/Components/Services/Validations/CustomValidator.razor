@@ -61,7 +61,7 @@
         foreach (var attr in failedAttributes)
         {
             var field = new FieldIdentifier(model, property.Name);
-            var errorKey = GetErrorKeyFromAttribute(attr);
+            var errorKey = attr.GetType().Name.Replace("Attribute", "");
 
             var localizedMessage = GetLocalizedErrorMessage(model.GetType().Name, property.Name, errorKey, Language);
             messageStore?.Add(field, localizedMessage);
@@ -72,11 +72,6 @@
     {
         var attributes = property.GetCustomAttributes<ValidationAttribute>(true);
         return attributes.Where(attr => !attr.IsValid(property.GetValue(model))).ToList();
-    }
-
-    private string GetErrorKeyFromAttribute(ValidationAttribute attr)
-    {
-        return attr.GetType().Name.Replace("Attribute", "");
     }
 
     private string GetLocalizedErrorMessage(string dtoName, string propertyName, string errorKey, string lang)
