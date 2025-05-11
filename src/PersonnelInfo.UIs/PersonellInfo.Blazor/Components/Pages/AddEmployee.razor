@@ -1,17 +1,44 @@
 ﻿@page "/add-employee"
+@using Microsoft.Extensions.Options
+@using PersonellInfo.Blazor.Components.Services
 @rendermode InteractiveServer
+@inject IDisplayName displayName
+@inject IOptions<ApiConfiguration> apiConfig
 
 
 <EditForm Model="@employee" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
     <CustomValidator />
 
     <div class="mb-3">
-        <label>First Name</label>
-        <InputText @bind-Value="employee.FirstName" class="form-control" />
+        <label>@displayName.GetDisplayName(employee, nameof(employee.PersonnelCode))</label>
+        <InputNumber class="form-control" disabled @bind-Value="employee.PersonnelCode" />
+    </div>
+
+    <div class="mb-3">
+        <label>@displayName.GetDisplayName(employee, nameof(employee.FirstName))</label>
+        <InputText class="form-control" @bind-Value="employee.FirstName" />
         <ValidationMessage For="@(() => employee.FirstName)" />
     </div>
 
-    <button class="btn btn-primary" type="submit">Submit</button>
+    <div class="mb-3">
+        <label>@displayName.GetDisplayName(employee, nameof(employee.LastName))</label>
+        <InputText class="form-control" @bind-Value="employee.LastName" />
+        <ValidationMessage For="@(() => employee.LastName)" />
+    </div>
+
+    <div class="mb-3">
+        <label>@displayName.GetDisplayName(employee, nameof(employee.NationalId))</label>
+        <InputText class="form-control" @bind-Value="employee.NationalId" />
+        <ValidationMessage For="@(() => employee.NationalId)" />
+    </div>
+
+    <div class="mb-3">
+        <label>@displayName.GetDisplayName(employee, nameof(employee.ContactNumber))</label>
+        <InputText class="form-control" @bind-Value="employee.ContactNumber" />
+        <ValidationMessage For="@(() => employee.ContactNumber)" />
+    </div>
+
+    <button class="btn btn-primary" type="submit">ثبت</button>
 </EditForm>
 
 
@@ -19,10 +46,23 @@
     private AddEmployeeDto employee = new();
     private List<string> errorKeys = new(); 
 
-    private void HandleValidSubmit()
+
+    private async Task HandleValidSubmit()
     {
-        Console.WriteLine("Form submitted with FirstName: " + employee.FirstName);
+        var baseUrl = apiConfig.Value.Url;
+        using var client = new HttpClient { BaseAddress = new Uri(baseUrl) };
+        var response = await client.PostAsJsonAsync("/api/employee/add", employee);
+
+        if (response.IsSuccessStatusCode)
+        {
+            // Success logic
+        }
+        else
+        {
+            // Handle failure
+        }
     }
+
 
     private void HandleInvalidSubmit()
     {

@@ -7,29 +7,30 @@ public class AddEmployeeDto
 {
     #region Basic Information
     [BindNever]
-    [Display(Name ="کد پرسنلی")]
+    [Display(Name = "کد پرسنلی")]
     public int PersonnelCode { get; set; }
 
-    [Required(ErrorMessage = "Required")]
-    [StringLength(2, MinimumLength =1,ErrorMessage = "StringLength")]
-    [NationalId(ErrorMessage = "NationalId")]
-    [Display(Name ="نام")]
+    [Required]
+    [StringLength(21, MinimumLength = 3)]
+    [Display(Name = "نام")]
     public string FirstName { get; set; }
 
-    //[Required(ErrorMessage = "Required")]
-    //[Display(Name ="نام خانوادگی")]
-    //[StringLength(21, ErrorMessage = "StringLength")]
-    //public string LastName { get; set; }
+    [Required]
+    [StringLength(21, MinimumLength = 3)]
+    [Display(Name = "نام خانوادگی")]
+    public string LastName { get; set; }
 
-    //[Required(ErrorMessage = "Required")]
-    [NationalId(ErrorMessage = "NationalId")]
+    [Required]
+    [NationalId]
+    [StringLength(10, MinimumLength = 10)]
+    [RegularExpression(@"^\d+$")]
     [Display(Name = "کد ملی")]
-    [StringLength(1, MinimumLength = 1, ErrorMessage = "StringLength")]
     public string NationalId { get; set; }
 
-    //[Required(ErrorMessage = "Required")]
-    //[StringLength(11, MinimumLength = 11, ErrorMessage = "StringLength")]
-    //[Display(Name ="شماره همراه")]
-    //public string ContactNumber { get; set; }
+    [Required]
+    [StringLength(11, MinimumLength = 11)]
+    [RegularExpression(@"^\d+$")]
+    [Display(Name = "شماره همراه")]
+    public string ContactNumber { get; set; }
     #endregion
 }

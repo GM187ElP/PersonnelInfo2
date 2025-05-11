@@ -12,6 +12,7 @@ public class Employee
     public string LastName { get; set; } = string.Empty;
     public string NationalId { get; set; } = string.Empty;
     public string ContactNumber { get; set; } = string.Empty;
+    public bool IsDeleted { get; set; } = false;
     #endregion
 
     #region Gender and Status
@@ -46,7 +47,7 @@ public class Employee
     #region Insurance Information
     public string InsurranceCode { get; set; } = string.Empty;
     public string InsurranceStatus { get; set; } = string.Empty;
-    public bool HasInsurance { get; set; }
+    public bool HasInsurance { get; set; } = true;
     public int ExtraInsurranceCount { get; set; } = 0;
     #endregion
 
@@ -56,7 +57,7 @@ public class Employee
     public EmploymentType EmploymentTypeDisplay { get; set; } = EmploymentType.Official;
     public DateTime StartingDate { get; set; } = DateTime.Now;
     public DateTime? LeavingDate { get; set; } // nullable
-    public long SupervisorId { get; set; }
+    public long? SupervisorId { get; set; }
     public Employee? SuperVisor { get; set; }
     public ICollection<Employee> Employees { get; set; } = [];
     #endregion

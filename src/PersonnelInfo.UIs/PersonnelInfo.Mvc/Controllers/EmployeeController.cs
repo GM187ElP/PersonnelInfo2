@@ -1,82 +1,80 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using PersonnelInfo.API.Controllers;
-using PersonnelInfo.Core.DTOs.Entities.Employees;
-using PersonnelInfo.Mvc.DTOs.Entities.Employees;
+﻿//using Microsoft.AspNetCore.Mvc;
 
-namespace PersonnelInfo.Mvc.Controllers;
-public class EmployeeController : Controller
-{
-    private readonly ILogger<EmployeeController> _logger;
-    private readonly IHttpClientFactory _clientFactory;
 
-    public EmployeeController(ILogger<EmployeeController> logger, IHttpClientFactory clientFactory)
-    {
-        _clientFactory = clientFactory;
-        _logger = logger;
-    }
-    public async Task<IActionResult> Index()
-    {
-        var client = _clientFactory.CreateClient("API");
-        var response = await client.GetAsync("api/Employee/GetAll");
+//namespace PersonnelInfo.Mvc.Controllers;
+//public class EmployeeController : Controller
+//{
+//    private readonly ILogger<EmployeeController> _logger;
+//    private readonly IHttpClientFactory _clientFactory;
 
-        if (response.IsSuccessStatusCode)
-        {
-            var employees = await response.Content.ReadFromJsonAsync<List<EmployeeDto>>();
-            return View(employees);
-        }
+//    public EmployeeController(ILogger<EmployeeController> logger, IHttpClientFactory clientFactory)
+//    {
+//        _clientFactory = clientFactory;
+//        _logger = logger;
+//    }
+//    //public async Task<IActionResult> Index()
+//    //{
+//    //    var client = _clientFactory.CreateClient("API");
+//    //    var response = await client.GetAsync("api/Employee/GetAll");
 
-        return View(new List<EmployeeDto>());
-    }
+//    //    if (response.IsSuccessStatusCode)
+//    //    {
+//    //        var employees = await response.Content.ReadFromJsonAsync<List<EmployeeDto>>();
+//    //        return View(employees);
+//    //    }
 
-    public IActionResult Create()
-    {
-        return View();
-    }
+//    //    return View(new List<EmployeeDto>());
+//    //}
 
-    [HttpPost]
-    public async Task<IActionResult> Create([FromForm] AddEmployeeDto dto)
-    {
-        var client = _clientFactory.CreateClient("API");
-        var content=JsonContent.Create(dto);
+//    public IActionResult Create()
+//    {
+//        return View();
+//    }
 
-        var response=await client.PostAsync("api/Employee/Add",content);
-        if (response.IsSuccessStatusCode)
-        {
-            return RedirectToAction("Index");
-        }
+//    [HttpPost]
+//    public async Task<IActionResult> Create([FromForm] AddEmployeeDto dto)
+//    {
+//        var client = _clientFactory.CreateClient("API");
+//        var content=JsonContent.Create(dto);
+
+//        var response=await client.PostAsync("api/Employee/Add",content);
+//        if (response.IsSuccessStatusCode)
+//        {
+//            return RedirectToAction("Index");
+//        }
         
-        return View(dto);
-    }
+//        return View(dto);
+//    }
 
-    public IActionResult Delete(long id)
-    {
-        return View();
-    }
+//    public IActionResult Delete(long id)
+//    {
+//        return View();
+//    }
 
     
-    public IActionResult Delete()
-    {
-        return View();
-    }
+//    public IActionResult Delete()
+//    {
+//        return View();
+//    }
 
-    public IActionResult Update(long id)
-    {
-        return View();
-    }
+//    public IActionResult Update(long id)
+//    {
+//        return View();
+//    }
 
 
-    public IActionResult Update(EmployeeDto dto)
-    {
-        try
-        {
+//    //public IActionResult Update(EmployeeDto dto)
+//    //{
+//    //    try
+//    //    {
 
-            return RedirectToAction(nameof(Index));
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex.Message);
-            return View("Error");
-        }
-    }
+//    //        return RedirectToAction(nameof(Index));
+//    //    }
+//    //    catch (Exception ex)
+//    //    {
+//    //        _logger.LogError(ex.Message);
+//    //        return View("Error");
+//    //    }
+//    //}
 
-}
+//}

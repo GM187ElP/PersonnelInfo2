@@ -4,53 +4,47 @@
     "Fa": "وارد کردن نام الزامی است."
   },
   "AddEmployeeDto.FirstName.StringLength": {
-    "En": "First name must be between 3 and 50 characters long.",
-    "Fa": "نام باید بین 3 و 50 کاراکتر باشد."
+    "En": "First name must be between 3 and 21 characters long.",
+    "Fa": "نام باید بین 3 تا 21 کاراکتر باشد."
+  },
+  "AddEmployeeDto.LastName.Required": {
+    "En": "Last name is required.",
+    "Fa": "وارد کردن نام خانوادگی الزامی است."
+  },
+  "AddEmployeeDto.LastName.StringLength": {
+    "En": "Last name must be between 3 and 21 characters long.",
+    "Fa": "نام خانوادگی باید بین 3 تا 21 کاراکتر باشد."
   },
   "AddEmployeeDto.NationalId.Required": {
-    "En": "National Id is required.",
+    "En": "National ID is required.",
     "Fa": "کد ملی الزامی است."
   },
+  "AddEmployeeDto.NationalId.StringLength": {
+    "En": "National ID must be exactly 10 digits.",
+    "Fa": "کد ملی باید دقیقاً 10 رقم باشد."
+  },
   "AddEmployeeDto.NationalId.NationalId": {
-    "En": "National Id is Wrong.",
+    "En": "National ID is invalid.",
     "Fa": "کد ملی اشتباه است."
   },
-  "AddEmployeeDto.LastName.MaxLength": {
-    "En": "Last name cannot exceed 100 characters.",
-    "Fa": "نام خانوادگی نمی‌تواند بیشتر از 100 کاراکتر باشد."
+  "AddEmployeeDto.NationalId.RegularExpression": {
+    "En": "Please enter digits only.",
+    "Fa": "لطفاً فقط رقم وارد کنید."
   },
-  "AddEmployeeDto.Username.MinLength": {
-    "En": "Username must be at least 5 characters long.",
-    "Fa": "نام کاربری باید حداقل 5 کاراکتر باشد."
+  "AddEmployeeDto.ContactNumber.Required": {
+    "En": "Contact number is required.",
+    "Fa": "شماره همراه الزامی است."
   },
-  "AddEmployeeDto.Age.Range": {
-    "En": "Age must be between 18 and 65.",
-    "Fa": "سن باید بین 18 و 65 باشد."
+  "AddEmployeeDto.ContactNumber.StringLength": {
+    "En": "Contact number must be exactly 11 digits.",
+    "Fa": "شماره همراه باید دقیقاً 11 رقم باشد."
   },
-  "AddEmployeeDto.ZipCode.Regex": {
-    "En": "Zipcode must be a 5-digit number.",
-    "Fa": "کدپستی باید یک عدد 5 رقمی باشد."
+  "AddEmployeeDto.ContactNumber.RegularExpression": {
+    "En": "Please enter digits only.",
+    "Fa": "لطفاً فقط رقم وارد کنید."
   },
-  "AddEmployeeDto.Email.EmailAddress": {
-    "En": "Invalid email address.",
-    "Fa": "آدرس ایمیل نامعتبر است."
-  },
-  "AddEmployeeDto.Phone.Phone": {
-    "En": "Invalid phone number.",
-    "Fa": "شماره تلفن نامعتبر است."
-  },
-  "AddEmployeeDto.Website.Url": {
-    "En": "Invalid URL.",
-    "Fa": "آدرس وب‌سایت نامعتبر است."
-  },
-  "AddEmployeeDto.BirthDate.DataType": {
-    "En": "Invalid date format. Please use MM/dd/yyyy.",
-    "Fa": "فرمت تاریخ نامعتبر است. لطفاً از فرمت MM/dd/yyyy استفاده کنید."
-  },
-  "AddEmployeeDto.CreditCard.CreditCard": {
-    "En": "Invalid credit card number.",
-    "Fa": "شماره کارت اعتباری نامعتبر است."
-  },
+
+  // JobTitle section
   "AddJobTitleDto.Title.Required": {
     "En": "Title is required.",
     "Fa": "عنوان الزامی است."

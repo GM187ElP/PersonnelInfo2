@@ -1,3 +1,6 @@
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using PersonellInfo.Blazor;
 using PersonellInfo.Blazor.Components;
 using PersonellInfo.Blazor.Components.Services;
 
@@ -6,6 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.Configure<ApiConfiguration>(builder.Configuration.GetSection("ApiConfiguration"));
+builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.Configuration["ApiConfiguration:Url"]) });
+
+builder.Services.AddSingleton<IDisplayName, DisplayName>();
 
 var app = builder.Build();
 

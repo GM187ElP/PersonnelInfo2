@@ -18,8 +18,15 @@ public class EmployeeRepository : IEmployeeRepository
         _dbSet = _context.Set<Employee>();
     }
 
-    public async Task AddAsync(Employee entity, CancellationToken cancellationToken = default) =>
+    public async Task AddAsync(Employee entity, CancellationToken cancellationToken = default)
+    {
+        entity.BirthPlaceId = 32;
+        entity.DepartmentId = "فروش";
+        entity.ShenasnameIssuedPlaceId = 32;
+        //entity.SupervisorId = 1;
+
         await _dbSet.AddAsync(entity, cancellationToken);
+    }
 
     public async Task DeleteAsync(Employee entity, CancellationToken cancellationToken = default)
     {

@@ -31,7 +31,7 @@ public class EmployeeConfig : IEntityTypeConfiguration<Employee>
         builder.Property(e => e.MostRecentDegree).HasMaxLength(21);
         builder.Property(e => e.Major).HasMaxLength(21);
 
-        builder.HasOne(e => e.SuperVisor).WithMany(e => e.Employees).HasForeignKey(e => e.SupervisorId).OnDelete(DeleteBehavior.Restrict); ;
+        builder.HasOne(e => e.SuperVisor).WithMany(e => e.Employees).HasForeignKey(e => e.SupervisorId).OnDelete(DeleteBehavior.Restrict); 
 
         builder.HasMany(e => e.ChequePromissionaryNotes).WithOne(c => c.Employee).HasForeignKey(c => c.EmployeeId).OnDelete(DeleteBehavior.Restrict);
         builder.HasMany(e => e.StartLeftHistories).WithOne(s => s.Employee).HasForeignKey(s => s.EmployeeId).OnDelete(DeleteBehavior.Restrict);
