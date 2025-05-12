@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using PersonnelInfo.Application.Interfaces.Entities;
 using PersonnelInfo.Core.Entities;
+using PersonnelInfo.Core.Infrastructure;
 using System.Linq;
 
 namespace PersonnelInfo.Infrastructure.Data.Repositories;
@@ -13,7 +14,7 @@ public class EmployeeRepository : IEmployeeRepository
 
     public EmployeeRepository(DbContext context)
     {
-        _connectionString= context.Database.GetConnectionString();
+        _connectionString = context.Database.GetConnectionString();
         _context = context;
         _dbSet = _context.Set<Employee>();
     }
@@ -23,14 +24,13 @@ public class EmployeeRepository : IEmployeeRepository
         entity.BirthPlaceId = 32;
         entity.DepartmentId = "فروش";
         entity.ShenasnameIssuedPlaceId = 32;
-        //entity.SupervisorId = 1;
 
         await _dbSet.AddAsync(entity, cancellationToken);
     }
 
     public async Task DeleteAsync(Employee entity, CancellationToken cancellationToken = default)
     {
-       _dbSet.Remove(entity);
+        _dbSet.Remove(entity);
     }
 
     public async Task<List<Employee>> GetAllAsync(CancellationToken cancellationToken = default)
@@ -45,8 +45,8 @@ public class EmployeeRepository : IEmployeeRepository
         return entities;
     }
 
-    public async Task<Employee> NationalIdExistAsync(string nationalId, CancellationToken cancellationToken = default) =>
-         await _dbSet.FirstOrDefaultAsync(e => e.NationalId == nationalId);
+    public async Task<bool> NationalIdExistAsync(string nationalId, CancellationToken cancellationToken = default) =>
+         await _dbSet.AnyAsync(e => e.NationalId == nationalId);
 
     public async Task<Employee> GetByIdAsync(long id, CancellationToken cancellationToken = default) =>
         await _dbSet
@@ -66,10 +66,10 @@ public class EmployeeRepository : IEmployeeRepository
     {
         var employees = await _dbSet
             .Where(e => e.PersonnelCode < 20000)
-            .ToListAsync(cancellationToken); 
+            .ToListAsync(cancellationToken);
 
         var max = employees.DefaultIfEmpty(new Employee { PersonnelCode = 0 })
-                           .Max(e => e.PersonnelCode); 
+                           .Max(e => e.PersonnelCode);
 
         return max;
     }

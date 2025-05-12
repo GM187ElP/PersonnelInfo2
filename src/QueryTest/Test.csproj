@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PersonnelInfo.Infrastructure\PersonnelInfo.Infrastructure.csproj" />
-    <ProjectReference Include="..\PersonnelInfo.UIs\PersonnelInfo.Razor\PersonnelInfo.Razor.csproj" />
   </ItemGroup>
 
 </Project>

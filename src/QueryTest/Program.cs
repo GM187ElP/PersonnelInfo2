@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
 using PersonnelInfo.Razor.DTOs.Entities.Employees;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
 using Test;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 
 //
@@ -49,12 +51,49 @@ using Test;
 //    }
 //}
 //-----------------------------------------------------------------------------------------
-var props = typeof(AddEmployeeDto).GetProperties();
-foreach (var prop in props)
+//var props = typeof(AddEmployeeDto).GetProperties();
+//foreach (var prop in props)
+//{
+//    var attrs = prop.GetCustomAttributes(typeof(ValidationAttribute), true);
+//    foreach (var attr in attrs)
+//    {
+//        Console.WriteLine($"{prop.Name}: {attr}");
+//    }
+//}
+
+
+var log = new StructuredLog
 {
-    var attrs = prop.GetCustomAttributes(typeof(ValidationAttribute), true);
-    foreach (var attr in attrs)
+    Category = LogCategory.Api,
+    ErrorType = ErrorType.Validation,
+    Level = LogLevel.Critical,
+    Message = "test",
+    Timestamp = DateTime.Now,
+    //Context=  new { userId = 123, endPoint = "/admin/data" }
+    Context = new Dictionary<string,object> { ["userId"] = 123, ["endPoint"] = "/admin/data" }
+};
+
+
+log.LogStructured(log);
+
+public class StructuredLog
+{
+    public DateTime Timestamp { get; set; } = DateTime.UtcNow;
+    public LogCategory Category { get; set; }
+    public LogLevel Level { get; set; }
+    public ErrorType ErrorType { get; set; } = ErrorType.None;
+    public string Message { get; set; } = string.Empty;
+    public object? Context { get; set; }
+
+    public void LogStructured(StructuredLog log)
     {
-        Console.WriteLine($"{prop.Name}: {attr}");
+        var json = JsonSerializer.Serialize(log, new JsonSerializerOptions { WriteIndented = false });
+        Console.WriteLine(json);
     }
 }
+
+
+
+public enum LogCategory { Api, Database, UI, Auth, BackgroundTask }
+public enum LogLevel { Trace, Debug, Info, Warning, Error, Critical }
+public enum ErrorType { None, Validation, Unauthorized, Network, Timeout, Unexpected }

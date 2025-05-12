@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersonnelInfo.Application.Services;
+namespace PersonnelInfo.Application.Services.Entities;
 
 public class PreChangeProcedures
 {

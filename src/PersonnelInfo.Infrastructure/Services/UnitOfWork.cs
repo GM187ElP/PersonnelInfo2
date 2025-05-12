@@ -12,7 +12,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 
     public UnitOfWork(DatabaseContext dbContext) => _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
 
-    public async Task SaveChangesAsync(CancellationToken cancellationToken = default) => await _dbContext.SaveChangesAsync(cancellationToken);
+    public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default) => await _dbContext.SaveChangesAsync(cancellationToken);
 
     public async Task BeginTransactionAsync(CancellationToken cancellationToken = default)
     {

@@ -4,7 +4,7 @@ using PersonnelInfo.Core.DTOs.Entities.Cities;
 using PersonnelInfo.Core.Entities;
 using PersonnelInfo.Core.Interfaces;
 
-namespace PersonnelInfo.Application.Services;
+namespace PersonnelInfo.Application.Services.Entities;
 
 public class CityServices : ICityServices
 {

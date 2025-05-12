@@ -2,10 +2,12 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using PersonnelInfo.Infrastructure.Configuration;
 using PersonnelInfo.Infrastructure.Data.Seeders;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllers(); 
+builder.Services.AddControllers();
 
+builder.Host.UseSerilog();
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 
 builder.Services.AddTransient<CitySeeder>();
