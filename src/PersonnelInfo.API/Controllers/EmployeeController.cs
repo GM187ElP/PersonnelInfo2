@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PersonnelInfo.Application.Interfaces.Entities;
+using PersonnelInfo.Core.DTOs.Entities.Employees;
 using PersonnelInfo.Core.Entities;
 using PersonnelInfo.Core.Interfaces;
 
@@ -49,12 +51,16 @@ public class EmployeeController : ControllerBase
         return BadRequest(new { message = result.ErrorMessage ?? "Failed to add the employee. Please check the provided data." });
     }
 
-
     [HttpGet]
     public async Task<IActionResult> GetAll([FromQuery] int page = 1, [FromQuery] int pageSize = 20, CancellationToken cancellationToken = default)
     {
-        var employees = await _services.GetAllAsync(page, pageSize, cancellationToken);
+        var result = await _services.GetAllAsync(page, pageSize, cancellationToken);
+        var employees = result.Data as List<EmployeeDto>;
 
-        return Ok(employees);
+        return Ok(new PagedResult<EmployeeDto>
+        {
+            TotalCount = result.TotalCount,
+            Items = employees ?? []
+        });
     }
 }

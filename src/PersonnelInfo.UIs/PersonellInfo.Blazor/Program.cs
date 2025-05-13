@@ -11,7 +11,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 
-builder.Services.AddHttpClient<IApi, Api>();
+//builder.Services.AddHttpClient<IApi, Api>();
 builder.Services.Configure<ApiConfiguration>(builder.Configuration.GetSection("ApiConfiguration"));
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.Configuration["ApiConfiguration:Url"]) });
 

@@ -1,0 +1,57 @@
+﻿@page "/"
+@using PersonnelInfo.Application.Interfaces.Entities
+@using PersonnelInfo.Core.DTOs.Entities.Employees
+@rendermode InteractiveServer
+@inject IDisplayName displayName
+@inject IOptions<ApiConfiguration> apiConfig
+
+<h3>Employees</h3>
+
+<MudTable T="EmployeeDto" ServerData="LoadServerData" Virtualize="true" RowsPerPage="50">
+    <HeaderContent>
+        <MudTh>Id</MudTh>
+        <MudTh>Code</MudTh>
+        <MudTh>First Name</MudTh>
+        <MudTh>Last Name</MudTh>
+        <MudTh>National ID</MudTh>
+        <MudTh>Contact</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Id">@context.Id</MudTd>
+        <MudTd DataLabel="Code">@context.PersonnelCode</MudTd>
+        <MudTd DataLabel="First Name">@context.FirstName</MudTd>
+        <MudTd DataLabel="Last Name">@context.LastName</MudTd>
+        <MudTd DataLabel="National ID">@context.NationalId</MudTd>
+        <MudTd DataLabel="Contact">@context.ContactNumber</MudTd>
+    </RowTemplate>
+</MudTable>
+
+
+
+
+@code {
+
+    private async Task<TableData<EmployeeDto>> LoadServerData(TableState state, CancellationToken cancellationToken)
+    {
+        var page = state.Page + 1;
+        var pageSize = state.PageSize;
+
+        var baseUrl = apiConfig.Value.Url;
+        using var client = new HttpClient { BaseAddress = new Uri(baseUrl) };
+
+        var url = $"api/employee?page={page}&pageSize={pageSize}";
+
+        var response = await client.GetFromJsonAsync<PagedResult<EmployeeDto>>(url, cancellationToken);
+
+
+
+        var test = new TableData<EmployeeDto>
+            {
+                Items = response?.Items ?? [],
+                TotalItems = response?.TotalCount ?? 0
+            };
+        return test;
+    }
+
+}
+

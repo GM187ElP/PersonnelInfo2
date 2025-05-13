@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using PersonnelInfo.Razor.DTOs.Entities.Employees;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 using Test;

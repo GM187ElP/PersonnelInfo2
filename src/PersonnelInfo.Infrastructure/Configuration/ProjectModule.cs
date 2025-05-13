@@ -2,8 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using PersonnelInfo.Application.Interfaces;
 using PersonnelInfo.Application.Interfaces.Entities;
+using PersonnelInfo.Application.Services;
 using PersonnelInfo.Application.Services.Entities;
-using PersonnelInfo.Application.Services.Entities.Employee;
 using PersonnelInfo.Core.Interfaces;
 using PersonnelInfo.Infrastructure.Data.Repositories;
 using PersonnelInfo.Infrastructure.Services;

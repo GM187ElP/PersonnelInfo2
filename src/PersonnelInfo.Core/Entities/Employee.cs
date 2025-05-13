@@ -7,7 +7,7 @@ public class Employee
     public long Id { get; set; }
 
     #region Basic Information
-    public long PersonnelCode { get; set; }
+    public int PersonnelCode { get; set; }
     public string FirstName { get; set; } = string.Empty;
     public string LastName { get; set; } = string.Empty;
     public string NationalId { get; set; } = string.Empty;

@@ -44,7 +44,8 @@
 
 @code {
     private AddEmployeeDto employee = new();
-    private List<string> errorKeys = new(); 
+    private List<string> errorKeys = new();
+    [Inject] private NavigationManager Navigation { get; set; } = default!;
 
 
     private async Task HandleValidSubmit()
@@ -55,11 +56,11 @@
 
         if (response.IsSuccessStatusCode)
         {
-            // Success logic
+            Navigation.NavigateTo("/");
         }
         else
         {
-            // Handle failure
+            
         }
     }
 

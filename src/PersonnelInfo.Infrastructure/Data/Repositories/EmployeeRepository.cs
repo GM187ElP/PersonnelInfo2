@@ -10,11 +10,9 @@ public class EmployeeRepository : IEmployeeRepository
 {
     private readonly DbSet<Employee> _dbSet;
     private readonly DbContext _context;
-    private readonly string? _connectionString;
 
     public EmployeeRepository(DbContext context)
     {
-        _connectionString = context.Database.GetConnectionString();
         _context = context;
         _dbSet = _context.Set<Employee>();
     }
@@ -28,51 +26,68 @@ public class EmployeeRepository : IEmployeeRepository
         await _dbSet.AddAsync(entity, cancellationToken);
     }
 
-    public async Task DeleteAsync(Employee entity, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteAsync(int id, CancellationToken cancellationToken = default)
     {
-        _dbSet.Remove(entity);
+        var entity = await _dbSet.FindAsync(id);
+        if (entity != null)
+        {
+            entity.IsDeleted = true;
+            return true;
+        }
+
+        return false;
     }
 
-    public async Task<List<Employee>> GetAllAsync(CancellationToken cancellationToken = default)
+    public async Task<PagedResult<Employee>> GetAllAsync(int page, int pageSize, CancellationToken cancellationToken = default) =>
+    new PagedResult<Employee>
     {
-        //using(var connection=new SqlConnection(_connectionString))
-        //{
-        //    await connection.OpenAsync();
-        //    var script="SELECT E,CP,S,B * FROM Employee AS E INNERJOIN ON E."
-        //};
+        TotalCount = await _dbSet.CountAsync(cancellationToken),
+        Items = await _dbSet
+            .AsNoTracking()
+            .Where(e => !e.IsDeleted)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync(cancellationToken)
+    };
 
-        var entities = await _dbSet.AsNoTracking().ToListAsync(cancellationToken);
-        return entities;
-    }
+
 
     public async Task<bool> NationalIdExistAsync(string nationalId, CancellationToken cancellationToken = default) =>
          await _dbSet.AnyAsync(e => e.NationalId == nationalId);
 
-    public async Task<Employee> GetByIdAsync(long id, CancellationToken cancellationToken = default) =>
+    public async Task<Employee?> GetByIdAsync(long id, CancellationToken cancellationToken = default) =>
         await _dbSet
             .AsNoTracking()
             .Include(e => e.ChequePromissionaryNotes)
             .Include(e => e.StartLeftHistories)
             .Include(e => e.BankAccounts)
-            .FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
+            .FirstOrDefaultAsync(e => (e.IsDeleted == false && e.Id == id), cancellationToken);
+
+    public async Task<Employee?> GetByPersonnelCodeAsync(int personnelCode, CancellationToken cancellationToken = default) =>
+        await _dbSet
+            .AsNoTracking()
+            .Include(e => e.ChequePromissionaryNotes)
+            .Include(e => e.StartLeftHistories)
+            .Include(e => e.BankAccounts)
+            .FirstOrDefaultAsync(e => (e.IsDeleted == false && e.PersonnelCode == personnelCode), cancellationToken);
+
+    public async Task<int> MaxPersonnelCodeAsync(CancellationToken cancellationToken = default)
+    {
+        var employees = await _dbSet
+            .Where(e => e.PersonnelCode < 20000)
+            .Select(e => e.PersonnelCode)
+            .ToListAsync(cancellationToken);
+
+        return employees
+             .DefaultIfEmpty(0)
+             .Max();
+    }
+
 
     public async Task UpdateAsync(Employee entity, CancellationToken cancellationToken = default)
     {
         var existingEntity = await _dbSet.FindAsync(new object[] { entity.Id }, cancellationToken);
         _context.Entry(existingEntity).CurrentValues.SetValues(entity);
     }
-
-    public async Task<long> MaxPersonnelCodeAsync(CancellationToken cancellationToken = default)
-    {
-        var employees = await _dbSet
-            .Where(e => e.PersonnelCode < 20000)
-            .ToListAsync(cancellationToken);
-
-        var max = employees.DefaultIfEmpty(new Employee { PersonnelCode = 0 })
-                           .Max(e => e.PersonnelCode);
-
-        return max;
-    }
-
-
 }
+

@@ -56,7 +56,7 @@ public class EmployeeServices : IEmployeeServices
         }
     }
 
-    public async Task<CrudOperationResult> GetByIdAsync(long id, CancellationToken cancellationToken = default)
+    public async Task<CrudOperationResult> GetByIdAsync(int id, CancellationToken cancellationToken = default)
     {
         var entity = await _repository.GetByIdAsync(id, cancellationToken);
         if (entity == null)
@@ -69,49 +69,49 @@ public class EmployeeServices : IEmployeeServices
         return new CrudOperationResult
         {
             Success = true,
+            EntityId = entity.Id,
             Data = Mapper.MapToDto(entity, new EmployeeDto())
         };
     }
 
-    public async Task<List<EmployeeDto>> GetAllAsync(int page, int pageSize, CancellationToken cancellationToken = default)
+    public async Task<CrudOperationResult> NationalIdExistAsync(string nationalId, CancellationToken cancellationToken = default) =>
+         new CrudOperationResult
+         {
+             Success = true,
+             Data = await _repository.NationalIdExistAsync(nationalId, cancellationToken)
+         };
+
+    public async Task<CrudOperationResult> DeleteByIdAsync(int id, CancellationToken cancellationToken = default)
     {
-        var entityList = await _repository.GetAllAsync(cancellationToken);
+        var result = await _repository.DeleteAsync(id, cancellationToken);
+        return new CrudOperationResult
+        {
+            Success = result,
+            Data = result,
+            ErrorMessage = result ? string.Empty : $"No employee found with ID: {id}."
+        };
+    }
 
+    public async Task<CrudOperationResult> GetAllAsync(int page, int pageSize, CancellationToken cancellationToken = default)
+    {
+        var pagedResult = await _repository.GetAllAsync(page, pageSize, cancellationToken);
 
-        var a = entityList.Select(e => Mapper.MapToDto(e, new EmployeeDto())).ToList();
-        return a;
+        var dtoList = pagedResult.Items
+            .Select(e => Mapper.MapToDto(e, new EmployeeDto()))
+            .ToList();
+
+        return new CrudOperationResult
+        {
+            Success = dtoList.Any(),
+            ErrorMessage = dtoList.Any() ? string.Empty : "There are no employees on this page.",
+            Data = dtoList,
+            TotalCount = pagedResult.TotalCount
+        };
     }
 
 
-    public async Task DeleteByIdAsync(long id, CancellationToken cancellationToken = default)
-    {
-        throw new Exception();
-        //var entity = await _repository.GetByIdAsync(id, cancellationToken)
-        //              ?? throw new NotFoundEntity(typeof(Employee));
 
-        //var relatedEntities = PreChangeProcedures.GetRelatedEntityCounts(entity);
-        //if (relatedEntities.Any())
-        //{
-        //    var message = $"Cannot delete employee with related records: " + string.Join(", ", relatedEntities.Select(re => $"{re.Key}: {re.Value}"));
-        //    throw new InvalidOperationException(message);
-        //}
-
-        //await _unitOfWork.ExecuteInTransactionAsync(async _ =>
-        //{
-        //    await _repository.DeleteAsync(entity, cancellationToken);
-        //}, cancellationToken);
-    }
-
-
-    public async Task<EmployeeDto> GetByNationalId(string nationalId, CancellationToken cancellationToken = default)
-    {
-        throw new Exception();
-        //var entity = await _repository.NationalIdExistAsync(nationalId, cancellationToken)
-        //    ?? throw new NotFoundEntity();
-        //return Mapper.MapToDto(entity, new EmployeeDto());
-    }
-
-    public async Task UpdateAsync(EmployeeDto updateDto, CancellationToken cancellationToken = default)
+    public async Task<CrudOperationResult> UpdateAsync(EmployeeDto updateDto, CancellationToken cancellationToken = default)
     {
         throw new Exception();
         //var entity = await _repository.GetByIdAsync(updateDto.Id, cancellationToken)
