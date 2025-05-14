@@ -2,12 +2,37 @@
 @using PersonnelInfo.Application.Interfaces.Entities
 @using PersonnelInfo.Core.DTOs.Entities.Employees
 @rendermode InteractiveServer
+@using System.Net.Http.Json
+@inject HttpClient httpClient
 @inject IDisplayName displayName
-@inject IOptions<ApiConfiguration> apiConfig
 
 <h3>Employees</h3>
 
-<MudTable T="EmployeeDto" ServerData="LoadServerData" Virtualize="true" RowsPerPage="50">
+<MudTable T="EmployeeDto"
+          ServerData="LoadServerData"
+          ServerSide="true"
+          RowsPerPage="50"
+          Dense="@dense"
+          Hover="@hover"
+          Bordered="@bordered"
+          Striped="@striped"
+          Filter="FilterFunc"
+          @bind-SelectedItem="selectedEmployee">
+
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">Employees</MudText>
+        <MudSpacer />
+        <MudTextField @bind-Value="searchString"
+                      Placeholder="Search"
+                      Adornment="Adornment.Start"
+                      AdornmentIcon="@Icons.Material.Filled.Search"
+                      IconSize="Size.Medium"
+                      Class="mt-0"
+                      Immediate="true"
+                      OnBlurred="ReloadTable"
+                      OnKeyUp="@(async _ => await ReloadTable())" />
+    </ToolBarContent>
+
     <HeaderContent>
         <MudTh>Id</MudTh>
         <MudTh>Code</MudTh>
@@ -16,42 +41,72 @@
         <MudTh>National ID</MudTh>
         <MudTh>Contact</MudTh>
     </HeaderContent>
+
     <RowTemplate>
-        <MudTd DataLabel="Id">@context.Id</MudTd>
-        <MudTd DataLabel="Code">@context.PersonnelCode</MudTd>
-        <MudTd DataLabel="First Name">@context.FirstName</MudTd>
-        <MudTd DataLabel="Last Name">@context.LastName</MudTd>
-        <MudTd DataLabel="National ID">@context.NationalId</MudTd>
-        <MudTd DataLabel="Contact">@context.ContactNumber</MudTd>
+        <MudTd>@context.Id</MudTd>
+        <MudTd>@context.PersonnelCode</MudTd>
+        <MudTd>@context.FirstName</MudTd>
+        <MudTd>@context.LastName</MudTd>
+        <MudTd>@context.NationalId</MudTd>
+        <MudTd>@context.ContactNumber</MudTd>
     </RowTemplate>
+
+    <PagerContent>
+        <MudTablePager />
+    </PagerContent>
+
 </MudTable>
 
 
 
 
-@code {
 
-    private async Task<TableData<EmployeeDto>> LoadServerData(TableState state, CancellationToken cancellationToken)
+
+
+
+
+
+
+@code {
+    private string searchString = "";
+    private bool dense = false;
+    private bool hover = true;
+    private bool striped = false;
+    private bool bordered = false;
+    private EmployeeDto selectedEmployee;
+    private MudTable<EmployeeDto> _table;
+
+    [Inject] private IOptions<ApiConfiguration> apiConfig { get; set; }
+
+    private async Task<TableData<EmployeeDto>> LoadServerData(TableState state,CancellationToken cancellationToken=default)
     {
         var page = state.Page + 1;
         var pageSize = state.PageSize;
 
-        var baseUrl = apiConfig.Value.Url;
-        using var client = new HttpClient { BaseAddress = new Uri(baseUrl) };
+        var url = $"{apiConfig.Value.Url}/api/employee?page={page}&pageSize={pageSize}&search={searchString}";
+        using var client = new HttpClient();
+        var result = await client.GetFromJsonAsync<PagedResult<EmployeeDto>>(url);
 
-        var url = $"api/employee?page={page}&pageSize={pageSize}";
-
-        var response = await client.GetFromJsonAsync<PagedResult<EmployeeDto>>(url, cancellationToken);
-
-
-
-        var test = new TableData<EmployeeDto>
+        return new TableData<EmployeeDto>
             {
-                Items = response?.Items ?? [],
-                TotalItems = response?.TotalCount ?? 0
+                Items = result?.Items ?? [],
+                TotalItems = result?.TotalCount ?? 0
             };
-        return test;
     }
 
+    private async Task ReloadTable()
+    {
+        if (_table is not null)
+        {
+            await _table.ReloadServerData();
+        }
+    }
+
+    private bool FilterFunc(EmployeeDto e) =>
+        string.IsNullOrWhiteSpace(searchString) ||
+        e.FirstName?.Contains(searchString, StringComparison.OrdinalIgnoreCase) == true ||
+        e.LastName?.Contains(searchString, StringComparison.OrdinalIgnoreCase) == true ||
+        e.NationalId?.Contains(searchString, StringComparison.OrdinalIgnoreCase) == true;
 }
+
 

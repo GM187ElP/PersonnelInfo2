@@ -13,23 +13,23 @@ public class EmployeeConfig : IEntityTypeConfiguration<Employee>
         builder.HasIndex(e => e.NationalId).IsUnique();
         builder.HasIndex(e => e.ContactNumber).IsUnique();
 
-        builder.Property(e => e.NationalId).IsRequired().HasMaxLength(10);
+        builder.Property(e => e.NationalId).IsRequired().HasMaxLength(11);
         builder.Property(e => e.ContactNumber).IsRequired().HasMaxLength(11);
         builder.Property(e => e.FirstName).IsRequired().HasMaxLength(21);
         builder.Property(e => e.LastName).IsRequired().HasMaxLength(21);
 
         builder.Property(e => e.FatherName).HasMaxLength(21);
-        builder.Property(e => e.ShenasnameNumber).HasMaxLength(10);
-        builder.Property(e => e.ShenasnameSerial).HasMaxLength(2);
+        builder.Property(e => e.ShenasnameNumber).HasMaxLength(12);
+        builder.Property(e => e.ShenasnameSerial).HasMaxLength(6);
         builder.Property(e => e.ShenasnameSerie).HasMaxLength(6);
         builder.Property(e => e.ShenasnameSerialLetter).HasMaxLength(3);
         builder.Property(e => e.InsurranceCode).HasMaxLength(8);
         builder.Property(e => e.InsurranceStatus).HasMaxLength(21);
-        builder.Property(e => e.InternalContactNumber).HasMaxLength(3);
+        builder.Property(e => e.InternalContactNumber).HasMaxLength(4);
         builder.Property(e => e.LandPhoneNumber).HasMaxLength(11);
         builder.Property(e => e.PostalCode).HasMaxLength(10);
         builder.Property(e => e.MostRecentDegree).HasMaxLength(21);
-        builder.Property(e => e.Major).HasMaxLength(21);
+        builder.Property(e => e.Major).HasMaxLength(30);
 
         builder.HasOne(e => e.SuperVisor).WithMany(e => e.Employees).HasForeignKey(e => e.SupervisorId).OnDelete(DeleteBehavior.Restrict); 
 

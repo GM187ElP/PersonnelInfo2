@@ -54,8 +54,10 @@ app.MapControllers();
 //await databaseContext.Database.EnsureCreatedAsync();
 //var citySeeder = scope.ServiceProvider.GetRequiredService<CitySeeder>();
 //var jobTitleSeeder = scope.ServiceProvider.GetRequiredService<JobTitleSeeder>();
+//var employeeSeeder = scope.ServiceProvider.GetRequiredService<EmployeeSeeder>();
 //await citySeeder.SeedCitiesFromJson();
 //await jobTitleSeeder.SeedJobTitlesFromJson();
+//await employeeSeeder.SeedEmployeesFromJson();
 //#endregion
 
 

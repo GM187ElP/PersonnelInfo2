@@ -6,6 +6,7 @@ using PersonnelInfo.Application.Services;
 using PersonnelInfo.Application.Services.Entities;
 using PersonnelInfo.Core.Interfaces;
 using PersonnelInfo.Infrastructure.Data.Repositories;
+using PersonnelInfo.Infrastructure.Data.Seeders;
 using PersonnelInfo.Infrastructure.Services;
 
 namespace PersonnelInfo.Infrastructure.Configuration;
@@ -13,7 +14,7 @@ public class ProjectModule : Module
 {
     protected override void Load(ContainerBuilder builder)
     {
-        builder.RegisterType<RSAESEncryption>().AsSelf().SingleInstance(); 
+        builder.RegisterType<RSAESEncryption>().AsSelf().SingleInstance();
         builder.RegisterType<DatabaseContext>().As<DbContext>().AsSelf().InstancePerLifetimeScope();
         builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
 
@@ -26,5 +27,8 @@ public class ProjectModule : Module
         builder.RegisterType<EmployeeServices>().As<IEmployeeServices>().InstancePerLifetimeScope();
         builder.RegisterType<CityServices>().As<ICityServices>().InstancePerLifetimeScope();
         builder.RegisterType<GlobalExceptionMiddleware>().AsSelf().InstancePerLifetimeScope();
+
+        // Register EmployeeSeeder
+        builder.RegisterType<EmployeeSeeder>().InstancePerLifetimeScope();
     }
 }

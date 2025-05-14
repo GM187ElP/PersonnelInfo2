@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MudBlazor.Services;
 using PersonellInfo.Blazor;
 using PersonellInfo.Blazor.Components;
 using PersonellInfo.Blazor.Components.Services;
@@ -10,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+builder.Services.AddMudServices();
 
 //builder.Services.AddHttpClient<IApi, Api>();
 builder.Services.Configure<ApiConfiguration>(builder.Configuration.GetSection("ApiConfiguration"));

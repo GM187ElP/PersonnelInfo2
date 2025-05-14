@@ -1,8 +1,9 @@
-﻿using PersonnelInfo.Core.Enums;
+﻿using PersonnelInfo.Core.Entities;
+using PersonnelInfo.Core.Enums;
 
-namespace PersonnelInfo.Core.Entities;
+namespace PersonnelInfo.Infrastructure.Data.Seeders;
 
-public class Employee
+public class EmployeeRaw
 {
     public long Id { get; set; }
 
@@ -12,7 +13,8 @@ public class Employee
     public string LastName { get; set; } = string.Empty;
     public string NationalId { get; set; } = string.Empty;
     public string ContactNumber { get; set; } = string.Empty;
-    public bool IsDeleted { get; set; } = false;
+    public bool IsDeleted { get; set; } 
+    public string IsDeletedString { get; set; } 
     #endregion
 
     #region Gender and Status
@@ -22,7 +24,8 @@ public class Employee
 
     #region Family Information
     public string FatherName { get; set; } = string.Empty;
-    public bool? IsMarried { get; set; } 
+    public bool? IsMarried { get; set; }
+    public string IsMarriedString { get; set; }
     public int ChildrenCount { get; set; } = 0;
     #endregion
 
@@ -34,9 +37,9 @@ public class Employee
     #endregion
 
     #region Birth and Place Information
-    public DateTime? BirthDate { get; set; } = DateTime.Now;
+    public DateTime? BirthDate { get; set; } 
     public long BirthPlaceId { get; set; }
-    public City? BirthPlace { get; set; } 
+    public City? BirthPlace { get; set; }
     #endregion
 
     #region Shenasname Issuance Information
@@ -55,7 +58,7 @@ public class Employee
     public string DepartmentId { get; set; } = string.Empty;
     public JobTitle? JobTitle { get; set; }
     public EmploymentType EmploymentTypeDisplay { get; set; } = EmploymentType.Official;
-    public DateTime? StartingDate { get; set; } = DateTime.Now;
+    public DateTime? StartingDate { get; set; }
     public DateTime? LeavingDate { get; set; } // nullable
     public long? SupervisorId { get; set; }
     public Employee? SuperVisor { get; set; }
@@ -64,7 +67,7 @@ public class Employee
 
     #region Contact Information
     public string InternalContactNumber { get; set; } = "0000";
-    public string? LandPhoneNumber { get; set; } 
+    public string? LandPhoneNumber { get; set; }
     public string Address { get; set; } = string.Empty;
     public string PostalCode { get; set; } = string.Empty;
     #endregion
@@ -80,3 +83,4 @@ public class Employee
     public ICollection<BankAccount> BankAccounts { get; set; } = [];
     #endregion
 }
+
