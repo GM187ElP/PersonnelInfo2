@@ -1,112 +1,102 @@
 ﻿@page "/"
-@using PersonnelInfo.Application.Interfaces.Entities
-@using PersonnelInfo.Core.DTOs.Entities.Employees
 @rendermode InteractiveServer
-@using System.Net.Http.Json
 @inject HttpClient httpClient
 @inject IDisplayName displayName
+@using PersonnelInfo.Application.Interfaces.Entities
+@using PersonnelInfo.Core.DTOs.Entities.Employees
+@using System.Net.Http.Json
 
-<h3>Employees</h3>
 
-<MudTable T="EmployeeDto"
-          ServerData="LoadServerData"
-          ServerSide="true"
-          RowsPerPage="50"
-          Dense="@dense"
-          Hover="@hover"
-          Bordered="@bordered"
-          Striped="@striped"
-          Filter="FilterFunc"
-          @bind-SelectedItem="selectedEmployee">
-
+<MudTable FixedHeader="@fixedHeader" height="500px" FixedFooter="@fixedFooter" Items="@employees" Dense="@dense" Hover Bordered="@bordered" Striped="@striped" Filter="new Func<EmployeeDto,bool>(FilterFunc1)" @bind-SelectedItem="selectedEmployee">
     <ToolBarContent>
         <MudText Typo="Typo.h6">Employees</MudText>
         <MudSpacer />
-        <MudTextField @bind-Value="searchString"
-                      Placeholder="Search"
-                      Adornment="Adornment.Start"
-                      AdornmentIcon="@Icons.Material.Filled.Search"
-                      IconSize="Size.Medium"
-                      Class="mt-0"
-                      Immediate="true"
-                      OnBlurred="ReloadTable"
-                      OnKeyUp="@(async _ => await ReloadTable())" />
+        <MudTextField @bind-Value="searchString1" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
     </ToolBarContent>
 
     <HeaderContent>
-        <MudTh>Id</MudTh>
-        <MudTh>Code</MudTh>
-        <MudTh>First Name</MudTh>
-        <MudTh>Last Name</MudTh>
-        <MudTh>National ID</MudTh>
-        <MudTh>Contact</MudTh>
+        <MudTh>ویرایش</MudTh>
+        <MudTh><MudTableSortLabel SortBy=@(GetSortFunc<EmployeeDto>(nameof(employeeDto.RowNumber)))>ردیف</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy=@(GetSortFunc<EmployeeDto>(nameof(employeeDto.PersonnelCode)))>@displayName.GetDisplayName(employeeDto, nameof(employeeDto.PersonnelCode))</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy=@(GetSortFunc<EmployeeDto>(nameof(employeeDto.FirstName)))>@displayName.GetDisplayName(employeeDto, nameof(employeeDto.FirstName))</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy=@(GetSortFunc<EmployeeDto>(nameof(employeeDto.LastName)))>@displayName.GetDisplayName(employeeDto, nameof(employeeDto.LastName))</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy=@(GetSortFunc<EmployeeDto>(nameof(employeeDto.NationalId)))>@displayName.GetDisplayName(employeeDto, nameof(employeeDto.NationalId))</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy=@(GetSortFunc<EmployeeDto>(nameof(employeeDto.ContactNumber)))>@displayName.GetDisplayName(employeeDto, nameof(employeeDto.ContactNumber))</MudTableSortLabel></MudTh>
     </HeaderContent>
 
     <RowTemplate>
-        <MudTd>@context.Id</MudTd>
-        <MudTd>@context.PersonnelCode</MudTd>
-        <MudTd>@context.FirstName</MudTd>
-        <MudTd>@context.LastName</MudTd>
-        <MudTd>@context.NationalId</MudTd>
-        <MudTd>@context.ContactNumber</MudTd>
+        <MudTd DataLabel="ٍویرایش"><a class="btn btn-primary">ویرایش</a></MudTd>
+        <MudTd DataLabel="@displayName.GetDisplayName(employeeDto, nameof(employeeDto.RowNumber))">@context.RowNumber</MudTd>
+        <MudTd DataLabel="@displayName.GetDisplayName(employeeDto, nameof(employeeDto.PersonnelCode))">@context.PersonnelCode</MudTd>
+        <MudTd DataLabel="@displayName.GetDisplayName(employeeDto, nameof(employeeDto.FirstName))">@context.FirstName</MudTd>
+        <MudTd DataLabel="@displayName.GetDisplayName(employeeDto, nameof(employeeDto.LastName))">@context.LastName</MudTd>
+        <MudTd DataLabel="@displayName.GetDisplayName(employeeDto, nameof(employeeDto.NationalId))">@context.NationalId</MudTd>
+        <MudTd DataLabel="@displayName.GetDisplayName(employeeDto, nameof(employeeDto.ContactNumber))">@context.ContactNumber</MudTd>
     </RowTemplate>
-
     <PagerContent>
-        <MudTablePager />
+        <MudTablePager PageSizeOptions=[1000,2000,3000,4000] />
     </PagerContent>
-
 </MudTable>
 
 
 
 
-
-
-
-
-
-
-
 @code {
-    private string searchString = "";
-    private bool dense = false;
-    private bool hover = true;
-    private bool striped = false;
-    private bool bordered = false;
-    private EmployeeDto selectedEmployee;
-    private MudTable<EmployeeDto> _table;
+    private bool dense = true;
+    private bool striped = true;
+    private bool bordered = true;
+    private string searchString1 = "";
+    private bool fixedHeader = true;
+    private bool fixedFooter = false;
+    private EmployeeDto employeeDto = new();
 
-    [Inject] private IOptions<ApiConfiguration> apiConfig { get; set; }
-
-    private async Task<TableData<EmployeeDto>> LoadServerData(TableState state,CancellationToken cancellationToken=default)
+    private Func<T, object> GetSortFunc<T>(string propertyName)
     {
-        var page = state.Page + 1;
-        var pageSize = state.PageSize;
-
-        var url = $"{apiConfig.Value.Url}/api/employee?page={page}&pageSize={pageSize}&search={searchString}";
-        using var client = new HttpClient();
-        var result = await client.GetFromJsonAsync<PagedResult<EmployeeDto>>(url);
-
-        return new TableData<EmployeeDto>
-            {
-                Items = result?.Items ?? [],
-                TotalItems = result?.TotalCount ?? 0
-            };
+        var propInfo = typeof(T).GetProperty(propertyName);
+        return x => propInfo.GetValue(x);
     }
 
-    private async Task ReloadTable()
+
+    private int SetRowNumber<T>(T context, IEnumerable<T> list)
     {
-        if (_table is not null)
+        return list.ToList().IndexOf(context) + 1 + (mudTable?.CurrentPage ?? 0) * (mudTable?.RowsPerPage ?? 0);
+    }
+
+
+
+    [Inject]
+    private IOptions<ApiConfiguration> apiConfig { get; set; }
+
+    private EmployeeDto selectedEmployee;
+    private MudTable<EmployeeDto> mudTable;
+    private IEnumerable<EmployeeDto> employees = [];
+    private CancellationTokenSource cts = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await httpClient.GetFromJsonAsync<PagedResult<EmployeeDto>>($"{apiConfig.Value.Url}/api/employee?page=1&pageSize=150", cts.Token);
+
+        employees = result?.Items ?? [];
+
+        var index = 0;
+        foreach (var employee in employees)
         {
-            await _table.ReloadServerData();
+            employee.RowNumber = ++index;
         }
     }
 
-    private bool FilterFunc(EmployeeDto e) =>
-        string.IsNullOrWhiteSpace(searchString) ||
-        e.FirstName?.Contains(searchString, StringComparison.OrdinalIgnoreCase) == true ||
-        e.LastName?.Contains(searchString, StringComparison.OrdinalIgnoreCase) == true ||
-        e.NationalId?.Contains(searchString, StringComparison.OrdinalIgnoreCase) == true;
+    private bool FilterFunc1(EmployeeDto employee) => FilterFunc(employee, searchString1);
+
+    private bool FilterFunc(EmployeeDto employee, string searchString)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+
+        return $"{employee.PersonnelCode} {employee.FirstName} {employee.LastName} {employee.NationalId} {employee.ContactNumber} {employee.GenderDisplay} {employee.WorkingStatusDisplay} {employee.FatherName} {employee.MaritalStatus} {employee.ChildrenCount} {employee.ShenasnameNumber} {employee.ShenasnameSerialLetter} {employee.ShenasnameSerie} {employee.ShenasnameSerial} {employee.BirthDate} {employee.BirthPlaceId} {employee.ShenasnameIssuedPlaceId} {employee.InsurranceCode} {employee.InsurranceStatus} {employee.HasInsurance} {employee.ExtraInsurranceCount} {employee.DepartmentId} {employee.EmploymentTypeDisplay} {employee.StartingDate:yyyy - MM - dd} {employee.LeavingDate?.ToString("yyyy-MM-dd")} {employee.SupervisorId} {employee.InternalContactNumber} {employee.LandPhoneNumber} {employee.Address} {employee.PostalCode} {employee.MostRecentDegree} {employee.Major}".Contains(searchString, StringComparison.OrdinalIgnoreCase);
+    }
 }
+
+
+
 
 

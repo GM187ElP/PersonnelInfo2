@@ -52,15 +52,22 @@ public class EmployeeController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll([FromQuery] int page = 1, [FromQuery] int pageSize = 20, CancellationToken cancellationToken = default)
+    [HttpGet]
+    public async Task<IActionResult> GetAll(int page = 1, int pageSize = 20, CancellationToken cancellationToken = default)
     {
-        var result = await _services.GetAllAsync(page, pageSize, cancellationToken);
-        var employees = result.Data as List<EmployeeDto>;
-
-        return Ok(new PagedResult<EmployeeDto>
+        try
         {
-            TotalCount = result.TotalCount,
-            Items = employees ?? []
-        });
+            var result = await _services.GetAllAsync(page, pageSize, cancellationToken);
+            var employees = result.Data as List<EmployeeDto>;
+            return Ok(new PagedResult<EmployeeDto>
+            {
+                TotalCount = result.TotalCount,
+                Items = employees ?? []
+            });
+        }
+        catch (OperationCanceledException)
+        {
+            return StatusCode(499); // 499 is used by some proxies to indicate client closed request
+        }
     }
 }
