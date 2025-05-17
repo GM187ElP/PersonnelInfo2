@@ -52,8 +52,7 @@ public class EmployeeController : ControllerBase
     }
 
     [HttpGet]
-    [HttpGet]
-    public async Task<IActionResult> GetAll(int page = 1, int pageSize = 20, CancellationToken cancellationToken = default)
+    public async Task<IActionResult> GetAllAsync(int page = 1, int pageSize = 20, CancellationToken cancellationToken = default)
     {
         try
         {
@@ -69,5 +68,12 @@ public class EmployeeController : ControllerBase
         {
             return StatusCode(499); // 499 is used by some proxies to indicate client closed request
         }
+    }
+
+
+    [HttpPost("update/{id}")]
+    public async Task<IActionResult> UpdateAsync([FromRoute]long id, CancellationToken cancellationToken = default)
+    {
+        var result = await _services.UpdateAsync(EmployeeDto,cancellationToken);
     }
 }

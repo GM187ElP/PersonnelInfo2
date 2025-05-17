@@ -25,7 +25,7 @@
     </HeaderContent>
 
     <RowTemplate>
-        <MudTd DataLabel="ٍویرایش"><a class="btn btn-primary">ویرایش</a></MudTd>
+        <MudTd DataLabel="ٍویرایش"><MudIconButton Icon="@Icons.Material.Filled.Edit" Color="Color.Info" Title="ویرایش" OnClick="@(e=>Edit<long>("/update-employee/",context.Id))" class="btn btn-primary"></MudIconButton></MudTd>
         <MudTd DataLabel="@displayName.GetDisplayName(employeeDto, nameof(employeeDto.RowNumber))">@context.RowNumber</MudTd>
         <MudTd DataLabel="@displayName.GetDisplayName(employeeDto, nameof(employeeDto.PersonnelCode))">@context.PersonnelCode</MudTd>
         <MudTd DataLabel="@displayName.GetDisplayName(employeeDto, nameof(employeeDto.FirstName))">@context.FirstName</MudTd>
@@ -49,6 +49,7 @@
     private bool fixedHeader = true;
     private bool fixedFooter = false;
     private EmployeeDto employeeDto = new();
+    [Inject] private NavigationManager navManager { get; set; }
 
     private Func<T, object> GetSortFunc<T>(string propertyName)
     {
@@ -56,6 +57,8 @@
         return x => propInfo.GetValue(x);
     }
 
+    private void Edit<T>(string uri, T id) =>
+        navManager.NavigateTo($"{uri}{id}");
 
     private int SetRowNumber<T>(T context, IEnumerable<T> list)
     {
@@ -92,7 +95,7 @@
         if (string.IsNullOrWhiteSpace(searchString))
             return true;
 
-        return $"{employee.PersonnelCode} {employee.FirstName} {employee.LastName} {employee.NationalId} {employee.ContactNumber} {employee.GenderDisplay} {employee.WorkingStatusDisplay} {employee.FatherName} {employee.MaritalStatus} {employee.ChildrenCount} {employee.ShenasnameNumber} {employee.ShenasnameSerialLetter} {employee.ShenasnameSerie} {employee.ShenasnameSerial} {employee.BirthDate} {employee.BirthPlaceId} {employee.ShenasnameIssuedPlaceId} {employee.InsurranceCode} {employee.InsurranceStatus} {employee.HasInsurance} {employee.ExtraInsurranceCount} {employee.DepartmentId} {employee.EmploymentTypeDisplay} {employee.StartingDate:yyyy - MM - dd} {employee.LeavingDate?.ToString("yyyy-MM-dd")} {employee.SupervisorId} {employee.InternalContactNumber} {employee.LandPhoneNumber} {employee.Address} {employee.PostalCode} {employee.MostRecentDegree} {employee.Major}".Contains(searchString, StringComparison.OrdinalIgnoreCase);
+        return $"{employee.PersonnelCode} {employee.FirstName} {employee.LastName} {employee.NationalId} {employee.ContactNumber} {employee.GenderDisplay} {employee.WorkingStatusDisplay} {employee.FatherName} {employee.MaritalStatus} {employee.ChildrenCount} {employee.ShenasnameNumber} {employee.ShenasnameSerialLetter} {employee.ShenasnameSerie} {employee.ShenasnameSerial} {employee.BirthDate} {employee.BirthPlaceId} {employee.ShenasnameIssuedPlaceId} {employee.InsurranceCode} {employee.InsurranceStatus} {employee.HasInsurance} {employee.ExtraInsurranceCount} {employee.DepartmentId} {employee.EmploymentTypeDisplay} {employee.StartingDate:yyyy-MM-dd} {employee.LeavingDate?.ToString("yyyy-MM-dd")} {employee.SupervisorId} {employee.InternalContactNumber} {employee.LandPhoneNumber} {employee.Address} {employee.PostalCode} {employee.MostRecentDegree} {employee.Major}".Contains(searchString, StringComparison.OrdinalIgnoreCase);
     }
 }
 

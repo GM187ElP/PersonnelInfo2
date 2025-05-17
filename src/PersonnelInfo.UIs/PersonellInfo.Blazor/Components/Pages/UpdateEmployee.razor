@@ -1,0 +1,25 @@
+﻿@page "/update-employee/{id:long}"
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
+@using PersonnelInfo.Core.Infrastructure
+@inject IOptions<ApiConfiguration> apiConfig
+@inject HttpClient client
+@inject NavigationManager navigation
+
+<h3>UpdateEmployee</h3>
+
+
+
+@code {
+    [Parameter] public long Id { get; set; }
+    private EmployeeDto employee = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var baseUrl = apiConfig.Value.Url;
+        var result = await client.GetFromJsonAsync<CrudOperationResult>($"{baseUrl}/api/employee/GetById/{Id}");
+
+        employee = (EmployeeDto)result!.Data!;
+
+        navigation.NavigateTo("/basic-info");
+    }
+}

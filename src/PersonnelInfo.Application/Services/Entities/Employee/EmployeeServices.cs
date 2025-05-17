@@ -114,14 +114,5 @@ public class EmployeeServices : IEmployeeServices
     public async Task<CrudOperationResult> UpdateAsync(EmployeeDto updateDto, CancellationToken cancellationToken = default)
     {
         throw new Exception();
-        //var entity = await _repository.GetByIdAsync(updateDto.Id, cancellationToken)
-        //              ?? throw new NotFoundEntity(typeof(Employee));
-
-        //Mapper.MapToEntity(updateDto, entity);
-
-        //await _unitOfWork.ExecuteInTransactionAsync(async _ =>
-        //{
-        //    await _repository.UpdateAsync(entity, cancellationToken);
-        //}, cancellationToken);
     }
 }

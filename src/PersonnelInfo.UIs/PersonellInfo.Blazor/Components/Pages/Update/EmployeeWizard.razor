@@ -1,0 +1,28 @@
+﻿@using PersonnelInfo.Core.DTOs.Entities.Employees
+
+@page "/employee-wizard"
+
+<EmployeeWizard />
+
+@code {
+    private int step = 0;
+    private EmployeeDto employee = new();
+
+    private void NextStep() => step++;
+    private void PrevStep() => step--;
+
+    private RenderFragment RenderStep() => step switch
+    {
+        0 => builder => builder.OpenComponent<StepBasicInfo>(0)
+                                .AddAttribute(1, "Employee", employee)
+                                .AddAttribute(2, "OnNext", EventCallback.Factory.Create(this, NextStep))
+                                .CloseComponent(),
+        1 => builder => builder.OpenComponent<StepGenderStatus>(0)
+                                .AddAttribute(1, "Employee", employee)
+                                .AddAttribute(2, "OnNext", EventCallback.Factory.Create(this, NextStep))
+                                .AddAttribute(3, "OnPrevious", EventCallback.Factory.Create(this, PrevStep))
+                                .CloseComponent(),
+        // ... Repeat for each step
+        _ => builder => builder.AddContent(0, "فرم کامل شد."),
+    };
+}

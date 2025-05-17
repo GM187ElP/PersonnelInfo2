@@ -1,0 +1,59 @@
+﻿@page "/basic-info"
+@inject IDisplayName displayName
+
+
+<EditForm Model="@Employee" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
+    <CustomValidator />
+
+    <div class="mb-3">
+        <label>@displayName.GetDisplayName(Employee, nameof(Employee.PersonnelCode))</label>
+        <InputNumber class="form-control" disabled @bind-Value="Employee.PersonnelCode" />
+    </div>
+
+    <div class="mb-3">
+        <label>@displayName.GetDisplayName(Employee, nameof(Employee.FirstName))</label>
+        <InputText class="form-control" @bind-Value="Employee.FirstName" />
+        <ValidationMessage For="@(() => Employee.FirstName)" />
+    </div>
+
+    <div class="mb-3">
+        <label>@displayName.GetDisplayName(Employee, nameof(Employee.LastName))</label>
+        <InputText class="form-control" @bind-Value="Employee.LastName" />
+        <ValidationMessage For="@(() => Employee.LastName)" />
+    </div>
+
+    <div class="mb-3">
+        <label>@displayName.GetDisplayName(Employee, nameof(Employee.NationalId))</label>
+        <InputText class="form-control" @bind-Value="Employee.NationalId" />
+        <ValidationMessage For="@(() => Employee.NationalId)" />
+    </div>
+
+    <div class="mb-3">
+        <label>@displayName.GetDisplayName(Employee, nameof(Employee.ContactNumber))</label>
+        <InputText class="form-control" @bind-Value="Employee.ContactNumber" />
+        <ValidationMessage For="@(() => Employee.ContactNumber)" />
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <button type="button" class="btn btn-secondary" @onclick="OnPrevious.InvokeAsync">مرحله قبل</button>
+        <button type="submit" class="btn btn-primary">مرحله بعد</button>
+    </div>
+</EditForm>
+
+@code {
+    [Parameter] public EmployeeDto Employee { get; set; }
+    [Parameter] public EventCallback OnNext { get; set; }
+    [Parameter] public EventCallback OnPrevious { get; set; }
+
+
+    private async Task HandleValidSubmit(EditContext context)
+    {
+        await OnNext.InvokeAsync();
+    }
+
+    private async Task HandleInvalidSubmit(EditContext context)
+    {
+        // You can log, show message, or handle it here
+    }
+
+}
