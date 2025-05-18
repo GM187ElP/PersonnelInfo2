@@ -20,13 +20,13 @@ public class EmployeeServices : IEmployeeServices
     }
 
 
-    public async Task<CrudOperationResult> AddAsync(AddEmployeeDto addDto, CancellationToken cancellationToken = default)
+    public async Task<CrudDataResult<long>> AddAsync(AddEmployeeDto addDto, CancellationToken cancellationToken = default)
     {
         var existedEntity = await _repository.NationalIdExistAsync(addDto.NationalId, cancellationToken);
 
         if (existedEntity)
         {
-            return new CrudOperationResult
+            return new CrudDataResult<long>
             {
                 Success = false,
                 AffectedRows = 0,
@@ -47,35 +47,35 @@ public class EmployeeServices : IEmployeeServices
                 affected = await _unitOfWork.SaveChangesAsync(cancellationToken);
             }, cancellationToken);
 
-            return new CrudOperationResult
+            return new CrudDataResult<long>
             {
                 Success = affected > 0,
                 AffectedRows = affected,
-                EntityId = entity.Id,
+                Data = entity.Id,
             };
         }
     }
 
-    public async Task<CrudOperationResult> GetByIdAsync(int id, CancellationToken cancellationToken = default)
+    public async Task<CrudDataResult<EmployeeDto>> GetByIdAsync(int id, CancellationToken cancellationToken = default)
     {
         var entity = await _repository.GetByIdAsync(id, cancellationToken);
         if (entity == null)
-            return new CrudOperationResult
+            return new CrudDataResult<EmployeeDto>
             {
                 Success = false,
                 ErrorMessage = $"No employee found with ID: {id}."
             };
 
-        return new CrudOperationResult
+        return new CrudDataResult<EmployeeDto>
         {
             Success = true,
-            EntityId = entity.Id,
             Data = Mapper.MapToDto(entity, new EmployeeDto())
+            
         };
     }
 
-    public async Task<CrudOperationResult> NationalIdExistAsync(string nationalId, CancellationToken cancellationToken = default) =>
-         new CrudOperationResult
+    public async Task<CrudDataResult<bool>> NationalIdExistAsync(string nationalId, CancellationToken cancellationToken = default) =>
+         new CrudDataResult<bool>
          {
              Success = true,
              Data = await _repository.NationalIdExistAsync(nationalId, cancellationToken)
@@ -87,12 +87,11 @@ public class EmployeeServices : IEmployeeServices
         return new CrudOperationResult
         {
             Success = result,
-            Data = result,
             ErrorMessage = result ? string.Empty : $"No employee found with ID: {id}."
         };
     }
 
-    public async Task<CrudOperationResult> GetAllAsync(int page, int pageSize, CancellationToken cancellationToken = default)
+    public async Task<CrudListResult<EmployeeDto>> GetAllAsync(int page, int pageSize, CancellationToken cancellationToken = default)
     {
         var pagedResult = await _repository.GetAllAsync(page, pageSize, cancellationToken);
 
@@ -100,7 +99,7 @@ public class EmployeeServices : IEmployeeServices
             .Select(e => Mapper.MapToDto(e, new EmployeeDto()))
             .ToList();
 
-        return new CrudOperationResult
+        return new CrudListResult<EmployeeDto>
         {
             Success = dtoList.Any(),
             ErrorMessage = dtoList.Any() ? string.Empty : "There are no employees on this page.",

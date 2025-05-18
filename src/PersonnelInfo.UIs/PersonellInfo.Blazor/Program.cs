@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using MudBlazor.Services;
 using PersonellInfo.Blazor;
 using PersonellInfo.Blazor.Components;
+using PersonellInfo.Blazor.Components.Pages.Update;
 using PersonellInfo.Blazor.Components.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,7 @@ builder.Services.AddRazorComponents()
 builder.Services.AddServerSideBlazor()
     .AddCircuitOptions(options => { options.DetailedErrors = true; });
 
+builder.Services.AddScoped<EmployeeState>();
 
 builder.Services.AddMudServices();
 

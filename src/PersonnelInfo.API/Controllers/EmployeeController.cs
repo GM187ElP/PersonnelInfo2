@@ -43,8 +43,8 @@ public class EmployeeController : ControllerBase
 
         if (result.Success)
         {
-            logger.LogInformation("Successfully added employee {FirstName} {LastName} with ID: {EmployeeId}", dto.FirstName, dto.LastName, result.EntityId);
-            return CreatedAtAction(nameof(GetById), new { id = result.EntityId }, new { message = $"Employee {dto.FirstName} {dto.LastName} was added successfully." });
+            logger.LogInformation("Successfully added employee {FirstName} {LastName} with ID: {EmployeeId}", dto.FirstName, dto.LastName, result.Data);
+            return CreatedAtAction(nameof(GetById), new { id = result.Data }, new { message = $"Employee {dto.FirstName} {dto.LastName} was added successfully." });
         }
 
         logger.LogError("Failed to add employee {FirstName} {LastName}. Error: {Error}", dto.FirstName, dto.LastName, result.ErrorMessage ?? "Unknown error");
@@ -71,9 +71,9 @@ public class EmployeeController : ControllerBase
     }
 
 
-    [HttpPost("update/{id}")]
-    public async Task<IActionResult> UpdateAsync([FromRoute]long id, CancellationToken cancellationToken = default)
-    {
-        var result = await _services.UpdateAsync(EmployeeDto,cancellationToken);
-    }
+    //[HttpPost("update/{id}")]
+    //public async Task<IActionResult> UpdateAsync([FromRoute]long id, CancellationToken cancellationToken = default)
+    //{
+    //    var result = await _services.UpdateAsync(EmployeeDto,cancellationToken);
+    //}
 }

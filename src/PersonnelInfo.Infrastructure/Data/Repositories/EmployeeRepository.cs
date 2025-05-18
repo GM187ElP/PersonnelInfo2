@@ -31,6 +31,7 @@ public class EmployeeRepository : IEmployeeRepository
         var entity = await _dbSet.FindAsync(id);
         if (entity != null)
         {
+            entity.PersonnelCode = await MaxPersonnelCodeAsync(cancellationToken) + 1;
             entity.IsDeleted = true;
             return true;
         }

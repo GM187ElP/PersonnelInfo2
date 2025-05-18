@@ -1,4 +1,4 @@
-﻿@page "/update-employee/{id:long}"
+﻿@page "/update-employee5/{id:long}"
 @using Microsoft.EntityFrameworkCore.Metadata.Internal
 @using PersonnelInfo.Core.Infrastructure
 @inject IOptions<ApiConfiguration> apiConfig
@@ -18,7 +18,7 @@
         var baseUrl = apiConfig.Value.Url;
         var result = await client.GetFromJsonAsync<CrudOperationResult>($"{baseUrl}/api/employee/GetById/{Id}");
 
-        employee = (EmployeeDto)result!.Data!;
+       // employee = (EmployeeDto)result!.Data!;
 
         navigation.NavigateTo("/basic-info");
     }

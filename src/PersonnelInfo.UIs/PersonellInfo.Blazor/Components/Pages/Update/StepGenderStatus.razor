@@ -1,5 +1,67 @@
-﻿<h3>StepBasicInfo</h3>
+﻿@page "/gender-info"
+@using PersonnelInfo.Core.Infrastructure
+@using System.Text.Json
+@inject IDisplayName displayName
+@inject HttpClient client
+@inject IOptions<ApiConfiguration> apiConfig
+@inject EmployeeState employeeState
+@inject NavigationManager navigation
+
+@if (employee != null)
+{
+    <EditForm Model="@employee" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
+        <CustomValidator />
+
+        <div class="mb-3">
+            <label>@displayName.GetDisplayName(employee, nameof(employee.GenderDisplay))</label>
+            <InputSelect class="form-control" @bind-Value="employee.GenderDisplay" />
+            <ValidationMessage For="@(() => employee.GenderDisplay)" />
+        </div>
+
+        <div class="mb-3">
+            <label>@displayName.GetDisplayName(employee, nameof(employee.WorkingStatusDisplay))</label>
+            <InputSelect class="form-control" @bind-Value="employee.WorkingStatusDisplay" />
+            <ValidationMessage For="@(() => employee.LastName)" />
+        </div>
+
+        <div class="d-flex justify-content-between">
+             <button type="submit" class="btn btn-secondary" @onclick="() => OnPrevious.InvokeAsync()">مرحله قبل</button>
+            <button type="submit" class="btn btn-primary">مرحله بعد</button>
+        </div>
+    </EditForm>
+}
+else
+{
+    <p>Loading...</p>
+}
 
 @code {
+    private EmployeeDto employee = new();
+    [Parameter] public long Id { get; set; }
+    [Parameter] public EventCallback OnNext { get; set; }
+    [Parameter] public EventCallback OnPrevious { get; set; }
+    private CancellationTokenSource _cts = new();
 
+    protected override async Task OnInitializedAsync()
+    {
+        employee = employeeState.CurrentEmployee;
+    }
+
+    private async Task HandleValidSubmit(EditContext context)
+    {
+        employeeState.CurrentEmployee = employee;
+        navigation.NavigateTo($"/gender-info");
+        await OnNext.InvokeAsync();
+    }
+
+    private async Task HandleInvalidSubmit(EditContext context)
+    {
+        // You can log, show message, or handle it here
+    }
+
+    public void Dispose()
+    {
+        _cts.Cancel();
+        _cts.Dispose();
+    }
 }
