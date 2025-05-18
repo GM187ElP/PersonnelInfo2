@@ -93,3 +93,37 @@
         public string Fa { get; set; } = string.Empty;
     }
 }
+
+@* 
+        using Microsoft.AspNetCore.Components.Forms;
+using Newtonsoft.Json;
+
+public static class LocalizedValidationHelper
+{
+    private static Dictionary<string, LocalizedMessage> _localizedMessages = new();
+
+    public static void LoadLocalizedMessages(string path)
+    {
+        if (_localizedMessages.Count == 0 && File.Exists(path))
+        {
+            var json = File.ReadAllText(path);
+            _localizedMessages = JsonConvert.DeserializeObject<Dictionary<string, LocalizedMessage>>(json) ?? new Dictionary<string, LocalizedMessage>();
+        }
+    }
+
+    public static string Localize(string errorKey, string language)
+    {
+        if (_localizedMessages.TryGetValue(errorKey, out var msg))
+        {
+            var prop = typeof(LocalizedMessage).GetProperty(language);
+            return prop?.GetValue(msg)?.ToString() ?? errorKey;
+        }
+        return errorKey;
+    }
+
+    public class LocalizedMessage
+    {
+        public string En { get; set; }
+        public string Fa { get; set; }
+    }
+} *@
