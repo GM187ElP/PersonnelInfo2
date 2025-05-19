@@ -43,7 +43,10 @@
     "En": "Please enter digits only.",
     "Fa": "لطفاً فقط رقم وارد کنید."
   },
-
+  "EmployeeDto.NationalId.NationalId": {
+    "En": "First name is required.",
+    "Fa": "وارد کردن نام الزامی است."
+  },
   // JobTitle section
   "AddJobTitleDto.Title.Required": {
     "En": "Title is required.",

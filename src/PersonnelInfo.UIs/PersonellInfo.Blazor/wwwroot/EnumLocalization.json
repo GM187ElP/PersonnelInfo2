@@ -1,0 +1,66 @@
+{
+  "EmploymentType.NotSelected": {
+    "En": "Not Selected",
+    "Fa": "انتخاب نشده"
+  },
+  "EmploymentType.Official": {
+    "En": "Official",
+    "Fa": "رسمی"
+  },
+  "EmploymentType.Contract": {
+    "En": "Contract",
+    "Fa": "قراردادی"
+  },
+
+  "GenderType.NotSelected": {
+    "En": "Not Selected",
+    "Fa": "انتخاب نشده"
+  },
+  "GenderType.Male": {
+    "En": "Male",
+    "Fa": "مرد"
+  },
+  "GenderType.Female": {
+    "En": "Female",
+    "Fa": "زن"
+  },
+
+  "MaritalStatusType.NotSelected": {
+    "En": "Not Selected",
+    "Fa": "انتخاب نشده"
+  },
+  "MaritalStatusType.Single": {
+    "En": "Single",
+    "Fa": "مجرد"
+  },
+  "MaritalStatusType.Married": {
+    "En": "Married",
+    "Fa": "متاهل"
+  },
+
+  "NoteType.NotSelected": {
+    "En": "Not Selected",
+    "Fa": "انتخاب نشده"
+  },
+  "NoteType.Checque": {
+    "En": "Cheque",
+    "Fa": "چک"
+  },
+  "NoteType.PromissionaryNote": {
+    "En": "Promissory Note",
+    "Fa": "سفته"
+  },
+
+  "WorkingStatusType.NotSelected": {
+    "En": "Not Selected",
+    "Fa": "انتخاب نشده"
+  },
+  "WorkingStatusType.Working": {
+    "En": "Working",
+    "Fa": "شاغل"
+  },
+  "WorkingStatusType.Left": {
+    "En": "Left",
+    "Fa": "ترک کار"
+  }
+}

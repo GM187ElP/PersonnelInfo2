@@ -3,13 +3,13 @@
 @using Newtonsoft.Json
 @inherits ComponentBase
 @inject IServiceProvider ServiceProvider
+@inject AppLanguageService languageService
 
 @code {
     [CascadingParameter] private EditContext CurrentEditContext { get; set; } = default!;
     private ValidationMessageStore? messageStore;
 
     private static Dictionary<string, LocalizedMessage> _localizedMessages = new();
-    private const string Language = "Fa"; // You can replace with a dynamic language setting later
 
     protected override void OnInitialized()
     {
@@ -63,7 +63,7 @@
             var field = new FieldIdentifier(model, property.Name);
             var errorKey = attr.GetType().Name.Replace("Attribute", "");
 
-            var localizedMessage = GetLocalizedErrorMessage(model.GetType().Name, property.Name, errorKey, Language);
+            var localizedMessage = GetLocalizedErrorMessage(model.GetType().Name, property.Name, errorKey);
             messageStore?.Add(field, localizedMessage);
         }
     }
@@ -74,8 +74,9 @@
         return attributes.Where(attr => !attr.IsValid(property.GetValue(model))).ToList();
     }
 
-    private string GetLocalizedErrorMessage(string dtoName, string propertyName, string errorKey, string lang)
+    private string GetLocalizedErrorMessage(string dtoName, string propertyName, string errorKey)
     {
+        var lang = languageService.Language;
         var fullKey = $"{dtoName}.{propertyName}.{errorKey}";
 
         if (_localizedMessages.TryGetValue(fullKey, out var localized))
@@ -93,37 +94,3 @@
         public string Fa { get; set; } = string.Empty;
     }
 }
-
-@* 
-        using Microsoft.AspNetCore.Components.Forms;
-using Newtonsoft.Json;
-
-public static class LocalizedValidationHelper
-{
-    private static Dictionary<string, LocalizedMessage> _localizedMessages = new();
-
-    public static void LoadLocalizedMessages(string path)
-    {
-        if (_localizedMessages.Count == 0 && File.Exists(path))
-        {
-            var json = File.ReadAllText(path);
-            _localizedMessages = JsonConvert.DeserializeObject<Dictionary<string, LocalizedMessage>>(json) ?? new Dictionary<string, LocalizedMessage>();
-        }
-    }
-
-    public static string Localize(string errorKey, string language)
-    {
-        if (_localizedMessages.TryGetValue(errorKey, out var msg))
-        {
-            var prop = typeof(LocalizedMessage).GetProperty(language);
-            return prop?.GetValue(msg)?.ToString() ?? errorKey;
-        }
-        return errorKey;
-    }
-
-    public class LocalizedMessage
-    {
-        public string En { get; set; }
-        public string Fa { get; set; }
-    }
-} *@

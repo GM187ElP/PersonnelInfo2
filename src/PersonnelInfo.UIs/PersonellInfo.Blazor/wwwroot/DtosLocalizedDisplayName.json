@@ -1,0 +1,158 @@
+﻿{
+  "AddEmployeeDto.PersonnelCode": {
+    "En": "Personnel Code",
+    "Fa": "کد پرسنلی"
+  },
+  "AddEmployeeDto.FirstName": {
+    "En": "First Name",
+    "Fa": "نام"
+  },
+  "AddEmployeeDto.LastName": {
+    "En": "Last Name",
+    "Fa": "نام خانوادگی"
+  },
+  "AddEmployeeDto.NationalId": {
+    "En": "National ID",
+    "Fa": "کد ملی"
+  },
+  "AddEmployeeDto.ContactNumber": {
+    "En": "Mobile Number",
+    "Fa": "شماره همراه"
+  },
+  "EmployeeDto.Id": {
+    "En": "ID",
+    "Fa": "شناسه"
+  },
+  "EmployeeDto.RowNumber": {
+    "En": "Row Number",
+    "Fa": "ردیف"
+  },
+  "EmployeeDto.PersonnelCode": {
+    "En": "Personnel Code",
+    "Fa": "کد پرسنلی"
+  },
+  "EmployeeDto.FirstName": {
+    "En": "First Name",
+    "Fa": "نام"
+  },
+  "EmployeeDto.LastName": {
+    "En": "Last Name",
+    "Fa": "نام خانوادگی"
+  },
+  "EmployeeDto.NationalId": {
+    "En": "National ID",
+    "Fa": "کد ملی"
+  },
+  "EmployeeDto.ContactNumber": {
+    "En": "Contact Number",
+    "Fa": "شماره تماس"
+  },
+  "EmployeeDto.GenderDisplay": {
+    "En": "Gender",
+    "Fa": "جنسیت"
+  },
+  "EmployeeDto.WorkingStatusDisplay": {
+    "En": "Working Status",
+    "Fa": "وضعیت اشتغال"
+  },
+  "EmployeeDto.FatherName": {
+    "En": "Father's Name",
+    "Fa": "نام پدر"
+  },
+  "EmployeeDto.MaritalStatus": {
+    "En": "Marital Status",
+    "Fa": "متأهل"
+  },
+  "EmployeeDto.ChildrenCount": {
+    "En": "Children Count",
+    "Fa": "تعداد فرزندان"
+  },
+  "EmployeeDto.ShenasnameNumber": {
+    "En": "Shenasnameh Number",
+    "Fa": "شماره شناسنامه"
+  },
+  "EmployeeDto.ShenasnameSerialLetter": {
+    "En": "Shenasnameh Serial Letter",
+    "Fa": "حرف سریال شناسنامه"
+  },
+  "EmployeeDto.ShenasnameSerie": {
+    "En": "Shenasnameh Serie",
+    "Fa": "سری شناسنامه"
+  },
+  "EmployeeDto.ShenasnameSerial": {
+    "En": "Shenasnameh Serial",
+    "Fa": "سریال شناسنامه"
+  },
+  "EmployeeDto.BirthDate": {
+    "En": "Birth Date",
+    "Fa": "تاریخ تولد"
+  },
+  "EmployeeDto.BirthPlaceId": {
+    "En": "Birth Place",
+    "Fa": "محل تولد"
+  },
+  "EmployeeDto.ShenasnameIssuedPlaceId": {
+    "En": "Shenasnameh Issued Place",
+    "Fa": "محل صدور شناسنامه"
+  },
+  "EmployeeDto.InsurranceCode": {
+    "En": "Insurance Code",
+    "Fa": "کد بیمه"
+  },
+  "EmployeeDto.InsurranceStatus": {
+    "En": "Insurance Status",
+    "Fa": "وضعیت بیمه"
+  },
+  "EmployeeDto.HasInsurance": {
+    "En": "Has Insurance?",
+    "Fa": "بیمه دارد؟"
+  },
+  "EmployeeDto.ExtraInsurranceCount": {
+    "En": "Extra Insurance Count",
+    "Fa": "تعداد بیمه‌تکمیلی"
+  },
+  "EmployeeDto.DepartmentId": {
+    "En": "Department",
+    "Fa": "واحد"
+  },
+  "EmployeeDto.EmploymentTypeDisplay": {
+    "En": "Employment Type",
+    "Fa": "نوع استخدام"
+  },
+  "EmployeeDto.StartingDate": {
+    "En": "Starting Date",
+    "Fa": "تاریخ شروع به کار"
+  },
+  "EmployeeDto.LeavingDate": {
+    "En": "Leaving Date",
+    "Fa": "تاریخ پایان کار"
+  },
+  "EmployeeDto.SupervisorId": {
+    "En": "Supervisor Code",
+    "Fa": "کد سرپرست"
+  },
+  "EmployeeDto.InternalContactNumber": {
+    "En": "Internal Contact Number",
+    "Fa": "شماره تماس داخلی"
+  },
+  "EmployeeDto.LandPhoneNumber": {
+    "En": "Landline Phone Number",
+    "Fa": "شماره تلفن ثابت"
+  },
+  "EmployeeDto.Address": {
+    "En": "Address",
+    "Fa": "آدرس"
+  },
+  "EmployeeDto.PostalCode": {
+    "En": "Postal Code",
+    "Fa": "کد پستی"
+  },
+  "EmployeeDto.MostRecentDegree": {
+    "En": "Most Recent Degree",
+    "Fa": "آخرین مدرک تحصیلی"
+  },
+  "EmployeeDto.Major": {
+    "En": "Major",
+    "Fa": "رشته تحصیلی"
+  }
+}

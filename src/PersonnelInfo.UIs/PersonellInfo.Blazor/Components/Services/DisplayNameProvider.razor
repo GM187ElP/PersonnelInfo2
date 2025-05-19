@@ -1,0 +1,49 @@
+﻿@using Newtonsoft.Json
+
+@inject AppLanguageService languageService
+
+<label for="@For">
+    @GetDisplayName(Type, Property)
+</label>
+
+@code {
+    [Parameter] public Type Type { get; set; } = default!;
+    [Parameter] public string Property { get; set; } = default!;
+    [Parameter] public string? For { get; set; }
+}
+
+@code{
+
+    private readonly Dictionary<string, Dictionary<string, string>> _displayNames;
+
+    public DisplayNameProvider()
+    {
+        var json = File.ReadAllText("wwwroot/DtosLocalizedDisplayName.json");
+        _displayNames = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(json)
+            ?? new();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        languageService.LanguageChanged += OnLanguageChanged;
+    }
+
+    private void OnLanguageChanged()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        languageService.LanguageChanged -= OnLanguageChanged;
+    }
+
+    private string GetDisplayName(Type dtoType, string property)
+    {
+        var language = languageService.Language;
+        var key = $"{dtoType.ToString()}.{property}";
+        if (_displayNames.TryGetValue(key, out var dict) && dict.TryGetValue(language, out var value))
+            return value;
+        return property; 
+    }
+}

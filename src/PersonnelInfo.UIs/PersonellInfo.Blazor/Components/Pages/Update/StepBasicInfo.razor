@@ -10,7 +10,6 @@
 @if (employee != null)
 {
     <EditForm Model="@employee" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
-        <CustomValidator />
 
         <div class="mb-3">
             <label>@displayName.GetDisplayName(employee, nameof(employee.PersonnelCode))</label>

@@ -16,6 +16,7 @@ builder.Services.AddServerSideBlazor()
     .AddCircuitOptions(options => { options.DetailedErrors = true; });
 
 builder.Services.AddScoped<EmployeeState>();
+builder.Services.AddSingleton<AppLanguageService>();
 
 builder.Services.AddMudServices();
 

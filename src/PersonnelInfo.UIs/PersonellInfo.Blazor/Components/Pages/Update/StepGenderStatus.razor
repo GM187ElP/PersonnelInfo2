@@ -1,6 +1,7 @@
 ﻿@page "/gender-info"
 @using PersonnelInfo.Core.Infrastructure
 @using System.Text.Json
+@using PersonnelInfo.Core.Enums
 @inject IDisplayName displayName
 @inject HttpClient client
 @inject IOptions<ApiConfiguration> apiConfig
@@ -10,18 +11,24 @@
 @if (employee != null)
 {
     <EditForm Model="@employee" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
-        <CustomValidator />
-
         <div class="mb-3">
-            <label>@displayName.GetDisplayName(employee, nameof(employee.GenderDisplay))</label>
-            <InputSelect class="form-control" @bind-Value="employee.GenderDisplay" />
-            <ValidationMessage For="@(() => employee.GenderDisplay)" />
+            <label>@displayName.GetDisplayName(employee, nameof(employee.EmploymentTypeDisplay))</label>
+            <EnumSelect TEnum="EmploymentType" @bind-Value="employee.EmploymentTypeDisplay" Placeholder="Select Gender" />
         </div>
 
         <div class="mb-3">
+            <label>@displayName.GetDisplayName(employee, nameof(employee.GenderDisplay))</label>
+            <EnumSelect TEnum="GenderType" @bind-Value="employee.GenderDisplay" Placeholder="Select Gender" />
+        </div>
+
+        <div class="mb-3">
+            <label>@displayName.GetDisplayName(employee, nameof(employee.MaritalStatus))</label>
+            <EnumSelect TEnum="MaritalStatusType" @bind-Value="employee.MaritalStatus" Placeholder="Select Gender" />
+        </div>
+
+           <div class="mb-3">
             <label>@displayName.GetDisplayName(employee, nameof(employee.WorkingStatusDisplay))</label>
-            <InputSelect class="form-control" @bind-Value="employee.WorkingStatusDisplay" />
-            <ValidationMessage For="@(() => employee.LastName)" />
+            <EnumSelect TEnum="WorkingStatusType" @bind-Value="employee.WorkingStatusDisplay" Placeholder="Select Gender" />
         </div>
 
         <div class="d-flex justify-content-between">

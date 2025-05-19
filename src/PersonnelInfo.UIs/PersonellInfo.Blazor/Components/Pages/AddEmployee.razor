@@ -6,33 +6,33 @@
 
 
 <EditForm Model="@employee" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
-    <CustomValidator />
+    <LocalizedValidationMessage />
 
     <div class="mb-3">
-        <label>@displayName.GetDisplayName(employee, nameof(employee.PersonnelCode))</label>
+        <DisplayNameProvider Type=@typeof(AddEmployeeDto) Property="PersonnelCode" />
         <InputNumber class="form-control" disabled @bind-Value="employee.PersonnelCode" />
     </div>
 
     <div class="mb-3">
-        <label>@displayName.GetDisplayName(employee, nameof(employee.FirstName))</label>
+        <DisplayNameProvider Type=@typeof(AddEmployeeDto) Property="FirstName" />
         <InputText class="form-control" @bind-Value="employee.FirstName" />
         <ValidationMessage For="@(() => employee.FirstName)" />
     </div>
 
     <div class="mb-3">
-        <label>@displayName.GetDisplayName(employee, nameof(employee.LastName))</label>
+        <DisplayNameProvider Type=@typeof(AddEmployeeDto) Property="LastName" />
         <InputText class="form-control" @bind-Value="employee.LastName" />
         <ValidationMessage For="@(() => employee.LastName)" />
     </div>
 
     <div class="mb-3">
-        <label>@displayName.GetDisplayName(employee, nameof(employee.NationalId))</label>
+        <DisplayNameProvider Type=@typeof(AddEmployeeDto) Property="NationalId" />
         <InputText class="form-control" @bind-Value="employee.NationalId" />
         <ValidationMessage For="@(() => employee.NationalId)" />
     </div>
 
     <div class="mb-3">
-        <label>@displayName.GetDisplayName(employee, nameof(employee.ContactNumber))</label>
+        <DisplayNameProvider Type=@typeof(AddEmployeeDto) Property="ContactNumber" />
         <InputText class="form-control" @bind-Value="employee.ContactNumber" />
         <ValidationMessage For="@(() => employee.ContactNumber)" />
     </div>
