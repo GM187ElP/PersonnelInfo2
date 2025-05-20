@@ -1,65 +1,65 @@
 {
-  "EmploymentType.NotSelected": {
+  "Enum.EmploymentType.NotSelected": {
     "En": "Not Selected",
     "Fa": "انتخاب نشده"
   },
-  "EmploymentType.Official": {
+  "Enum.EmploymentType.Official": {
     "En": "Official",
     "Fa": "رسمی"
   },
-  "EmploymentType.Contract": {
+  "Enum.EmploymentType.Contract": {
     "En": "Contract",
     "Fa": "قراردادی"
   },
 
-  "GenderType.NotSelected": {
+  "Enum.GenderType.NotSelected": {
     "En": "Not Selected",
     "Fa": "انتخاب نشده"
   },
-  "GenderType.Male": {
+  "Enum.GenderType.Male": {
     "En": "Male",
     "Fa": "مرد"
   },
-  "GenderType.Female": {
+  "Enum.GenderType.Female": {
     "En": "Female",
     "Fa": "زن"
   },
 
-  "MaritalStatusType.NotSelected": {
+  "Enum.MaritalStatusType.NotSelected": {
     "En": "Not Selected",
     "Fa": "انتخاب نشده"
   },
-  "MaritalStatusType.Single": {
+  "Enum.MaritalStatusType.Single": {
     "En": "Single",
     "Fa": "مجرد"
   },
-  "MaritalStatusType.Married": {
+  "Enum.MaritalStatusType.Married": {
     "En": "Married",
     "Fa": "متاهل"
   },
 
-  "NoteType.NotSelected": {
+  "Enum.NoteType.NotSelected": {
     "En": "Not Selected",
     "Fa": "انتخاب نشده"
   },
-  "NoteType.Checque": {
+  "Enum.NoteType.Checque": {
     "En": "Cheque",
     "Fa": "چک"
   },
-  "NoteType.PromissionaryNote": {
+  "Enum.NoteType.PromissionaryNote": {
     "En": "Promissory Note",
     "Fa": "سفته"
   },
 
-  "WorkingStatusType.NotSelected": {
+  "Enum.WorkingStatusType.NotSelected": {
     "En": "Not Selected",
     "Fa": "انتخاب نشده"
   },
-  "WorkingStatusType.Working": {
+  "Enum.WorkingStatusType.Working": {
     "En": "Working",
     "Fa": "شاغل"
   },
-  "WorkingStatusType.Left": {
+  "Enum.WorkingStatusType.Left": {
     "En": "Left",
     "Fa": "ترک کار"
   }

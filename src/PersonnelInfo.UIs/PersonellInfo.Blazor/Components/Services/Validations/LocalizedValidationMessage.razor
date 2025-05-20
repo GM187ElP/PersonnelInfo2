@@ -1,7 +1,5 @@
 ﻿@using System.ComponentModel.DataAnnotations
 @using System.Reflection
-@using Newtonsoft.Json
-@inherits ComponentBase
 @inject IServiceProvider ServiceProvider
 @inject AppLanguageService languageService
 
@@ -9,28 +7,11 @@
     [CascadingParameter] private EditContext CurrentEditContext { get; set; } = default!;
     private ValidationMessageStore? messageStore;
 
-    private static Dictionary<string, LocalizedMessage> _localizedMessages = new();
-
     protected override void OnInitialized()
     {
         messageStore = new ValidationMessageStore(CurrentEditContext);
         CurrentEditContext.OnValidationRequested += (s, e) => HandleValidation();
         CurrentEditContext.OnFieldChanged += (s, e) => messageStore?.Clear(e.FieldIdentifier);
-
-        LoadLocalizedMessages();
-    }
-
-    private void LoadLocalizedMessages()
-    {
-        if (_localizedMessages.Count == 0)
-        {
-            var path = "./wwwroot/ValidationMessages-mini.json";
-            if (File.Exists(path))
-            {
-                var json = File.ReadAllText(path);
-                _localizedMessages = JsonConvert.DeserializeObject<Dictionary<string, LocalizedMessage>>(json) ?? new Dictionary<string, LocalizedMessage>();
-            }
-        }
     }
 
     private void HandleValidation()
@@ -41,7 +22,7 @@
         var validationResults = GetValidationResults(model);
 
         foreach (var property in model.GetType().GetProperties())
-            ProcessPropertyValidation(property, model, validationResults);
+            ProcessPropertyValidation(property, model);
 
         CurrentEditContext.NotifyValidationStateChanged();
     }
@@ -54,7 +35,7 @@
         return validationResults;
     }
 
-    private void ProcessPropertyValidation(PropertyInfo property, object model, List<ValidationResult> validationResults)
+    private void ProcessPropertyValidation(PropertyInfo property, object model)
     {
         var failedAttributes = GetFailedValidationAttributes(property, model);
 
@@ -62,7 +43,6 @@
         {
             var field = new FieldIdentifier(model, property.Name);
             var errorKey = attr.GetType().Name.Replace("Attribute", "");
-
             var localizedMessage = GetLocalizedErrorMessage(model.GetType().Name, property.Name, errorKey);
             messageStore?.Add(field, localizedMessage);
         }
@@ -76,21 +56,7 @@
 
     private string GetLocalizedErrorMessage(string dtoName, string propertyName, string errorKey)
     {
-        var lang = languageService.Language;
-        var fullKey = $"{dtoName}.{propertyName}.{errorKey}";
-
-        if (_localizedMessages.TryGetValue(fullKey, out var localized))
-        {
-            var prop = typeof(LocalizedMessage).GetProperty(lang, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
-            return prop?.GetValue(localized)?.ToString() ?? $"{errorKey}: validation failed";
-        }
-
-        return $"{errorKey}: validation failed";
-    }
-
-    public class LocalizedMessage
-    {
-        public string En { get; set; } = string.Empty;
-        public string Fa { get; set; } = string.Empty;
+        var fullKey = $"Validation.{dtoName}.{propertyName}.{errorKey}";
+        return languageService.Translate(fullKey);
     }
 }

@@ -13,56 +13,40 @@
 </InputSelect>
 
 @code {
+
+
+    // protected override async Task OnInitializedAsync()
+    // {
+    //     languageService.LanguageChanged += OnLanguageChanged;
+    // }
+
+    // private void OnLanguageChanged()
+    // {
+    //     InvokeAsync(StateHasChanged);
+    // }
+
+    // public void Dispose()
+    // {
+    //     languageService.LanguageChanged -= OnLanguageChanged;
+    // }
+
+
+
     [Parameter] public TEnum Value { get; set; }
     [Parameter] public EventCallback<TEnum> ValueChanged { get; set; }
     [Parameter] public string? Class { get; set; }
     [Parameter] public string Placeholder { get; set; } = "Select...";
 
-    private static Dictionary<string, Dictionary<string, string>>? _localizations;
-    private bool _loaded = false;
+    private static Type UnderlyingEnum => Nullable.GetUnderlyingType(typeof(TEnum)) ?? typeof(TEnum);
 
-    protected override async Task OnInitializedAsync()
-    {
-        languageService.LanguageChanged += OnLanguageChanged;
-        if (_localizations == null)
-        {
-            using var http = new HttpClient();
-            var json = await http.GetStringAsync("./wwwroot/EnumLocalization.json");
-            _localizations = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, string>>>(json);
-        }
-        _loaded = true;
-    }
-
-    private void OnLanguageChanged()
-    {
-        InvokeAsync(StateHasChanged);
-    }
-
-    public void Dispose()
-    {
-        languageService.LanguageChanged -= OnLanguageChanged;
-    }
-
-    private IEnumerable<(string Value, string Display)> EnumOptions
-    {
-        get
-        {
-            if (!_loaded) return Enumerable.Empty<(string, string)>();
-            return Enum.GetValues(UnderlyingEnum)
-                .Cast<object>()
-                .Select(e => (e.ToString()!, GetLocalizedDisplayName(e)));
-        }
-    }
-
-    private static Type UnderlyingEnum =>
-        Nullable.GetUnderlyingType(typeof(TEnum)) ?? typeof(TEnum);
+    private IEnumerable<(string Value, string Display)> EnumOptions =>
+        Enum.GetValues(UnderlyingEnum)
+            .Cast<object>()
+            .Select(e => (e.ToString()!, GetLocalizedDisplayName(e)));
 
     private string GetLocalizedDisplayName(object value)
     {
-        if (_localizations == null) return value.ToString()!;
-        var key = $"{UnderlyingEnum.Name}.{value}";
-        if (_localizations.TryGetValue(key, out var dict) && dict.TryGetValue(languageService.Language, out var localized))
-            return localized;
-        return value.ToString()!;
+        var key = $"Enum.{UnderlyingEnum.Name}.{value}";
+        return languageService.Translate(key);
     }
 }

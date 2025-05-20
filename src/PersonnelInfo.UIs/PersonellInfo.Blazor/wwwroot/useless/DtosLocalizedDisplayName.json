@@ -1,157 +1,157 @@
 ﻿{
-  "AddEmployeeDto.PersonnelCode": {
+  "DisplayName.AddDisplayName.EmployeeDto.PersonnelCode": {
     "En": "Personnel Code",
     "Fa": "کد پرسنلی"
   },
-  "AddEmployeeDto.FirstName": {
+  "DisplayName.AddDisplayName.EmployeeDto.FirstName": {
     "En": "First Name",
     "Fa": "نام"
   },
-  "AddEmployeeDto.LastName": {
+  "DisplayName.AddDisplayName.EmployeeDto.LastName": {
     "En": "Last Name",
     "Fa": "نام خانوادگی"
   },
-  "AddEmployeeDto.NationalId": {
+  "DisplayName.AddDisplayName.EmployeeDto.NationalId": {
     "En": "National ID",
     "Fa": "کد ملی"
   },
-  "AddEmployeeDto.ContactNumber": {
+  "DisplayName.AddDisplayName.EmployeeDto.ContactNumber": {
     "En": "Mobile Number",
     "Fa": "شماره همراه"
   },
-  "EmployeeDto.Id": {
+  "DisplayName.EmployeeDto.Id": {
     "En": "ID",
     "Fa": "شناسه"
   },
-  "EmployeeDto.RowNumber": {
+  "DisplayName.EmployeeDto.RowNumber": {
     "En": "Row Number",
     "Fa": "ردیف"
   },
-  "EmployeeDto.PersonnelCode": {
+  "DisplayName.EmployeeDto.PersonnelCode": {
     "En": "Personnel Code",
     "Fa": "کد پرسنلی"
   },
-  "EmployeeDto.FirstName": {
+  "DisplayName.EmployeeDto.FirstName": {
     "En": "First Name",
     "Fa": "نام"
   },
-  "EmployeeDto.LastName": {
+  "DisplayName.EmployeeDto.LastName": {
     "En": "Last Name",
     "Fa": "نام خانوادگی"
   },
-  "EmployeeDto.NationalId": {
+  "DisplayName.EmployeeDto.NationalId": {
     "En": "National ID",
     "Fa": "کد ملی"
   },
-  "EmployeeDto.ContactNumber": {
+  "DisplayName.EmployeeDto.ContactNumber": {
     "En": "Contact Number",
     "Fa": "شماره تماس"
   },
-  "EmployeeDto.GenderDisplay": {
+  "DisplayName.EmployeeDto.GenderDisplay": {
     "En": "Gender",
     "Fa": "جنسیت"
   },
-  "EmployeeDto.WorkingStatusDisplay": {
+  "DisplayName.EmployeeDto.WorkingStatusDisplay": {
     "En": "Working Status",
     "Fa": "وضعیت اشتغال"
   },
-  "EmployeeDto.FatherName": {
+  "DisplayName.EmployeeDto.FatherName": {
     "En": "Father's Name",
     "Fa": "نام پدر"
   },
-  "EmployeeDto.MaritalStatus": {
+  "DisplayName.EmployeeDto.MaritalStatus": {
     "En": "Marital Status",
     "Fa": "متأهل"
   },
-  "EmployeeDto.ChildrenCount": {
+  "DisplayName.EmployeeDto.ChildrenCount": {
     "En": "Children Count",
     "Fa": "تعداد فرزندان"
   },
-  "EmployeeDto.ShenasnameNumber": {
+  "DisplayName.EmployeeDto.ShenasnameNumber": {
     "En": "Shenasnameh Number",
     "Fa": "شماره شناسنامه"
   },
-  "EmployeeDto.ShenasnameSerialLetter": {
+  "DisplayName.EmployeeDto.ShenasnameSerialLetter": {
     "En": "Shenasnameh Serial Letter",
     "Fa": "حرف سریال شناسنامه"
   },
-  "EmployeeDto.ShenasnameSerie": {
+  "DisplayName.EmployeeDto.ShenasnameSerie": {
     "En": "Shenasnameh Serie",
     "Fa": "سری شناسنامه"
   },
-  "EmployeeDto.ShenasnameSerial": {
+  "DisplayName.EmployeeDto.ShenasnameSerial": {
     "En": "Shenasnameh Serial",
     "Fa": "سریال شناسنامه"
   },
-  "EmployeeDto.BirthDate": {
+  "DisplayName.EmployeeDto.BirthDate": {
     "En": "Birth Date",
     "Fa": "تاریخ تولد"
   },
-  "EmployeeDto.BirthPlaceId": {
+  "DisplayName.EmployeeDto.BirthPlaceId": {
     "En": "Birth Place",
     "Fa": "محل تولد"
   },
-  "EmployeeDto.ShenasnameIssuedPlaceId": {
+  "DisplayName.EmployeeDto.ShenasnameIssuedPlaceId": {
     "En": "Shenasnameh Issued Place",
     "Fa": "محل صدور شناسنامه"
   },
-  "EmployeeDto.InsurranceCode": {
+  "DisplayName.EmployeeDto.InsurranceCode": {
     "En": "Insurance Code",
     "Fa": "کد بیمه"
   },
-  "EmployeeDto.InsurranceStatus": {
+  "DisplayName.EmployeeDto.InsurranceStatus": {
     "En": "Insurance Status",
     "Fa": "وضعیت بیمه"
   },
-  "EmployeeDto.HasInsurance": {
+  "DisplayName.EmployeeDto.HasInsurance": {
     "En": "Has Insurance?",
     "Fa": "بیمه دارد؟"
   },
-  "EmployeeDto.ExtraInsurranceCount": {
+  "DisplayName.EmployeeDto.ExtraInsurranceCount": {
     "En": "Extra Insurance Count",
     "Fa": "تعداد بیمه‌تکمیلی"
   },
-  "EmployeeDto.DepartmentId": {
+  "DisplayName.EmployeeDto.DepartmentId": {
     "En": "Department",
     "Fa": "واحد"
   },
-  "EmployeeDto.EmploymentTypeDisplay": {
+  "DisplayName.EmployeeDto.EmploymentTypeDisplay": {
     "En": "Employment Type",
     "Fa": "نوع استخدام"
   },
-  "EmployeeDto.StartingDate": {
+  "DisplayName.EmployeeDto.StartingDate": {
     "En": "Starting Date",
     "Fa": "تاریخ شروع به کار"
   },
-  "EmployeeDto.LeavingDate": {
+  "DisplayName.EmployeeDto.LeavingDate": {
     "En": "Leaving Date",
     "Fa": "تاریخ پایان کار"
   },
-  "EmployeeDto.SupervisorId": {
+  "DisplayName.EmployeeDto.SupervisorId": {
     "En": "Supervisor Code",
     "Fa": "کد سرپرست"
   },
-  "EmployeeDto.InternalContactNumber": {
+  "DisplayName.EmployeeDto.InternalContactNumber": {
     "En": "Internal Contact Number",
     "Fa": "شماره تماس داخلی"
   },
-  "EmployeeDto.LandPhoneNumber": {
+  "DisplayName.EmployeeDto.LandPhoneNumber": {
     "En": "Landline Phone Number",
     "Fa": "شماره تلفن ثابت"
   },
-  "EmployeeDto.Address": {
+  "DisplayName.EmployeeDto.Address": {
     "En": "Address",
     "Fa": "آدرس"
   },
-  "EmployeeDto.PostalCode": {
+  "DisplayName.EmployeeDto.PostalCode": {
     "En": "Postal Code",
     "Fa": "کد پستی"
   },
-  "EmployeeDto.MostRecentDegree": {
+  "DisplayName.EmployeeDto.MostRecentDegree": {
     "En": "Most Recent Degree",
     "Fa": "آخرین مدرک تحصیلی"
   },
-  "EmployeeDto.Major": {
+  "DisplayName.EmployeeDto.Major": {
     "En": "Major",
     "Fa": "رشته تحصیلی"
   }

@@ -9,30 +9,30 @@
     <LocalizedValidationMessage />
 
     <div class="mb-3">
-        <DisplayNameProvider Type=@typeof(AddEmployeeDto) Property="PersonnelCode" />
+        <DisplayNameProvider EntityType=@typeof(AddEmployeeDto) PropertyNameString="PersonnelCode" />
         <InputNumber class="form-control" disabled @bind-Value="employee.PersonnelCode" />
     </div>
 
     <div class="mb-3">
-        <DisplayNameProvider Type=@typeof(AddEmployeeDto) Property="FirstName" />
+        <DisplayNameProvider EntityType=@typeof(AddEmployeeDto) PropertyNameString="FirstName" />
         <InputText class="form-control" @bind-Value="employee.FirstName" />
         <ValidationMessage For="@(() => employee.FirstName)" />
     </div>
 
     <div class="mb-3">
-        <DisplayNameProvider Type=@typeof(AddEmployeeDto) Property="LastName" />
+        <DisplayNameProvider EntityType=@typeof(AddEmployeeDto) PropertyNameString="LastName" />
         <InputText class="form-control" @bind-Value="employee.LastName" />
         <ValidationMessage For="@(() => employee.LastName)" />
     </div>
 
     <div class="mb-3">
-        <DisplayNameProvider Type=@typeof(AddEmployeeDto) Property="NationalId" />
+        <DisplayNameProvider EntityType=@typeof(AddEmployeeDto) PropertyNameString="NationalId" />
         <InputText class="form-control" @bind-Value="employee.NationalId" />
         <ValidationMessage For="@(() => employee.NationalId)" />
     </div>
 
     <div class="mb-3">
-        <DisplayNameProvider Type=@typeof(AddEmployeeDto) Property="ContactNumber" />
+        <DisplayNameProvider EntityType=@typeof(AddEmployeeDto) PropertyNameString="ContactNumber" />
         <InputText class="form-control" @bind-Value="employee.ContactNumber" />
         <ValidationMessage For="@(() => employee.ContactNumber)" />
     </div>

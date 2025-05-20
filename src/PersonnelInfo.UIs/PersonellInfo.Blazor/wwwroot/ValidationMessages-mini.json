@@ -1,59 +1,46 @@
 ﻿{
-  "AddEmployeeDto.FirstName.Required": {
+  "Validation.AddEmployeeDto.FirstName.Required": {
     "En": "First name is required.",
     "Fa": "وارد کردن نام الزامی است."
   },
-  "AddEmployeeDto.FirstName.StringLength": {
+  "Validation.AddEmployeeDto.FirstName.StringLength": {
     "En": "First name must be between 3 and 21 characters long.",
     "Fa": "نام باید بین 3 تا 21 کاراکتر باشد."
   },
-  "AddEmployeeDto.LastName.Required": {
+  "Validation.AddEmployeeDto.LastName.Required": {
     "En": "Last name is required.",
     "Fa": "وارد کردن نام خانوادگی الزامی است."
   },
-  "AddEmployeeDto.LastName.StringLength": {
+  "Validation.AddEmployeeDto.LastName.StringLength": {
     "En": "Last name must be between 3 and 21 characters long.",
     "Fa": "نام خانوادگی باید بین 3 تا 21 کاراکتر باشد."
   },
-  "AddEmployeeDto.NationalId.Required": {
+  "Validation.AddEmployeeDto.NationalId.Required": {
     "En": "National ID is required.",
     "Fa": "کد ملی الزامی است."
   },
-  "AddEmployeeDto.NationalId.StringLength": {
+  "Validation.AddEmployeeDto.NationalId.StringLength": {
     "En": "National ID must be exactly 10 digits.",
     "Fa": "کد ملی باید دقیقاً 10 رقم باشد."
   },
-  "AddEmployeeDto.NationalId.NationalId": {
+  "Validation.AddEmployeeDto.NationalId.NationalId": {
     "En": "National ID is invalid.",
     "Fa": "کد ملی اشتباه است."
   },
-  "AddEmployeeDto.NationalId.RegularExpression": {
+  "Validation.AddEmployeeDto.NationalId.RegularExpression": {
     "En": "Please enter digits only.",
     "Fa": "لطفاً فقط رقم وارد کنید."
   },
-  "AddEmployeeDto.ContactNumber.Required": {
+  "Validation.AddEmployeeDto.ContactNumber.Required": {
     "En": "Contact number is required.",
     "Fa": "شماره همراه الزامی است."
   },
-  "AddEmployeeDto.ContactNumber.StringLength": {
+  "Validation.AddEmployeeDto.ContactNumber.StringLength": {
     "En": "Contact number must be exactly 11 digits.",
     "Fa": "شماره همراه باید دقیقاً 11 رقم باشد."
   },
-  "AddEmployeeDto.ContactNumber.RegularExpression": {
+  "Validation.AddEmployeeDto.ContactNumber.RegularExpression": {
     "En": "Please enter digits only.",
     "Fa": "لطفاً فقط رقم وارد کنید."
-  },
-  "EmployeeDto.NationalId.NationalId": {
-    "En": "First name is required.",
-    "Fa": "وارد کردن نام الزامی است."
-  },
-  // JobTitle section
-  "AddJobTitleDto.Title.Required": {
-    "En": "Title is required.",
-    "Fa": "عنوان الزامی است."
-  },
-  "AddJobTitleDto.DepartmentId.Required": {
-    "En": "Department ID is required.",
-    "Fa": "شناسه دپارتمان الزامی است."
   }
 }

@@ -16,26 +16,29 @@
 
     <HeaderContent>
         <MudTh>ویرایش</MudTh>
-        <MudTh><MudTableSortLabel SortBy=@(GetSortFunc<EmployeeDto>(nameof(employeeDto.RowNumber)))>ردیف</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy=@(GetSortFunc<EmployeeDto>(nameof(employeeDto.PersonnelCode)))>@displayName.GetDisplayName(employeeDto, nameof(employeeDto.PersonnelCode))</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy=@(GetSortFunc<EmployeeDto>(nameof(employeeDto.FirstName)))>@displayName.GetDisplayName(employeeDto, nameof(employeeDto.FirstName))</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy=@(GetSortFunc<EmployeeDto>(nameof(employeeDto.LastName)))>@displayName.GetDisplayName(employeeDto, nameof(employeeDto.LastName))</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy=@(GetSortFunc<EmployeeDto>(nameof(employeeDto.NationalId)))>@displayName.GetDisplayName(employeeDto, nameof(employeeDto.NationalId))</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy=@(GetSortFunc<EmployeeDto>(nameof(employeeDto.ContactNumber)))>@displayName.GetDisplayName(employeeDto, nameof(employeeDto.ContactNumber))</MudTableSortLabel></MudTh>
+        <DisplayNameProvider PropertyList="@propertyList" SearchString="searchString1" IsMudTh=true EntityType=typeof(EmployeeDto) PropertyNameString="RowNumber" />
+        @* <DisplayNameProvider IsMudTh=true Type=typeof(EmployeeDto) PropertyNameString="RowNumber" />
+        <DisplayNameProvider IsMudTh=true Type=typeof(EmployeeDto) PropertyNameString="PersonnelCode" />
+        <DisplayNameProvider IsMudTh=true Type=typeof(EmployeeDto) PropertyNameString="FirstName" />
+        <DisplayNameProvider IsMudTh=true Type=typeof(EmployeeDto) PropertyNameString="LastName" />
+        <DisplayNameProvider IsMudTh=true Type=typeof(EmployeeDto) PropertyNameString="NationalId" />
+        <DisplayNameProvider IsMudTh=true Type=typeof(EmployeeDto) PropertyNameString="ContactNumber" /> *@
     </HeaderContent>
 
     <RowTemplate>
-        <MudTd DataLabel="ٍویرایش"><MudIconButton Icon="@Icons.Material.Filled.Edit" Color="Color.Info" Title="ویرایش" OnClick="@(e=>Edit<long>("/update-employee/",context.Id))" class="btn btn-primary"></MudIconButton></MudTd>
-        <MudTd DataLabel="@displayName.GetDisplayName(employeeDto, nameof(employeeDto.RowNumber))">@context.RowNumber</MudTd>
-        <MudTd DataLabel="@displayName.GetDisplayName(employeeDto, nameof(employeeDto.PersonnelCode))">@context.PersonnelCode</MudTd>
-        <MudTd DataLabel="@displayName.GetDisplayName(employeeDto, nameof(employeeDto.FirstName))">@context.FirstName</MudTd>
-        <MudTd DataLabel="@displayName.GetDisplayName(employeeDto, nameof(employeeDto.LastName))">@context.LastName</MudTd>
-        <MudTd DataLabel="@displayName.GetDisplayName(employeeDto, nameof(employeeDto.NationalId))">@context.NationalId</MudTd>
-        <MudTd DataLabel="@displayName.GetDisplayName(employeeDto, nameof(employeeDto.ContactNumber))">@context.ContactNumber</MudTd>
+        <MudTd DataLabel="ٍویرایش"><MudIconButton Icon="@Icons.Material.Filled.Edit" Color="Color.Info" OnClick="@(e=>Edit<long>("/update-employee/",context.Id))" class="btn btn-primary"></MudIconButton></MudTd>
+        <DisplayNameProvider IsMudTd=true PropertyList="@propertyList" EntityType=typeof(EmployeeDto) PropertyNameString="RowNumber" Context="@context" />
+       @* <DisplayNameProvider IsMudTd=true EntityType=typeof(EmployeeDto) PropertyNameString="RowNumber" Context="@context" />
+        <DisplayNameProvider IsMudTd=true EntityType=typeof(EmployeeDto) PropertyNameString="PersonnelCode">@context.PersonnelCode</DisplayNameProvider>
+        <DisplayNameProvider IsMudTd=true EntityType=typeof(EmployeeDto) PropertyNameString="FirstName">@context.FirstName</DisplayNameProvider>
+        <DisplayNameProvider IsMudTd=true EntityType=typeof(EmployeeDto) PropertyNameString="LastName">@context.LastName</DisplayNameProvider>
+        <DisplayNameProvider IsMudTd=true EntityType=typeof(EmployeeDto) PropertyNameString="NationalId">@context.NationalId</DisplayNameProvider>
+        <DisplayNameProvider IsMudTd=true EntityType=typeof(EmployeeDto) PropertyNameString="ContactNumber">@context.ContactNumber</DisplayNameProvider> *@
     </RowTemplate>
     <PagerContent>
         <MudTablePager PageSizeOptions=[1000,2000,3000,4000] />
     </PagerContent>
+
 </MudTable>
 
 
@@ -51,11 +54,7 @@
     private EmployeeDto employeeDto = new();
     [Inject] private NavigationManager navManager { get; set; }
 
-    private Func<T, object> GetSortFunc<T>(string propertyName)
-    {
-        var propInfo = typeof(T).GetProperty(propertyName);
-        return x => propInfo.GetValue(x);
-    }
+
 
     private void Edit<T>(string uri, T id) =>
         navManager.NavigateTo($"{uri}{id}");
@@ -65,7 +64,7 @@
         return list.ToList().IndexOf(context) + 1 + (mudTable?.CurrentPage ?? 0) * (mudTable?.RowsPerPage ?? 0);
     }
 
-
+    private List<string> propertyList = [];
 
     [Inject]
     private IOptions<ApiConfiguration> apiConfig { get; set; }
@@ -86,11 +85,25 @@
         {
             employee.RowNumber = ++index;
         }
+        SetPropertyList();
     }
 
-    private bool FilterFunc1(EmployeeDto employee) => FilterFunc(employee, searchString1);
+    private void SetPropertyList()
+    {
+        var obj = new AddEmployeeDto();
+        propertyList = new()
+        {
+            nameof(obj.PersonnelCode),
+            nameof(obj.FirstName),
+            nameof(obj.LastName),
+            nameof(obj.NationalId),
+            nameof(obj.ContactNumber)
+        };
+    }
 
-    private bool FilterFunc(EmployeeDto employee, string searchString)
+    private bool FilterFunc1(EmployeeDto employee) => Filter(employee, searchString1);
+
+    private bool Filter(EmployeeDto employee, string searchString)
     {
         if (string.IsNullOrWhiteSpace(searchString))
             return true;
