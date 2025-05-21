@@ -17,6 +17,7 @@
     <HeaderContent>
         <MudTh>ویرایش</MudTh>
         <DisplayNameProvider PropertyList="@propertyList" SearchString="searchString1" IsMudTh=true EntityType=typeof(EmployeeDto) PropertyNameString="RowNumber" />
+
         @* <DisplayNameProvider IsMudTh=true Type=typeof(EmployeeDto) PropertyNameString="RowNumber" />
         <DisplayNameProvider IsMudTh=true Type=typeof(EmployeeDto) PropertyNameString="PersonnelCode" />
         <DisplayNameProvider IsMudTh=true Type=typeof(EmployeeDto) PropertyNameString="FirstName" />
@@ -28,6 +29,7 @@
     <RowTemplate>
         <MudTd DataLabel="ٍویرایش"><MudIconButton Icon="@Icons.Material.Filled.Edit" Color="Color.Info" OnClick="@(e=>Edit<long>("/update-employee/",context.Id))" class="btn btn-primary"></MudIconButton></MudTd>
         <DisplayNameProvider IsMudTd=true PropertyList="@propertyList" EntityType=typeof(EmployeeDto) PropertyNameString="RowNumber" Context="@context" />
+
        @* <DisplayNameProvider IsMudTd=true EntityType=typeof(EmployeeDto) PropertyNameString="RowNumber" Context="@context" />
         <DisplayNameProvider IsMudTd=true EntityType=typeof(EmployeeDto) PropertyNameString="PersonnelCode">@context.PersonnelCode</DisplayNameProvider>
         <DisplayNameProvider IsMudTd=true EntityType=typeof(EmployeeDto) PropertyNameString="FirstName">@context.FirstName</DisplayNameProvider>
@@ -103,7 +105,7 @@
 
     private bool FilterFunc1(EmployeeDto employee) => Filter(employee, searchString1);
 
-    private bool Filter(EmployeeDto employee, string searchString)
+    public bool Filter(EmployeeDto employee, string searchString)
     {
         if (string.IsNullOrWhiteSpace(searchString))
             return true;
