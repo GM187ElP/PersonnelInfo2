@@ -1,0 +1,142 @@
+﻿@page "/sign-in"
+
+@inject NavigationManager Navigation
+@inject HttpClient Http
+@using System.Net.Http.Json
+@using System.Text.Json.Serialization
+@using System.Security.Cryptography
+
+<h3>Login</h3>
+
+<div class="login-container">
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" type="email" class="form-control" @bind="loginModel.Email" />
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input id="password" type="password" class="form-control" @bind="loginModel.Password" />
+    </div>
+    <button class="btn btn-primary" @onclick="LoginAsync" disabled="@(isLoading)">
+        @(isLoading ? "Logging in..." : "Login")
+    </button>
+    <div class="mt-3">
+        <button class="btn btn-danger" @onclick="GoogleLogin" disabled="@string.IsNullOrEmpty(googleClientId)">
+            <i class="bi bi-google"></i> Login with Google
+        </button>
+    </div>
+    <div class="mt-3">
+        <button class="btn btn-danger" @onclick="GithubLogin" disabled="@string.IsNullOrEmpty(githubClientId)">
+            <i class="bi bi-google"></i> Login with Github
+        </button>
+    </div>
+
+    @if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <div class="alert alert-danger mt-2">@errorMessage</div>
+    }
+</div>
+
+@code {
+    private LoginModel loginModel = new LoginModel();
+    private bool isLoading = false;
+    private string? errorMessage;
+    private string? googleClientId = "938350234199-i5n7f62osdfauijk6coqgupq2130623q.apps.googleusercontent.com";
+    private string? githubClientId = "Ov23liME6srILua4m9LY";
+
+    // protected override async Task OnInitializedAsync()
+    // {
+    //     try
+    //     {
+    //         // Load Google client ID from frontend config
+    //         var config = await Http.GetFromJsonAsync<GoogleConfig>("c/google.json");
+    //         googleClientId = config?.ClientId;
+    //     }
+    //     catch
+    //     {
+    //         errorMessage = "Failed to load Google configuration.";
+    //     }
+    // }
+
+    private async Task LoginAsync()
+    {
+        isLoading = true;
+        errorMessage = null;
+
+        try
+        {
+            var resp = await Http.PostAsJsonAsync("/api/account/login", loginModel);
+            if (resp.IsSuccessStatusCode)
+            {
+                Navigation.NavigateTo("/");
+            }
+            else
+            {
+                var err = await resp.Content.ReadAsStringAsync();
+                errorMessage = "Login failed: " + err;
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = "Error: " + ex.Message;
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private void GoogleLogin()
+    {
+        if (string.IsNullOrEmpty(googleClientId))
+        {
+            errorMessage = "Google OAuth is not configured.";
+            return;
+        }
+        //var redirectUri = Navigation.BaseUri.TrimEnd('/') + "/auth-callback";
+        var redirectUri = "https://localhost:7196/auth-callback";
+
+        var authorizationUrl = $"https://accounts.google.com/o/oauth2/v2/auth?client_id={googleClientId}" +
+            $"&redirect_uri={Uri.EscapeDataString(redirectUri)}" +
+            $"&response_type=code" +
+            $"&scope=openid%20email%20profile" +
+            $"&access_type=online" +
+            $"&prompt=select_account";
+        Navigation.NavigateTo(authorizationUrl, forceLoad: true);
+    }
+    private void GithubLogin()
+    {
+        if (string.IsNullOrEmpty(githubClientId))
+        {
+            errorMessage = "Github OAuth is not configured.";
+            return;
+        }
+
+        string state = GenerateState();
+
+        string authorizationUrl = $"https://github.com/login/oauth/authorize" +
+                          $"?client_id={githubClientId}" +
+                          $"&scope=user" +
+                          $"&state={Uri.EscapeDataString(state)}";
+        Navigation.NavigateTo(authorizationUrl, forceLoad: true);
+    }
+
+    public class LoginModel
+    {
+        public string? Email { get; set; }
+        public string? Password { get; set; }
+    }
+    public class GoogleConfig
+    {
+        [JsonPropertyName("client_id")]
+        public string? ClientId { get; set; }
+    }
+
+    private string GenerateState()
+    {
+        byte[] bytes = new byte[16];
+        RandomNumberGenerator.Fill(bytes);
+        return Convert.ToBase64String(bytes);
+    }
+    
+}

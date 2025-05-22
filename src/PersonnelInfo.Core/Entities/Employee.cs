@@ -17,6 +17,7 @@ public class Employee
 
     #region Gender and Status
     public GenderType GenderDisplay { get; set; } = GenderType.NotSelected;
+    public Guid? UserId { get; set; }
     public WorkingStatusType WorkingStatusDisplay { get; set; } = WorkingStatusType.Working;
     #endregion
 

@@ -1,0 +1,14 @@
+﻿@page "/auth-callback"
+
+<h3>Authorized Callback</h3>
+
+<MudAlert Severity="Severity.Info">Code: @Code</MudAlert>
+<MudAlert Severity="Severity.Info">State: @State</MudAlert>
+
+@code {
+    [SupplyParameterFromQuery(Name = "code")]
+    public string? Code { get; set; }
+
+    [SupplyParameterFromQuery(Name = "state")]
+    public string? State { get; set; }
+}
