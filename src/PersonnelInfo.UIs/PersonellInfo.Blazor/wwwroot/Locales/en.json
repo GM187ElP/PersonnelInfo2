@@ -65,5 +65,38 @@
   "Validation.AddEmployeeDto.NationalId.RegularExpression": "Please enter digits only.",
   "Validation.AddEmployeeDto.ContactNumber.Required": "Contact number is required.",
   "Validation.AddEmployeeDto.ContactNumber.StringLength": "Contact number must be exactly 11 digits.",
-  "Validation.AddEmployeeDto.ContactNumber.RegularExpression": "Please enter digits only."
+  "Validation.AddEmployeeDto.ContactNumber.RegularExpression": "Please enter digits only.",
+
+
+  "Validation.EmployeeDto.PersonnelCode.Required": "Personnel code is required.",
+  "Validation.EmployeeDto.FirstName.Required": "First name is required.",
+  "Validation.EmployeeDto.FirstName.StringLength": "First name cannot exceed 21 characters.",
+  "Validation.EmployeeDto.LastName.Required": "Last name is required.",
+  "Validation.EmployeeDto.LastName.StringLength": "Last name cannot exceed 21 characters.",
+  "Validation.EmployeeDto.NationalId.Required": "National ID is required.",
+  "Validation.EmployeeDto.NationalId.Length": "National ID must be exactly 10 digits.",
+  "Validation.EmployeeDto.ContactNumber.Required": "Contact number is required.",
+  "Validation.EmployeeDto.ContactNumber.Length": "Contact number must be exactly 11 digits.",
+  "Validation.EmployeeDto.FatherName.Required": "Father’s name is required.",
+  "Validation.EmployeeDto.FatherName.StringLength": "Father’s name cannot exceed 21 characters.",
+  "Validation.EmployeeDto.ChildrenCount.Range": "Children count cannot be negative.",
+  "Validation.EmployeeDto.ShenasnameNumber.StringLength": "Birth certificate number cannot exceed 10 digits.",
+  "Validation.EmployeeDto.ShenasnameSerie.StringLength": "Birth certificate series cannot exceed 6 characters.",
+  "Validation.EmployeeDto.ShenasnameSerial.StringLength": "Birth certificate serial cannot exceed 2 characters.",
+  "Validation.EmployeeDto.BirthDate.Required": "Birth date is required.",
+  "Validation.EmployeeDto.BirthPlaceId.Required": "Birthplace is required.",
+  "Validation.EmployeeDto.InsurranceCode.StringLength": "Insurance code cannot exceed 8 digits.",
+  "Validation.EmployeeDto.ExtraInsurranceCount.Range": "Extra insurance count cannot be negative.",
+  "Validation.EmployeeDto.EmploymentTypeDisplay.Required": "Employment type is required.",
+  "Validation.EmployeeDto.StartingDate.Required": "Start date is required.",
+  "Validation.EmployeeDto.SupervisorId.Range": "Supervisor ID must be greater than zero.",
+  "Validation.EmployeeDto.InternalContactNumber.StringLength": "Internal contact number cannot exceed 3 digits.",
+  "Validation.EmployeeDto.LandPhoneNumber.StringLength": "Landline number cannot exceed 11 digits.",
+  "Validation.EmployeeDto.PostalCode.StringLength": "Postal code cannot exceed 10 digits.",
+  "Validation.EmployeeDto.MostRecentDegree.StringLength": "Most recent degree cannot exceed 21 characters.",
+  "Validation.EmployeeDto.Major.StringLength": "Major cannot exceed 21 characters."
+
+
+
+
 }

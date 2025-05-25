@@ -44,7 +44,7 @@
             .Cast<object>()
             .Select(e => (e.ToString()!, GetLocalizedDisplayName(e)));
 
-    private string GetLocalizedDisplayName(object value)
+    public string GetLocalizedDisplayName(object value)
     {
         var key = $"Enum.{UnderlyingEnum.Name}.{value}";
         return languageService.Translate(key);

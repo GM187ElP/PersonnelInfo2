@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using PersonnelInfo.Core.DTOs.Validators;
 using PersonnelInfo.Core.Entities;
 using PersonnelInfo.Core.Enums;
 using System.ComponentModel.DataAnnotations;
@@ -15,16 +16,20 @@ public class EmployeeDto : EmployeeBaseDto
     #region Basic Information
     public int PersonnelCode { get; set; }
 
-    [StringLength(21, ErrorMessage = "نام نباید بیشتر از {0} کاراکتر باشد.")]
+    [StringLength(21, MinimumLength = 3)]
     public string FirstName { get; set; }
 
-    [StringLength(21, ErrorMessage = "نام خانوادگی نباید بیشتر از {0} کاراکتر باشد.")]
+    [StringLength(21, MinimumLength = 3)]
     public string LastName { get; set; }
 
-    [StringLength(10, MinimumLength = 10, ErrorMessage = "کد ملی باید {0} رقمی باشد.")]
+
+    [Required]
+    [NationalId]
+    [StringLength(10, MinimumLength = 10)]
+    [RegularExpression(@"^\d+$")]
     public string NationalId { get; set; }
 
-    [StringLength(11, MinimumLength = 11, ErrorMessage = "شماره تماس باید {0} رقمی باشد.")]
+    [StringLength(11, MinimumLength = 11)]
     public string ContactNumber { get; set; }
     #endregion
 
@@ -35,25 +40,25 @@ public class EmployeeDto : EmployeeBaseDto
     #endregion
 
     #region Family Information
-    [StringLength(21, ErrorMessage = "نام پدر نباید بیشتر از {0} کاراکتر باشد.")]
+    [StringLength(21, MinimumLength = 3)]
     public string FatherName { get; set; }
 
     public MaritalStatusType MaritalStatus { get; set; } = MaritalStatusType.NotSelected;
 
-    [Range(0, int.MaxValue, ErrorMessage = "تعداد فرزندان نمی‌تواند منفی باشد.")]
+    [Range(0, int.MaxValue)]
     public int ChildrenCount { get; set; } = 0;
     #endregion
 
     #region Identity Information
-    [StringLength(10, ErrorMessage = "شماره شناسنامه نباید بیشتر از {0} رقم باشد.")]
+    [StringLength(10)]
     public string ShenasnameNumber { get; set; }
 
     public string ShenasnameSerialLetter { get; set; }
 
-    [StringLength(6, ErrorMessage = "سری شناسنامه نباید بیشتر از {0} رقم باشد.")]
+    [StringLength(6)]
     public string ShenasnameSerie { get; set; }
 
-    [StringLength(2, ErrorMessage = "سری شناسنامه نباید بیشتر از {0} رقم باشد.")]
+    [StringLength(2)]
     public string ShenasnameSerial { get; set; }
     #endregion
 
@@ -72,14 +77,14 @@ public class EmployeeDto : EmployeeBaseDto
     #endregion
 
     #region Insurance Information
-    [StringLength(8, ErrorMessage = "کد بیمه نباید بیشتر از {0} رقم باشد.")]
+    [StringLength(8)]
     public string? InsurranceCode { get; set; }
 
     public string? InsurranceStatus { get; set; }
 
     public bool HasInsurance { get; set; }
 
-    [Range(0, int.MaxValue, ErrorMessage = "تعداد بیمه‌های اضافی نمی‌تواند منفی باشد.")]
+    [Range(0, int.MaxValue)]
     public int ExtraInsurranceCount { get; set; } = 0;
     #endregion
 
@@ -94,29 +99,28 @@ public class EmployeeDto : EmployeeBaseDto
 
     public DateTime? LeavingDate { get; set; }
 
-    [Range(1, long.MaxValue, ErrorMessage = "کد سرپرست باید عدد مثبت باشد.")]
+    [Range(1, long.MaxValue)]
     public long? SupervisorId { get; set; }
     #endregion
 
     #region Contact Information
-    [StringLength(3, ErrorMessage = "تعداد ارقام کدپستی باید {0} رقم باشد")]
+    [StringLength(3)]
     public string InternalContactNumber { get; set; } = "000";
 
-    [StringLength(11, ErrorMessage = "تعداد ارقام کدپستی باید {0} رقم باشد")]
+    [StringLength(11)]
     public string? LandPhoneNumber { get; set; }
 
     public string? Address { get; set; }
 
-    [StringLength(10, ErrorMessage = "تعداد ارقام کدپستی باید {0} رقم باشد")]
+    [StringLength(10)]
     public string? PostalCode { get; set; }
     #endregion
 
     #region Academic Information
-    [StringLength(21, ErrorMessage = "نام خانوادگی نباید بیشتر از {0} کاراکتر باشد.")]
+    [StringLength(21, MinimumLength = 3)]
     public string? MostRecentDegree { get; set; }
 
-    [StringLength(21, ErrorMessage = "نام خانوادگی نباید بیشتر از {0} کاراکتر باشد.")]
+    [StringLength(21, MinimumLength = 3)]
     public string? Major { get; set; }
     #endregion
 }
-

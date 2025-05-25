@@ -65,5 +65,42 @@
   "Validation.AddEmployeeDto.NationalId.RegularExpression": "لطفاً فقط رقم وارد کنید.",
   "Validation.AddEmployeeDto.ContactNumber.Required": "شماره همراه الزامی است.",
   "Validation.AddEmployeeDto.ContactNumber.StringLength": "شماره همراه باید دقیقاً 11 رقم باشد.",
-  "Validation.AddEmployeeDto.ContactNumber.RegularExpression": "لطفاً فقط رقم وارد کنید."
+  "Validation.AddEmployeeDto.ContactNumber.RegularExpression": "لطفاً فقط رقم وارد کنید.",
+
+
+  "Validation.EmployeeDto.PersonnelCode.Required": "کد پرسنلی الزامی است.",
+  "Validation.EmployeeDto.FirstName.Required": "نام الزامی است.",
+  "Validation.EmployeeDto.FirstName.StringLength": "نام باید بین ۳ تا ۲۱ کاراکتر باشد.",
+  "Validation.EmployeeDto.LastName.Required": "نام خانوادگی الزامی است.",
+  "Validation.EmployeeDto.LastName.StringLength": "نام خانوادگی باید بین ۳ تا ۲۱ کاراکتر باشد.",
+  "Validation.EmployeeDto.NationalId.Required": "کد ملی الزامی است.",
+  "Validation.EmployeeDto.NationalId.StringLength": "کد ملی باید دقیقاً 10 رقم باشد.",
+  "Validation.EmployeeDto.NationalId.NationalId": "کد ملی اشتباه است.",
+  "Validation.EmployeeDto.NationalId.RegularExpression": "لطفاً فقط رقم وارد کنید.",
+  "Validation.EmployeeDto.ContactNumber.Required": "شماره تماس الزامی است.",
+  "Validation.EmployeeDto.ContactNumber.StringLength": "شماره تماس باید دقیقاً ۱۱ رقم باشد.",
+  "Validation.EmployeeDto.FatherName.Required": "نام پدر الزامی است.",
+  "Validation.EmployeeDto.FatherName.StringLength": "نام پدر باید بین ۳ تا ۲۱ کاراکتر باشد.",
+  "Validation.EmployeeDto.ChildrenCount.Range": "تعداد فرزندان نمی‌تواند منفی باشد.",
+  "Validation.EmployeeDto.ShenasnameNumber.StringLength": "شماره شناسنامه نمی‌تواند بیش از ۱۰ رقم باشد.",
+  "Validation.EmployeeDto.ShenasnameSerie.StringLength": "سری شناسنامه نمی‌تواند بیش از ۶ کاراکتر باشد.",
+  "Validation.EmployeeDto.ShenasnameSerial.StringLength": "سریال شناسنامه نمی‌تواند بیش از ۲ کاراکتر باشد.",
+  "Validation.EmployeeDto.BirthDate.Required": "تاریخ تولد الزامی است.",
+  "Validation.EmployeeDto.BirthPlaceId.Required": "محل تولد الزامی است.",
+  "Validation.EmployeeDto.InsurranceCode.StringLength": "کد بیمه نمی‌تواند بیش از ۸ رقم باشد.",
+  "Validation.EmployeeDto.ExtraInsurranceCount.Range": "تعداد بیمه اضافی نمی‌تواند منفی باشد.",
+  "Validation.EmployeeDto.EmploymentTypeDisplay.Required": "نوع استخدام الزامی است.",
+  "Validation.EmployeeDto.StartingDate.Required": "تاریخ شروع الزامی است.",
+  "Validation.EmployeeDto.SupervisorId.Range": "شناسه سرپرست باید بزرگ‌تر از صفر باشد.",
+  "Validation.EmployeeDto.InternalContactNumber.StringLength": "شماره داخلی نمی‌تواند بیش از ۳ رقم باشد.",
+  "Validation.EmployeeDto.LandPhoneNumber.StringLength": "شماره تلفن ثابت نمی‌تواند بیش از ۱۱ رقم باشد.",
+  "Validation.EmployeeDto.PostalCode.StringLength": "کد پستی نمی‌تواند بیش از ۱۰ رقم باشد.",
+  "Validation.EmployeeDto.MostRecentDegree.StringLength": "آخرین مدرک تحصیلی باید بین ۳ تا ۲۱ کاراکتر باشد.",
+  "Validation.EmployeeDto.Major.StringLength": "رشته تحصیلی باید بین ۳ تا ۲۱ کاراکتر باشد."
+
+
+
+
+
+
 }

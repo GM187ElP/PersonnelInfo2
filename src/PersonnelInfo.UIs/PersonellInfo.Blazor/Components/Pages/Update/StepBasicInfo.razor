@@ -1,4 +1,6 @@
-﻿@page "/update-employee/{id:long}"
+﻿@page "/basic-info/{id:long}"
+@using PersonellInfo.Blazor.Components.Services.Enums
+@using PersonnelInfo.Core.Enums
 @using PersonnelInfo.Core.Infrastructure
 @using System.Text.Json
 @inject IDisplayName displayName
@@ -6,38 +8,60 @@
 @inject IOptions<ApiConfiguration> apiConfig
 @inject EmployeeState employeeState
 @inject NavigationManager navigation
+@inject EnumServices services
 
 @if (employee != null)
 {
     <EditForm Model="@employee" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
+        <LocalizedValidationMessage />
 
         <div class="mb-3">
-            <label>@displayName.GetDisplayName(employee, nameof(employee.PersonnelCode))</label>
+            <DisplayNameProvider EntityType=@typeof(EmployeeBasicInfoDto) PropertyNameString="PersonnelCode" />
             <InputNumber class="form-control" disabled @bind-Value="employee.PersonnelCode" />
         </div>
 
         <div class="mb-3">
-            <label>@displayName.GetDisplayName(employee, nameof(employee.FirstName))</label>
+            <DisplayNameProvider EntityType=@typeof(EmployeeBasicInfoDto) PropertyNameString="FirstName" />
             <InputText class="form-control" @bind-Value="employee.FirstName" />
             <ValidationMessage For="@(() => employee.FirstName)" />
         </div>
 
         <div class="mb-3">
-            <label>@displayName.GetDisplayName(employee, nameof(employee.LastName))</label>
+            <DisplayNameProvider EntityType=@typeof(EmployeeBasicInfoDto) PropertyNameString="LastName" />
             <InputText class="form-control" @bind-Value="employee.LastName" />
             <ValidationMessage For="@(() => employee.LastName)" />
         </div>
 
         <div class="mb-3">
-            <label>@displayName.GetDisplayName(employee, nameof(employee.NationalId))</label>
+            <DisplayNameProvider EntityType=@typeof(EmployeeBasicInfoDto) PropertyNameString="NationalId" />
             <InputText class="form-control" @bind-Value="employee.NationalId" />
             <ValidationMessage For="@(() => employee.NationalId)" />
         </div>
 
         <div class="mb-3">
-            <label>@displayName.GetDisplayName(employee, nameof(employee.ContactNumber))</label>
+            <DisplayNameProvider EntityType=@typeof(EmployeeBasicInfoDto) PropertyNameString="ContactNumber" />
             <InputText class="form-control" @bind-Value="employee.ContactNumber" />
             <ValidationMessage For="@(() => employee.ContactNumber)" />
+        </div>
+
+        <div class="mb-3">
+            <DisplayNameProvider EntityType=@typeof(EmployeeBasicInfoDto) PropertyNameString="ContactNumber" />
+            <MudSelect @bind-Value="employee.WorkingStatusDisplay">
+                @foreach (var item in Enum.GetValues(typeof(WorkingStatusType)))
+                {
+                    <MudSelectItem Value="@item">@services.GetLocalizedDisplayName(typeof(GenderType), item.ToString())</MudSelectItem>
+                }
+            </MudSelect>
+        </div>
+
+        <div class="mb-3">
+            <DisplayNameProvider EntityType=@typeof(EmployeeBasicInfoDto) PropertyNameString="ContactNumber" />
+            <MudSelect @bind-Value="employee.WorkingStatusDisplay">
+            @foreach (var item in Enum.GetValues(typeof(GenderType)))
+            {
+                    <MudSelectItem Value="@item">@services.GetLocalizedDisplayName(typeof(GenderType), item.ToString())</MudSelectItem>
+            }
+            </MudSelect>
         </div>
 
         <div class="d-flex justify-content-between">
@@ -54,7 +78,7 @@ else
 }
 
 @code {
-    private EmployeeDto employee=new();
+    private EmployeeBasicInfoDto employee = new();
     [Parameter] public long Id { get; set; }
     [Parameter] public EventCallback OnNext { get; set; }
     [Parameter] public EventCallback OnPrevious { get; set; }
@@ -63,7 +87,7 @@ else
     protected override async Task OnInitializedAsync()
     {
         var baseUrl = apiConfig.Value.Url;
-        var result = await client.GetFromJsonAsync<CrudDataResult<EmployeeDto>>($"{baseUrl}/api/employee/{Id}", _cts.Token);
+        var result = await client.GetFromJsonAsync<CrudDataResult<EmployeeBasicInfoDto>>($"{baseUrl}/api/employee/{Id}", _cts.Token);
         employee = result.Data;
         Console.WriteLine($"Loaded employee: {employee.FirstName} {employee.LastName}");
     }
@@ -72,7 +96,7 @@ else
     {
         employeeState.CurrentEmployee = employee;
         navigation.NavigateTo($"/gender-info");
-       // await OnNext.InvokeAsync();
+        // await OnNext.InvokeAsync();
     }
 
     private async Task HandleInvalidSubmit(EditContext context)

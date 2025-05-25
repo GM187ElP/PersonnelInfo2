@@ -27,7 +27,7 @@
     </HeaderContent>
 
     <RowTemplate>
-        <MudTd DataLabel="ٍویرایش"><MudIconButton Icon="@Icons.Material.Filled.Edit" Color="Color.Info" OnClick="@(e=>Edit<long>("/update-employee/",context.Id))" class="btn btn-primary"></MudIconButton></MudTd>
+        <MudTd DataLabel="ٍویرایش"><MudIconButton Icon="@Icons.Material.Filled.Edit" Color="Color.Info" OnClick="@(e=>Edit<long>("/basic-info/",context.Id))" class="btn btn-primary"></MudIconButton></MudTd>
         <DisplayNameProvider IsMudTd=true PropertyList="@propertyList" EntityType=typeof(EmployeeDto) PropertyNameString="RowNumber" Context="@context" />
 
        @* <DisplayNameProvider IsMudTd=true EntityType=typeof(EmployeeDto) PropertyNameString="RowNumber" Context="@context" />
