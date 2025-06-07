@@ -8,6 +8,7 @@ using PersonnelInfo.Application.Interfaces.Entities;
 using PersonnelInfo.Core.Entities;
 using PersonnelInfo.Core.Infrastructure;
 using PersonnelInfo.Infrastructure.Configuration;
+using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection.Metadata.Ecma335;
@@ -50,11 +51,13 @@ public class EmployeeRepository : IEmployeeRepository
         return false;
     }
 
-    public async Task<PagedResult<Employee>> GetAllAsync(int page, int pageSize, GetTypeEnum getType, QueryProvider queryProvider, CancellationToken cancellationToken = default)
+    public async Task<PagedResult<Employee>> GetAllAsync(
+        int page,
+        int pageSize,
+        GetTypeEnum getType,
+        QueryProvider queryProvider,
+        CancellationToken cancellationToken = default)
     {
-        PagedResult<Employee> result;
-        CountResult countResult;
-
         var parameters = new
         {
             Offset = (page - 1) * pageSize,
@@ -62,84 +65,83 @@ public class EmployeeRepository : IEmployeeRepository
         };
 
         var countRawSql = $"""
-                SELECT COUNT(*) FROM [Employee] AS E 
-                {IncludeFilterForSql(getType, "E.IsDeleted")}
-                """;
+        SELECT COUNT(*) FROM [Employee] AS E 
+        {IncludeFilterForSql(getType, "E.IsDeleted")}
+        """;
 
-        var ItemsRawSql = $"""
-                SELECT * FROM [Employee] AS E 
-                {IncludeFilterForSql(getType, "E.IsDeleted")}
-                ORDER BY E.Id
-                OFFSET {parameters.Offset} ROWS 
-                FETCH NEXT {parameters.PageSize} ROWS ONLY
-                """;
+        var itemsRawSqlEfCore = $"""
+        SELECT * FROM [Employee] AS E 
+        {IncludeFilterForSql(getType, "E.IsDeleted")}
+        ORDER BY E.Id
+        OFFSET {parameters.Offset} ROWS 
+        FETCH NEXT {parameters.PageSize} ROWS ONLY
+        """;
 
-        if (queryProvider == QueryProvider.LinqMethod)
+        var itemsRawSqlDapper = $"""
+        SELECT * FROM [Employee] AS E 
+        {IncludeFilterForSql(getType, "E.IsDeleted")}
+        ORDER BY E.Id
+        OFFSET @Offset ROWS 
+        FETCH NEXT @PageSize ROWS ONLY
+        """;
+
+        var result = new PagedResult<Employee>();
+
+        switch (queryProvider)
         {
-            result = new()
-            {
-                TotalCount = await _dbSet.CountAsync(cancellationToken),
-                Items = await _dbSet
-                .AsNoTracking()
-                .Where(IncludeFilter(getType))
-                .Skip((page - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync(cancellationToken)
-            };
-            return result;
-        }
-        else if (queryProvider == QueryProvider.LinqQuery)
-        {
-            var queryable = from e in _dbSet.AsNoTracking().Where(IncludeFilter(getType))
-                            orderby e.Id
-                            select e;
+            case QueryProvider.LinqMethod:
+                result.TotalCount = await _dbSet.CountAsync(cancellationToken);
+                result.Items = await _dbSet
+                    .AsNoTracking()
+                    .Where(IncludeFilter(getType))
+                    .Skip(parameters.Offset)
+                    .Take(parameters.PageSize)
+                    .ToListAsync(cancellationToken);
+                break;
 
-            result = new()
-            {
-                TotalCount = await queryable.CountAsync(cancellationToken),
-                Items = await queryable
-                               .Skip((page - 1) * pageSize)
-                               .Take(pageSize)
-                               .ToListAsync(cancellationToken)
-            };
-            return result;
-        }
-        else if (queryProvider == QueryProvider.EfCoreFromSql)
-        {
-            countResult = new();
-            countResult = await _context.Set<CountResult>()
-               .FromSqlRaw(countRawSql)
-               .AsNoTracking()
-               .FirstAsync(cancellationToken);
+            case QueryProvider.LinqQuery:
+                var queryable = from e in _dbSet.AsNoTracking().Where(IncludeFilter(getType))
+                                orderby e.Id
+                                select e;
 
-            result = new();
-            result.TotalCount = countResult.TotalCount;
-            result.Items = await _dbSet.FromSqlRaw(ItemsRawSql)
-                .AsNoTracking()
-                .ToListAsync(cancellationToken);
+                result.TotalCount = await queryable.CountAsync(cancellationToken);
+                result.Items = await queryable
+                    .Skip(parameters.Offset)
+                    .Take(parameters.PageSize)
+                    .ToListAsync(cancellationToken);
+                break;
 
-            return result;
-        }
+            case QueryProvider.EfCoreFromSql:
+                var countResult = await _context.Set<CountResult>()
+                    .FromSqlRaw(countRawSql)
+                    .AsNoTracking()
+                    .FirstAsync(cancellationToken);
 
-        else if (queryProvider == QueryProvider.Dapper)
-        {
-            var connectionString = _context.Database.GetConnectionString();
-            using var connection = new SqlConnection(connectionString);
+                result.TotalCount = countResult.TotalCount;
+                result.Items = await _dbSet
+                    .FromSqlRaw(itemsRawSqlEfCore)
+                    .AsNoTracking()
+                    .ToListAsync(cancellationToken);
+                break;
 
-            result = new();
+            default:
+                var connectionString = _context.Database.GetConnectionString();
+                await using var connection = new SqlConnection(_context.Database.GetConnectionString());
+                await connection.OpenAsync(cancellationToken);
 
-            result.TotalCount = await connection.ExecuteScalarAsync<long>(new CommandDefinition(countRawSql, cancellationToken: cancellationToken));
-            var items = await connection.QueryAsync<Employee>(new CommandDefinition(ItemsRawSql, cancellationToken: cancellationToken));
-            result.Items = items.ToList();
+                result.TotalCount = await connection.ExecuteScalarAsync<long>(
+                    new CommandDefinition(countRawSql, parameters, cancellationToken: cancellationToken));
 
-            return result;
-        }
-        else
-        {
+                var items = await connection.QueryAsync<Employee>(
+                    new CommandDefinition(itemsRawSqlDapper, parameters, cancellationToken: cancellationToken));
 
+                result.Items = items.ToList();
+                break;
         }
 
+        return result;
     }
+
     public class CountResult
     {
         public long TotalCount { get; set; }
