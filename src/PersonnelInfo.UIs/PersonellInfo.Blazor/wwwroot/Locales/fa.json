@@ -96,8 +96,19 @@
   "Validation.EmployeeDto.LandPhoneNumber.StringLength": "شماره تلفن ثابت نمی‌تواند بیش از ۱۱ رقم باشد.",
   "Validation.EmployeeDto.PostalCode.StringLength": "کد پستی نمی‌تواند بیش از ۱۰ رقم باشد.",
   "Validation.EmployeeDto.MostRecentDegree.StringLength": "آخرین مدرک تحصیلی باید بین ۳ تا ۲۱ کاراکتر باشد.",
-  "Validation.EmployeeDto.Major.StringLength": "رشته تحصیلی باید بین ۳ تا ۲۱ کاراکتر باشد."
+  "Validation.EmployeeDto.Major.StringLength": "رشته تحصیلی باید بین ۳ تا ۲۱ کاراکتر باشد.",
 
+  "Validation.EmployeeBasicInfoDto.FirstName.Required": "وارد کردن نام الزامی است.",
+  "Validation.EmployeeBasicInfoDto.FirstName.StringLength": "نام باید بین 3 تا 21 کاراکتر باشد.",
+  "Validation.EmployeeBasicInfoDto.LastName.Required": "وارد کردن نام خانوادگی الزامی است.",
+  "Validation.EmployeeBasicInfoDto.LastName.StringLength": "نام خانوادگی باید بین 3 تا 21 کاراکتر باشد.",
+  "Validation.EmployeeBasicInfoDto.NationalId.Required": "کد ملی الزامی است.",
+  "Validation.EmployeeBasicInfoDto.NationalId.StringLength": "کد ملی باید دقیقاً 10 رقم باشد.",
+  "Validation.EmployeeBasicInfoDto.NationalId.NationalId": "کد ملی اشتباه است.",
+  "Validation.EmployeeBasicInfoDto.NationalId.RegularExpression": "لطفاً فقط رقم وارد کنید.",
+  "Validation.EmployeeBasicInfoDto.ContactNumber.Required": "شماره همراه الزامی است.",
+  "Validation.EmployeeBasicInfoDto.ContactNumber.StringLength": "شماره همراه باید دقیقاً 11 رقم باشد.",
+  "Validation.EmployeeBasicInfoDto.ContactNumber.RegularExpression": "لطفاً فقط رقم وارد کنید."
 
 
 

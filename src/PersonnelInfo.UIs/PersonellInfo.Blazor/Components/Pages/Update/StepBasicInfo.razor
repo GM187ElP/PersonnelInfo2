@@ -1,8 +1,11 @@
 ﻿@page "/basic-info/{id:long}"
+
 @using PersonellInfo.Blazor.Components.Services.Enums
 @using PersonnelInfo.Core.Enums
 @using PersonnelInfo.Core.Infrastructure
+@using Microsoft.Extensions.Options
 @using System.Text.Json
+@using System.Net.Http.Json
 @inject IDisplayName displayName
 @inject HttpClient client
 @inject IOptions<ApiConfiguration> apiConfig
@@ -10,65 +13,62 @@
 @inject NavigationManager navigation
 @inject EnumServices services
 
-@if (employee != null)
+@if (basicInfo != null)
 {
-    <EditForm Model="@employee" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
+    <EditForm Model="@basicInfo" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
         <LocalizedValidationMessage />
 
         <div class="mb-3">
-            <DisplayNameProvider EntityType=@typeof(EmployeeBasicInfoDto) PropertyNameString="PersonnelCode" />
-            <InputNumber class="form-control" disabled @bind-Value="employee.PersonnelCode" />
+            <DisplayNameProvider EntityType=@typeof(EmployeeDto) PropertyNameString="PersonnelCode" />
+            <InputNumber class="form-control" disabled @bind-Value="basicInfo.PersonnelCode" />
         </div>
 
         <div class="mb-3">
-            <DisplayNameProvider EntityType=@typeof(EmployeeBasicInfoDto) PropertyNameString="FirstName" />
-            <InputText class="form-control" @bind-Value="employee.FirstName" />
-            <ValidationMessage For="@(() => employee.FirstName)" />
+            <DisplayNameProvider EntityType=@typeof(EmployeeDto) PropertyNameString="FirstName" />
+            <InputText class="form-control" @bind-Value="basicInfo.FirstName" />
+            <ValidationMessage For="@(() => basicInfo.FirstName)" />
         </div>
 
         <div class="mb-3">
-            <DisplayNameProvider EntityType=@typeof(EmployeeBasicInfoDto) PropertyNameString="LastName" />
-            <InputText class="form-control" @bind-Value="employee.LastName" />
-            <ValidationMessage For="@(() => employee.LastName)" />
+            <DisplayNameProvider EntityType=@typeof(EmployeeDto) PropertyNameString="LastName" />
+            <InputText class="form-control" @bind-Value="basicInfo.LastName" />
+            <ValidationMessage For="@(() => basicInfo.LastName)" />
         </div>
 
         <div class="mb-3">
-            <DisplayNameProvider EntityType=@typeof(EmployeeBasicInfoDto) PropertyNameString="NationalId" />
-            <InputText class="form-control" @bind-Value="employee.NationalId" />
-            <ValidationMessage For="@(() => employee.NationalId)" />
+            <DisplayNameProvider EntityType=@typeof(EmployeeDto) PropertyNameString="NationalId" />
+            <InputText class="form-control" @bind-Value="basicInfo.NationalId" />
+            <ValidationMessage For="@(() => basicInfo.NationalId)" />
         </div>
 
         <div class="mb-3">
-            <DisplayNameProvider EntityType=@typeof(EmployeeBasicInfoDto) PropertyNameString="ContactNumber" />
-            <InputText class="form-control" @bind-Value="employee.ContactNumber" />
-            <ValidationMessage For="@(() => employee.ContactNumber)" />
+            <DisplayNameProvider EntityType=@typeof(EmployeeDto) PropertyNameString="ContactNumber" />
+            <InputText class="form-control" @bind-Value="basicInfo.ContactNumber" />
+            <ValidationMessage For="@(() => basicInfo.ContactNumber)" />
         </div>
 
         <div class="mb-3">
-            <DisplayNameProvider EntityType=@typeof(EmployeeBasicInfoDto) PropertyNameString="ContactNumber" />
-            <MudSelect @bind-Value="employee.WorkingStatusDisplay">
-                @foreach (var item in Enum.GetValues(typeof(WorkingStatusType)))
+            <DisplayNameProvider EntityType=@typeof(EmployeeDto) PropertyNameString="WorkingStatusDisplay" />
+            <MudSelect T="WorkingStatusType" @bind-Value="basicInfo.WorkingStatusDisplay">
+                @foreach (WorkingStatusType item in Enum.GetValues(typeof(WorkingStatusType)))
+                {
+                    <MudSelectItem Value="@item">@services.GetLocalizedDisplayName(typeof(WorkingStatusType), item.ToString())</MudSelectItem>
+                }
+            </MudSelect>
+        </div>
+
+        <div class="mb-3">
+            <DisplayNameProvider EntityType=@typeof(EmployeeDto) PropertyNameString="GenderDisplay" />
+            <MudSelect T="GenderType" @bind-Value="basicInfo.GenderDisplay">
+                @foreach (GenderType item in Enum.GetValues(typeof(GenderType)))
                 {
                     <MudSelectItem Value="@item">@services.GetLocalizedDisplayName(typeof(GenderType), item.ToString())</MudSelectItem>
                 }
             </MudSelect>
         </div>
 
-        <div class="mb-3">
-            <DisplayNameProvider EntityType=@typeof(EmployeeBasicInfoDto) PropertyNameString="ContactNumber" />
-            <MudSelect @bind-Value="employee.WorkingStatusDisplay">
-            @foreach (var item in Enum.GetValues(typeof(GenderType)))
-            {
-                    <MudSelectItem Value="@item">@services.GetLocalizedDisplayName(typeof(GenderType), item.ToString())</MudSelectItem>
-            }
-            </MudSelect>
-        </div>
-
         <div class="d-flex justify-content-between">
-            <button type="submit" class="btn btn-primary">
-                Go to Gender Info
-            </button>
-
+            <button type="submit" class="btn btn-primary">Go to Gender Info</button>
         </div>
     </EditForm>
 }
@@ -78,32 +78,94 @@ else
 }
 
 @code {
-    private EmployeeBasicInfoDto employee = new();
+    private EmployeeBasicInfoDto basicInfo = new();
     [Parameter] public long Id { get; set; }
     [Parameter] public EventCallback OnNext { get; set; }
     [Parameter] public EventCallback OnPrevious { get; set; }
+    [Parameter] public EmployeeDto EmployeeDto { get; set; }
+
     private CancellationTokenSource _cts = new();
 
     protected override async Task OnInitializedAsync()
     {
         var baseUrl = apiConfig.Value.Url;
-        var result = await client.GetFromJsonAsync<CrudDataResult<EmployeeBasicInfoDto>>($"{baseUrl}/api/employee/{Id}", _cts.Token);
-        employee = result.Data;
-        Console.WriteLine($"Loaded employee: {employee.FirstName} {employee.LastName}");
+        try
+        {
+            var result = await client.GetFromJsonAsync<CrudDataResult<EmployeeDto>>(
+                $"{baseUrl}/api/employee/{Id}", _cts.Token
+            );
+
+            if (result?.Data != null)
+            {
+                basicInfo = Map<EmployeeBasicInfoDto, EmployeeDto>(result.Data);
+                employeeState.CurrentEmployee = result.Data; // Store full object at start
+            }
+            else
+            {
+                Console.WriteLine("Employee data is null.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading employee: {ex.Message}");
+        }
     }
 
     private async Task HandleValidSubmit(EditContext context)
     {
-        employeeState.CurrentEmployee = employee;
-        navigation.NavigateTo($"/gender-info");
-        // await OnNext.InvokeAsync();
+        // Safely map only the updated fields into the shared state
+        if (employeeState.CurrentEmployee is not null)
+        {
+            MapTo(basicInfo, employeeState.CurrentEmployee);
+        }
+
+        navigation.NavigateTo("/contact-info");
     }
 
-    private async Task HandleInvalidSubmit(EditContext context)
+    private void HandleInvalidSubmit(EditContext context)
     {
-        foreach (var field in context.GetValidationMessages())
+        foreach (var msg in context.GetValidationMessages())
         {
-            Console.WriteLine($"- {field}");
+            Console.WriteLine($"Validation Error: {msg}");
+        }
+    }
+
+    public TTo Map<TTo, TFrom>(TFrom from) where TTo : new()
+    {
+        var to = new TTo();
+        var toProps = typeof(TTo).GetProperties();
+        var fromProps = typeof(TFrom).GetProperties();
+
+        foreach (var toProp in toProps)
+        {
+            if (!toProp.CanWrite) continue;
+
+            var fromProp = fromProps.FirstOrDefault(fp => fp.Name == toProp.Name && fp.CanRead);
+            if (fromProp != null)
+            {
+                var value = fromProp.GetValue(from);
+                toProp.SetValue(to, value);
+            }
+        }
+
+        return to;
+    }
+
+    public void MapTo<TFrom>(TFrom from, object to)
+    {
+        var toProps = to.GetType().GetProperties();
+        var fromProps = typeof(TFrom).GetProperties();
+
+        foreach (var toProp in toProps)
+        {
+            if (!toProp.CanWrite) continue;
+
+            var fromProp = fromProps.FirstOrDefault(fp => fp.Name == toProp.Name && fp.CanRead);
+            if (fromProp != null)
+            {
+                var value = fromProp.GetValue(from);
+                toProp.SetValue(to, value);
+            }
         }
     }
 

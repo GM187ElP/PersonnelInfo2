@@ -68,15 +68,17 @@
   "Validation.AddEmployeeDto.ContactNumber.RegularExpression": "Please enter digits only.",
 
 
-  "Validation.EmployeeDto.PersonnelCode.Required": "Personnel code is required.",
   "Validation.EmployeeDto.FirstName.Required": "First name is required.",
-  "Validation.EmployeeDto.FirstName.StringLength": "First name cannot exceed 21 characters.",
+  "Validation.EmployeeDto.FirstName.StringLength": "First name must be between 3 and 21 characters long.",
   "Validation.EmployeeDto.LastName.Required": "Last name is required.",
-  "Validation.EmployeeDto.LastName.StringLength": "Last name cannot exceed 21 characters.",
+  "Validation.EmployeeDto.LastName.StringLength": "Last name must be between 3 and 21 characters long.",
   "Validation.EmployeeDto.NationalId.Required": "National ID is required.",
-  "Validation.EmployeeDto.NationalId.Length": "National ID must be exactly 10 digits.",
+  "Validation.EmployeeDto.NationalId.StringLength": "National ID must be exactly 10 digits.",
+  "Validation.EmployeeDto.NationalId.NationalId": "National ID is invalid.",
+  "Validation.EmployeeDto.NationalId.RegularExpression": "Please enter digits only.",
   "Validation.EmployeeDto.ContactNumber.Required": "Contact number is required.",
-  "Validation.EmployeeDto.ContactNumber.Length": "Contact number must be exactly 11 digits.",
+  "Validation.EmployeeDto.ContactNumber.StringLength": "Contact number must be exactly 11 digits.",
+  "Validation.EmployeeDto.ContactNumber.RegularExpression": "Please enter digits only.",
   "Validation.EmployeeDto.FatherName.Required": "Father’s name is required.",
   "Validation.EmployeeDto.FatherName.StringLength": "Father’s name cannot exceed 21 characters.",
   "Validation.EmployeeDto.ChildrenCount.Range": "Children count cannot be negative.",
@@ -94,7 +96,20 @@
   "Validation.EmployeeDto.LandPhoneNumber.StringLength": "Landline number cannot exceed 11 digits.",
   "Validation.EmployeeDto.PostalCode.StringLength": "Postal code cannot exceed 10 digits.",
   "Validation.EmployeeDto.MostRecentDegree.StringLength": "Most recent degree cannot exceed 21 characters.",
-  "Validation.EmployeeDto.Major.StringLength": "Major cannot exceed 21 characters."
+  "Validation.EmployeeDto.Major.StringLength": "Major cannot exceed 21 characters.",
+
+  "Validation.EmployeeBasicInfoDto.FirstName.Required": "First name is required.",
+  "Validation.EmployeeBasicInfoDto.FirstName.StringLength": "First name must be between 3 and 21 characters long.",
+  "Validation.EmployeeBasicInfoDto.LastName.Required": "Last name is required.",
+  "Validation.EmployeeBasicInfoDto.LastName.StringLength": "Last name must be between 3 and 21 characters long.",
+  "Validation.EmployeeBasicInfoDto.NationalId.Required": "National ID is required.",
+  "Validation.EmployeeBasicInfoDto.NationalId.StringLength": "National ID must be exactly 10 digits.",
+  "Validation.EmployeeBasicInfoDto.NationalId.NationalId": "National ID is invalid.",
+  "Validation.EmployeeBasicInfoDto.NationalId.RegularExpression": "Please enter digits only.",
+  "Validation.EmployeeBasicInfoDto.ContactNumber.Required": "Contact number is required.",
+  "Validation.EmployeeBasicInfoDto.ContactNumber.StringLength": "Contact number must be exactly 11 digits.",
+  "Validation.EmployeeBasicInfoDto.ContactNumber.RegularExpression": "Please enter digits only."
+
 
 
 

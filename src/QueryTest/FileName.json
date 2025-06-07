@@ -1,0 +1,29 @@
+{
+  "Employee": {
+    "Id": "long",
+    "PersonnelCode": "int",
+    "FirstName": "string",
+    "LastName": "string",
+    "BankAccount": "table"
+  },
+  "City": {
+    "Id": "int",
+    "Name": "string",
+    "Employee": "table"
+  },
+  "BankAccount": {
+    "Id": "long",
+    "BankName": "string"
+  },
+
+
+  "City": {
+    "Name",
+    "Employee": {
+      "PersonnelCode",
+      "BankAccount": {
+        "BankName"
+      }
+    }
+  }
+}

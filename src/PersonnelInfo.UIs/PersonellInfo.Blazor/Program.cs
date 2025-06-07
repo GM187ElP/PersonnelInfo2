@@ -5,6 +5,7 @@ using PersonellInfo.Blazor;
 using PersonellInfo.Blazor.Components;
 using PersonellInfo.Blazor.Components.Pages.Update;
 using PersonellInfo.Blazor.Components.Services;
+using PersonellInfo.Blazor.Components.Services.Enums;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,7 @@ builder.Services.AddServerSideBlazor()
     .AddCircuitOptions(options => { options.DetailedErrors = true; });
 
 builder.Services.AddScoped<EmployeeState>();
+builder.Services.AddScoped<EnumServices>();
 builder.Services.AddSingleton<AppLanguageService>();
 
 builder.Services.AddMudServices();

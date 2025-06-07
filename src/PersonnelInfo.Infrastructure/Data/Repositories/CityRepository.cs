@@ -28,4 +28,14 @@ public class CityRepository : ICityRepository
     public async Task<City?> GetByIdAsync(long id, CancellationToken cancellationToken = default) =>
         await _dbSet.AsNoTracking()
         .FirstOrDefaultAsync(e => e.Id == id, cancellationToken);
+
+    //public async Task GetAllAsyncCity()
+    //{
+    //    var result = await (from c in _dbSet
+    //                        where c.ProvinceId!=0
+    //                        group c by c.ProvinceId into g
+                            
+    //                      );
+                    
+    //}
 }

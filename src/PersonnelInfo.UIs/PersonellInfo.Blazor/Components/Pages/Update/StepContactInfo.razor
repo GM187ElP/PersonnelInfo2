@@ -1,0 +1,65 @@
+﻿@page "/contact-info"
+@using PersonellInfo.Blazor.Components.Services.Enums
+@inject IDisplayName displayName
+@inject HttpClient client
+@inject IOptions<ApiConfiguration> apiConfig
+@inject EmployeeState employeeState
+@inject NavigationManager navigation
+@inject EnumServices services
+
+<EditForm Model="@employeeState.CurrentEmployee" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
+    <LocalizedValidationMessage />
+
+    <div class="mb-3">
+        <DisplayNameProvider EntityType="@typeof(EmployeeDto)" PropertyNameString="InternalContactNumber" />
+        <InputText class="form-control" @bind-Value="employeeState.CurrentEmployee.InternalContactNumber" />
+        <ValidationMessage For="@(() => employeeState.CurrentEmployee.InternalContactNumber)" />
+    </div>
+
+    <div class="mb-3">
+        <DisplayNameProvider EntityType="@typeof(EmployeeDto)" PropertyNameString="LandPhoneNumber" />
+        <InputText class="form-control" @bind-Value="employeeState.CurrentEmployee.LandPhoneNumber" />
+        <ValidationMessage For="@(() => employeeState.CurrentEmployee.LandPhoneNumber)" />
+    </div>
+
+    <div class="mb-3">
+        <DisplayNameProvider EntityType="@typeof(EmployeeDto)" PropertyNameString="Address" />
+        <InputTextArea class="form-control" rows="3" @bind-Value="employeeState.CurrentEmployee.Address" />
+        <ValidationMessage For="@(() => employeeState.CurrentEmployee.Address)" />
+    </div>
+
+    <div class="mb-3">
+        <DisplayNameProvider EntityType="@typeof(EmployeeDto)" PropertyNameString="PostalCode" />
+        <InputText class="form-control" @bind-Value="employeeState.CurrentEmployee.PostalCode" />
+        <ValidationMessage For="@(() => employeeState.CurrentEmployee.PostalCode)" />
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <button type="button" class="btn btn-secondary" @onclick="GoBack">Back</button>
+        <button type="submit" class="btn btn-primary">Next Step</button>
+    </div>
+</EditForm>
+
+@code {
+    [Parameter] public EventCallback OnNextStep { get; set; }
+    [Parameter] public EventCallback OnPreviousStep { get; set; }
+    [Inject] public EmployeeState EmployeeState { get; set; }
+
+
+ 
+
+    private void HandleValidSubmit()
+    {
+        OnNextStep.InvokeAsync();
+    }
+
+    private void HandleInvalidSubmit()
+    {
+        // Optional: toast or visual feedback
+    }
+
+    private async Task GoBack()
+    {
+        await OnPreviousStep.InvokeAsync();
+    }
+}

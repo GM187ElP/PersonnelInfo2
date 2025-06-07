@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "src\QueryTest\Test.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonellInfo.Blazor", "src\PersonnelInfo.UIs\PersonellInfo.Blazor\PersonellInfo.Blazor.csproj", "{315F4A7D-9BAE-44A3-9CE9-84FD126BC2DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonnelInfo.Api2", "src\PersonnelInfo.API2\PersonnelInfo.Api2\PersonnelInfo.Api2.csproj", "{174C2EC2-13A8-4B86-BAE3-D05FD76800EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{315F4A7D-9BAE-44A3-9CE9-84FD126BC2DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{315F4A7D-9BAE-44A3-9CE9-84FD126BC2DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{315F4A7D-9BAE-44A3-9CE9-84FD126BC2DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{174C2EC2-13A8-4B86-BAE3-D05FD76800EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{174C2EC2-13A8-4B86-BAE3-D05FD76800EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{174C2EC2-13A8-4B86-BAE3-D05FD76800EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{174C2EC2-13A8-4B86-BAE3-D05FD76800EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +96,7 @@ Global
 		{A2A8D9F9-A130-4BCD-B663-6B17E50136C4} = {6BC99D44-70F5-4277-9DB7-D3503A532AEE}
 		{C9B15E01-328C-410C-87B7-B889E04125C2} = {6BC99D44-70F5-4277-9DB7-D3503A532AEE}
 		{315F4A7D-9BAE-44A3-9CE9-84FD126BC2DA} = {6077531A-09C8-4E03-A356-964F799B13A7}
+		{174C2EC2-13A8-4B86-BAE3-D05FD76800EE} = {6BC99D44-70F5-4277-9DB7-D3503A532AEE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B01FDC92-F900-4546-927C-4E5E03928C36}
