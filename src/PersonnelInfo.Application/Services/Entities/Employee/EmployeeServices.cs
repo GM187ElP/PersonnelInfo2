@@ -6,7 +6,7 @@ using PersonnelInfo.Core.Infrastructure;
 using PersonnelInfo.Core.Interfaces;
 using PersonnelInfo.Shared.Exceptions.Application;
 
-namespace PersonnelInfo.Application.Services;
+namespace PersonnelInfo.Application.Services.Entities.Employee;
 
 public class EmployeeServices : IEmployeeServices
 {
